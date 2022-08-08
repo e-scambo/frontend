@@ -1,0 +1,15 @@
+{
+  "title": "E-TROKA",
+  "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+  "placeholders": {
+    "email": "seunome@email.com",
+    "password": "Senha do usuário"
+  },
+  "forgotPassword": "Esqueci a senha",
+  "loginButton": "Login",
+  "loginWithSocialNetwork": "Ou faça login com as redes sociais",
+  "facebookLogin": "Login com Facebook",
+  "googleLogin": "Login com Google",
+  "doesNotHaveAccount": "Não possui conta?",
+  "signUp": "Cadastre-se"
+}
