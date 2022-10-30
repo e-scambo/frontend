@@ -1,8 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import useAnnouncements from 'hooks/useAnnouncements';
 
-//import {Form} from '@unform/web';
-import {FormHandles} from '@unform/core';
+// import {Form} from '@unform/web';
+// import {FormHandles} from '@unform/core';
 import {rabinKarpSearch} from 'util/search';
 import {Announcement} from 'types';
 
@@ -12,10 +12,10 @@ import Header from 'components/Header';
 import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
 import SearchBar from 'components/SearchBar';
-//import Select from 'components/Select';
+// import Select from 'components/Select';
 
 import {ListOfCards} from './styles';
-//import {FiltersBar} from './styles';
+// import {FiltersBar} from './styles';
 // import {stateNames} from 'states-cities.json';
 
 /*interface Filters {
@@ -24,7 +24,7 @@ import {ListOfCards} from './styles';
 }*/
 
 const Announcements: React.FC = () => {
-  //const formRef = useRef<FormHandles>(null);
+  // const formRef = useRef<FormHandles>(null);
   const {announcements, fetchAnnouncements} = useAnnouncements();
   const [search, setSearch] = useState<string>('');
   const [searchResult, setSearchResult] = useState<Announcement[]>();
