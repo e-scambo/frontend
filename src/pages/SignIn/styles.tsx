@@ -16,7 +16,7 @@ export const ContainerDraw = styled.div`
 
 export const ContainerLoginForm = styled.div`
   width: 50%;
-  height: 60vh;
+  height: 90vh;
   padding: 10vh;
   background: #FFFFFF;
   border: 1px solid #F5F5F5;
@@ -74,7 +74,7 @@ export const Title = styled.div`
   font-weight: bold;
   font-size: 2.5vh;
   line-height: 3vh;
-  color: #0D4A99;
+  color: #4e096b;
   height: 20%;
   margin-top: 2vh;
 `;
@@ -96,7 +96,8 @@ export const ButtonLink = styled(Link)`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1vh;
+  margin-top: 1.5vh;
+  font-size: 1.5vh;
   line-height: 3vh;
   text-decoration-line: underline;
   color: #0D4A99;

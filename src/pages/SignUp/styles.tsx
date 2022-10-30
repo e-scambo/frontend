@@ -15,7 +15,7 @@ export const ContainerDraw = styled.div`
 
 export const ContainerLoginForm = styled.div`
   width: 24vw;
-  height: 60vh;
+  height: 70vh;
   padding: 10vh;
   background: #FFFFFF;
   border: 1px solid #F5F5F5;

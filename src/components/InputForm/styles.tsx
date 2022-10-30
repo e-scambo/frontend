@@ -18,8 +18,8 @@ export const Input = styled.input`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.2vh;
-  line-height: 3vh;
+  font-size: 2vh;
+  line-height: 2vh;
   color: #7d7d7e;
   border: none;
 
@@ -42,7 +42,7 @@ export const Label = styled.p`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 1.3vh;
+  font-size: 2vh;
   line-height: 1vh;
   color: #000000;
   margin: .5vh 0vh;

@@ -24,6 +24,8 @@ import messages from './data.json';
 import useUsers from 'hooks/useUsers';
 import translation from 'locales/yup.locale.pt-br';
 import {User} from 'types';
+import { useNavigate } from 'react-router-dom';
+import useAuth from 'hooks/useAuth';
 
 
 interface FormFields {
@@ -35,6 +37,8 @@ interface FormFields {
 }
 
 const SignUp: React.FC = () => {
+  const {signIn, auth} = useAuth();
+  const navigate = useNavigate();
   const {createUser} = useUsers();
   const formRef = useRef<any>(null);
 
@@ -74,7 +78,16 @@ const SignUp: React.FC = () => {
         phone: data.phone,
       };
 
-      createUser(newUser);
+      const res = await createUser(newUser);
+
+      if (res?.status === 201) {
+        signIn(data.email, data.password);
+        if (auth.user) {
+          navigate('/announcements');
+        }
+      }
+        
+      
     } catch (err) {
       const validationErrors = {};
       if (err instanceof Yup.ValidationError) {
