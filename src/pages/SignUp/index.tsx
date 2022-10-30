@@ -24,7 +24,7 @@ import messages from './data.json';
 import useUsers from 'hooks/useUsers';
 import translation from 'locales/yup.locale.pt-br';
 import {User} from 'types';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import useAuth from 'hooks/useAuth';
 
 
@@ -84,10 +84,7 @@ const SignUp: React.FC = () => {
         signIn(data.email, data.password);
         if (auth.user) {
           navigate('/announcements');
-        }
-      }
-        
-      
+        }}
     } catch (err) {
       const validationErrors = {};
       if (err instanceof Yup.ValidationError) {

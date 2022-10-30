@@ -15,19 +15,15 @@ function useUsers() {
   async function fetchUserById(id: string) {
     try {
       const response = await userService.getUserById(id);
-      setUser(response?.data);
-      
+      setUser(response?.data); 
     } catch (error) {
       //
     }
   }
 
   async function createUser(user:User): Promise<AxiosResponse|null> {
-    
     try {
       const response = await userService.createUser(user);
-      
-      
       return response;
     } catch (error) {
       //
