@@ -1,4 +1,4 @@
-import React, {useCallback, useRef, ChangeEvent} from 'react';
+import React, {useRef, ChangeEvent} from 'react';
 import convertFileToBase64 from 'util/image';
 import useNotification from 'hooks/useNotification';
 import {Container} from './styles';
