@@ -121,7 +121,7 @@ const SignUp: React.FC = () => {
                     name="phone"
                     label="Telefone"
                     type="text"
-                    placeholder="(87)99999-9999"
+                    placeholder="(87) 99999-9999"
                   />
                   <InputForm
                     name="password"

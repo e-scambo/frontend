@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import {ReactComponent as EscamboLogo} from 'assets/img/Escambologo.svg';
+import {ReactComponent as EscamboLogo} from 'assets/img/ETROKA.svg';
 
 export const Container = styled.div`
   position: fixed;
@@ -22,6 +22,8 @@ export const Container = styled.div`
 
 export const StyledEscamboLogo = styled(EscamboLogo)`
   height: 6vh;
+  width: 20%;
+
 `;
 
 
@@ -45,10 +47,10 @@ export const ContainerLogo = styled.div`
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: bold;
-  font-size: 2.5vh;
+  font-size: 3.5vh;
   line-height: 2.5vh;
   letter-spacing: 0.16px;
-  color: #0D4A99;
+  color: #4c0c6c;
 
   svg {
     margin: 1vh;
@@ -79,7 +81,7 @@ export const NavLink = styled(Link)`
 
   font-style: normal;
   font-weight: normal;
-  font-size: 2vh;
+  font-size: 2,5vh;
   line-height: 3vh;
   letter-spacing: 0.16px;
   font-feature-settings: 'pnum' on, 'lnum' on;

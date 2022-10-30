@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {ReactComponent as DrawSignUp} from 'assets/img/DrawSignup.svg';
-import {ReactComponent as EscamboLogo} from 'assets/img/Escambologo.svg';
+import {ReactComponent as EscamboLogo} from 'assets/img/ETROKA.svg';
 
 export const ContainerDraw = styled.div`
   width: 36vw;
@@ -40,6 +40,7 @@ export const StyledDrawSignUp = styled(DrawSignUp)`
 
 export const StyledEscamboLogo = styled(EscamboLogo)`
   width: 25%;
+  height: 15%;
 `;
 
 export const ContainerLogo = styled.div`

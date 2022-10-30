@@ -20,7 +20,7 @@ const Header: React.FC = () => {
       <BoxContent>
         <ContainerLogo>
           <StyledEscamboLogo />
-          E-SCAMBO
+          E-TROKA
         </ContainerLogo>
         <ContainerMenus>
           <nav>

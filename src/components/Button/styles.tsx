@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
   min-height: 3.5vh;
 
   /* spacing */
-  padding-left: .2vh;
+  padding-left: .4vh;
 
   /* borders */
   border: none;
@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
   cursor: pointer;
   transition-duration: 0.5s;
 
-  background-color: #F28C43;
+  background-color: #4e096b;
 
   /* display */
   display: flex;
