@@ -18,10 +18,10 @@ import {ListOfCards} from './styles';
 // import {FiltersBar} from './styles';
 // import {stateNames} from 'states-cities.json';
 
-/*interface Filters {
+/* interface Filters {
   state: string,
   city: string
-}*/
+} */
 
 const Announcements: React.FC = () => {
   // const formRef = useRef<FormHandles>(null);
