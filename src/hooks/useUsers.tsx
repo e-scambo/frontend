@@ -15,7 +15,7 @@ function useUsers() {
   async function fetchUserById(id: string) {
     try {
       const response = await userService.getUserById(id);
-      setUser(response?.data); 
+      setUser(response?.data);
     } catch (error) {
       //
     }

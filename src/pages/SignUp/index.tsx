@@ -84,7 +84,8 @@ const SignUp: React.FC = () => {
         signIn(data.email, data.password);
         if (auth.user) {
           navigate('/announcements');
-        }}
+        }
+      }
     } catch (err) {
       const validationErrors = {};
       if (err instanceof Yup.ValidationError) {
