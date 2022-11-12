@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const Paper = styled.div`
-  width: 60vw;
+  width: 100vw;
   min-height: 55vh;
   background: #FFFFFF;
   border: 1px solid #F5F5F5;
@@ -17,13 +17,13 @@ export const Paper = styled.div`
 
 
 export const ContainerForm = styled.div`
-  width: 35vw;
+  width: 50vw;
   padding: 3vh 6vw;
   box-sizing: border-box;
 `;
 
 export const ContainerProfile = styled.div`
-  width: 25vw;
+  width: 50vw;
   height: 55vh;
   padding: 3vh 0vw;
   box-sizing: border-box;
