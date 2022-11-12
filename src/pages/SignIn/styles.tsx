@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {ReactComponent as EscamboDraw} from 'assets/img/DrawLogin.svg';
-import {ReactComponent as EscamboLogo} from 'assets/img/ETROKA.svg';
+import {ReactComponent as EscamboLogo} from 'assets/img/TESTE.svg';
 
 export const ContainerDraw = styled.div`
+@media (max-width: 426px) {
+  width: 100%;
+  
+}
   width: 50%;
   min-height: 60vh;
   padding: 10vh 1vw;
@@ -16,7 +20,7 @@ export const ContainerDraw = styled.div`
 
 export const ContainerLoginForm = styled.div`
   width: 50%;
-  height: 90vh;
+  height: 60vh;
   padding: 10vh;
   background: #FFFFFF;
   border: 1px solid #F5F5F5;
@@ -24,6 +28,12 @@ export const ContainerLoginForm = styled.div`
   box-shadow: 0vh .4vh .6vh rgba(106, 106, 106, 0.12);
   border-radius: .5vh;
   padding: 3vh 4vh;
+  
+  @media (max-width: 426px) {
+    width: 100%;
+    height: 45vh;
+    
+  }
 `;
 
 export const LoginSection = styled.div`
@@ -33,6 +43,10 @@ export const LoginSection = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 426px) {
+    flex-direction: column-reverse;
+  }
+
 `;
 
 export const StyledEscamboDraw = styled(EscamboDraw)`
@@ -40,7 +54,8 @@ export const StyledEscamboDraw = styled(EscamboDraw)`
 `;
 
 export const StyledEscamboLogo = styled(EscamboLogo)`
-  width: 25%;
+  height: 35%;
+  width: 35%;
 `;
 
 export const ContainerLogo = styled.div`
@@ -126,10 +141,11 @@ export const ContainerButtons = styled.div`
 
 
 export const InfoText = styled.div`
+margin-top: 10px;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.3vh;
+  font-size: 1.5vh;
   line-height: 3vh;
   color: #666666;
 
@@ -144,7 +160,7 @@ export const Redirect = styled(Link)`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.3vh;
+  font-size: 1.6vh;
   line-height: 3vh;
   color: #666666;
   text-decoration: underline;

@@ -16,6 +16,8 @@ export const Paper = styled.div`
   &:not(:last-child) {
     margin-bottom: 1.5vh;
   }
+  @media (max-width: 426px) {
+    width: 70vw;
 `;
 
 export const Grid = styled.div`
@@ -25,6 +27,15 @@ export const Grid = styled.div`
   grid-template-columns: 10vw 35vw;
   grid-template-rows: 3vh 3vh 1fr 1fr;
   box-sizing: border-box;
+
+  @media (max-width: 426px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 35vh;
+    padding-bottom: 2vh;
+  }
 `;
 
 
@@ -43,8 +54,8 @@ export const Picture = styled.div<PropsImage>`
   background-color: #F2F2F2;
   cursor: pointer;
 
-  width: 10vw;
-  height: 16vh;
+  width: 100%;
+  height: 15vh;
 
   display: flex;
 
@@ -104,10 +115,16 @@ export const CardActions = styled.div`
   flex-direction: row;
 
   button {
-    width: 8vw;
+    width: 15vw;
     height: 4vh;
     &:not(:last-child) {
       margin-right: 1vw;
+    }
+
+  }
+  @media (max-width: 426px) {
+    button {
+      width: 25vw;
     }
   }
 `;

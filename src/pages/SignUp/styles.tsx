@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {ReactComponent as DrawSignUp} from 'assets/img/DrawSignup.svg';
-import {ReactComponent as EscamboLogo} from 'assets/img/ETROKA.svg';
+import {ReactComponent as EscamboLogo} from 'assets/img/TESTE.svg';
 
 export const ContainerDraw = styled.div`
   width: 36vw;
@@ -23,6 +23,12 @@ export const ContainerLoginForm = styled.div`
   box-shadow: 0vh .4vh .6vh rgba(106, 106, 106, 0.12);
   border-radius: .5vh;
   padding: 3vh 4vh;
+
+  @media (max-width: 426px) {
+    width: 100%;
+    height: 65vh;
+   
+  }
 `;
 
 
@@ -32,6 +38,10 @@ export const LoginSection = styled.div`
   flex-direction: row;
   justify-items: space-between;
   align-items: center;
+
+  @media (max-width: 426px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const StyledDrawSignUp = styled(DrawSignUp)`
@@ -39,8 +49,8 @@ export const StyledDrawSignUp = styled(DrawSignUp)`
 `;
 
 export const StyledEscamboLogo = styled(EscamboLogo)`
-  width: 25%;
-  height: 15%;
+  width: 40%;
+  height: 40%;
 `;
 
 export const ContainerLogo = styled.div`

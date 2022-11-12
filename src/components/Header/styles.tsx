@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import {ReactComponent as EscamboLogo} from 'assets/img/ETROKA.svg';
+import {ReactComponent as EscamboLogo} from 'assets/img/logoHorizontal.svg';
 
 export const Container = styled.div`
   position: fixed;
@@ -21,9 +21,11 @@ export const Container = styled.div`
 `;
 
 export const StyledEscamboLogo = styled(EscamboLogo)`
-  height: 6vh;
-  width: 20%;
-
+  height: 10vh;
+  width: 60%;
+  @media (max-width: 426px) {
+    width: 100%;
+    height: 50px;
 `;
 
 
@@ -37,7 +39,7 @@ export const BoxContent = styled.div`
 
 export const ContainerLogo = styled.div`
   width: 17vw;
-  height: 7vh;
+  height: 50px;
 
   display: flex;
   flex-direction: row;
@@ -54,6 +56,9 @@ export const ContainerLogo = styled.div`
 
   svg {
     margin: 1vh;
+  }
+  @media (max-width: 426px) {
+    width: 100%;
   }
 
 `;
@@ -74,14 +79,46 @@ export const ContainerMenus = styled.div`
     width: 7vw;
     height: 2vh;
   }
+  @media (max-width: 425px) {
+    button {
+      width: 20vw;
+    }
+  }
 `;
 
+export const NavDesktop = styled.nav`
+@media (max-width: 426px) {
+  display: none;
+}
+`;
+export const NavMobile = styled.nav`
+  display: none;
+  @media (max-width: 426px) {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+
+  NavLink{
+   
+
+  }
+  }
+  `;
 
 export const NavLink = styled(Link)`
 
   font-style: normal;
   font-weight: normal;
-  font-size: 2,5vh;
+  font-size: 2.6vh;
   line-height: 3vh;
   letter-spacing: 0.16px;
   font-feature-settings: 'pnum' on, 'lnum' on;
@@ -100,4 +137,16 @@ export const NavLink = styled(Link)`
     border-bottom: 2px solid #F07D0B;
     transition: ease-in .1s;
   }
+
+  @media (max-width: 426px) {
+    font-size: 5vh;
+    line-height: 5vh;
+    text-align: left;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
 `;
+
+
+
