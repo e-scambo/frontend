@@ -29,7 +29,7 @@ export const StyledMenu = styled.nav`
     transition: color 0.3s linear;
     text-align: center;
   }
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
 `;
 export const NavLink = styled(Link)`
 

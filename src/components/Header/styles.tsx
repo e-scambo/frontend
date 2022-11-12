@@ -106,11 +106,6 @@ export const NavMobile = styled.nav`
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-
-  NavLink{
-   
-
-  }
   }
   `;
 
@@ -147,6 +142,3 @@ export const NavLink = styled(Link)`
     display: table;
   }
 `;
-
-
-

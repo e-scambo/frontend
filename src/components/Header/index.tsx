@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import useAuth from 'hooks/useAuth';
 import {useNavigate} from 'react-router-dom';
 import Button from 'components/Button';
 
-import {Container, NavDesktop, NavMobile} from './styles';
+import {Container, NavDesktop} from './styles';
 import {BoxContent} from './styles';
 import {ContainerLogo} from './styles';
 import {ContainerMenus} from './styles';
@@ -19,16 +19,12 @@ const Header: React.FC = () => {
   const {signOut} = useAuth();
 
   return (
-    
     <Container>
-      
       <BoxContent>
         <ContainerLogo>
           <StyledEscamboLogo />
-          
         </ContainerLogo>
         <Burguer open={open} setOpen={setOpen} />
-          
         <ContainerMenus>
           <MenuMobile open={open} ></MenuMobile>
           <NavDesktop>
