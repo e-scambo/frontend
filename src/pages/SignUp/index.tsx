@@ -66,7 +66,8 @@ const SignUp: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
-      let phone = '(' + data.phone.slice(0, 2) + ') ' + data.phone.slice(2, 7) + '-';
+      let phone = '(' + data.phone.slice(0, 2) + ') ' 
+      phone = phone + + data.phone.slice(2, 7) + '-';
       phone = phone + data.phone.slice(7, 11);
       const newUser: User = {
         name: data.name,
