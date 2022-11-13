@@ -61,7 +61,6 @@ const SignUp: React.FC = () => {
             oneOf([Yup.ref('password'), null],
                 messages.validations.password),
       });
-      console.log(schema);
 
       await schema.validate(data, {
         abortEarly: false,
@@ -69,6 +68,7 @@ const SignUp: React.FC = () => {
       let phone = '(' + data.phone.slice(0, 2) + ') ';
       phone = phone + data.phone.slice(2, 7) + '-';
       phone = phone + data.phone.slice(7, 11);
+      console.log(phone);
       const newUser: User = {
         name: data.name,
         email: data.email,
@@ -82,8 +82,7 @@ const SignUp: React.FC = () => {
       if (res?.status === 201) {
         console.log('Usuário criado com sucesso');
         await signIn(data.email, data.password);
-        console.log(auth);
-        if (auth.user) {
+        if (localStorage) {
           navigate('/announcements');
         }
       }
