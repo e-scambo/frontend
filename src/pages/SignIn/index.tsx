@@ -44,6 +44,7 @@ const SignIn: React.FC = () => {
   const handleToSubmit = async (data: SignInProps) => {
     await signIn(data.email, data.password);
     if (localStorage) {
+      console.log(auth)
       navigate('/announcements');
     } else {
       errorMessage('Email ou senha inválidos');

@@ -66,10 +66,8 @@ const SignUp: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
-
-
-      /* TODO: Send data to Back-end */
-      const phone = '(' + data.phone.slice(0, 2) + ') ' + data.phone.slice(2, 7) + '-' + data.phone.slice(7, 11);
+      let phone = '(' + data.phone.slice(0, 2) + ') ' + data.phone.slice(2, 7) + '-';
+      phone = phone + data.phone.slice(7, 11);
       const newUser: User = {
         name: data.name,
         email: data.email,
