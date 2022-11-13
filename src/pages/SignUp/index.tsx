@@ -83,7 +83,7 @@ const SignUp: React.FC = () => {
         console.log('Usuário criado com sucesso');
         await signIn(data.email, data.password);
         if (localStorage) {
-          console.log(auth)
+          console.log(auth);
           navigate('/announcements');
         }
       }
