@@ -69,8 +69,7 @@ const SignUp: React.FC = () => {
 
 
       /* TODO: Send data to Back-end */
-      const phone =  '(' + data.phone.slice(0, 2) + ') ' + data.phone.slice(2, 7) + '-' + data.phone.slice(7, 11);
-      console.log(phone)
+      const phone = '(' + data.phone.slice(0, 2) + ') ' + data.phone.slice(2, 7) + '-' + data.phone.slice(7, 11);
       const newUser: User = {
         name: data.name,
         email: data.email,
@@ -79,7 +78,6 @@ const SignUp: React.FC = () => {
         state: 'Paraíba',
         phone: phone,
       };
-      console.log(newUser);
       const res = await createUser(newUser);
       console.log(res);
       if (res?.status === 201) {
