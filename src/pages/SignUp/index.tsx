@@ -69,24 +69,29 @@ const SignUp: React.FC = () => {
 
 
       /* TODO: Send data to Back-end */
+      const phone =  '(' + data.phone.slice(0, 2) + ') ' + data.phone.slice(2, 7) + '-' + data.phone.slice(7, 11);
+      console.log(phone)
       const newUser: User = {
         name: data.name,
         email: data.email,
         password: data.password,
         city: 'Campina Grande',
         state: 'Paraíba',
-        phone: data.phone,
+        phone: phone,
       };
-
+      console.log(newUser);
       const res = await createUser(newUser);
-
+      console.log(res);
       if (res?.status === 201) {
-        signIn(data.email, data.password);
+        console.log('Usuário criado com sucesso');
+        await signIn(data.email, data.password);
+        console.log(auth);
         if (auth.user) {
           navigate('/announcements');
         }
       }
     } catch (err) {
+      console.log(err);
       const validationErrors = {};
       if (err instanceof Yup.ValidationError) {
         err.inner.forEach((error) => {
@@ -131,8 +136,8 @@ const SignUp: React.FC = () => {
                   <InputForm
                     name="phone"
                     label="Telefone"
-                    type="text"
-                    placeholder="(87) 99999-9999"
+                    type="tel"
+                    placeholder="99999999999"
                   />
                   <InputForm
                     name="password"

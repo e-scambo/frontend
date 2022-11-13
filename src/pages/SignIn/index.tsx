@@ -41,10 +41,13 @@ const SignIn: React.FC = () => {
   const {signIn, auth} = useAuth();
 
 
-  const handleToSubmit = (data: SignInProps) => {
-    signIn(data.email, data.password);
-
-    if (auth.user) {
+  const handleToSubmit = async (data: SignInProps) => {
+    console.log(localStorage)
+    await signIn(data.email, data.password);
+    console.log(auth)
+    console.log(localStorage)
+    if (localStorage) {
+      console.log('here')
       navigate('/announcements');
     } else {
       errorMessage('Email ou senha inválidos');
