@@ -63,7 +63,7 @@ const Announcements: React.FC = () => {
             </FiltersBar>
           </Form> */}
           <ListOfCards>
-            {search && searchResult ? 
+            {search && searchResult ?
               searchResult.map((announcement: Announcement, index) => (
                 <AnnouncementCard
                   key={announcement.id}
