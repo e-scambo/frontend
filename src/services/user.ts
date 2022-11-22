@@ -64,7 +64,6 @@ class UserService extends CoreService {
   async createAnnouncement(userId: string, data): Promise<AxiosResponse|null> {
     try {
       const customRoute = `${this.baseRoute}/${userId}/announcements`;
-      
       const formData = new FormData();
       formData.append('title', data.title);
       formData.append('description', data.description);
@@ -72,11 +71,11 @@ class UserService extends CoreService {
       formData.append('localization', data.localization);
       formData.append('type', data.type);
       formData.append('images', data.images[0]);
-      formData.append('usage_time', data.usage_time)
-      const response = await this.getApi().post(customRoute, formData,{
-          headers: {
-          "content-type": "multipart/form-data",
-          }
+      formData.append('usage_time', data.usage_time);
+      const response = await this.getApi().post(customRoute, formData, {
+        headers: {
+          'content-type': 'multipart/form-data',
+        },
       });
       return response;
     } catch (error) {

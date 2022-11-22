@@ -30,8 +30,6 @@ const Announcements: React.FC = () => {
   const [searchResult, setSearchResult] = useState<Announcement[]>();
   // const [filters, setFilters] = useState<Filters>({} as Filters);
   // const [cities, setCities] = useState<string[]>([]);
-  
-
   useEffect(() => {
     fetchAnnouncements();
   }, []);
@@ -65,7 +63,7 @@ const Announcements: React.FC = () => {
             </FiltersBar>
           </Form> */}
           <ListOfCards>
-            {search && searchResult ?        
+            {search && searchResult ? 
               searchResult.map((announcement: Announcement, index) => (
                 <AnnouncementCard
                   key={announcement.id}

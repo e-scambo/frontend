@@ -12,7 +12,6 @@ import ContentBox from 'components/ContentBox';
 import InputForm from 'components/InputForm';
 import MultlineInput from 'components/MultlineInput';
 import Select from 'components/Select';
-import ProductImages from 'components/ProductImages';
 import RadioGroup from 'components/RadioInput';
 import Button from 'components/Button';
 
@@ -21,7 +20,7 @@ import {TitleSection} from './styles';
 import {ContainerFields} from './styles';
 import {ContainerLeft} from './styles';
 import {ContainerRight} from './styles';
-import {AnnouncementForm, key} from 'types';
+import {AnnouncementForm} from 'types';
 import {states, stateNames} from 'locales/states-cities.json';
 import {categories} from './options.json';
 import useAuth from 'hooks/useAuth';
@@ -85,7 +84,7 @@ const CreateAnnouncement: React.FC = () => {
         usage_time: data.usage_time,
         images: [pictures],
       });
-      if(anuncio?.status === 201){
+      if (anuncio?.status === 201) {
         navigate('/announcements');
       };
 
@@ -180,8 +179,7 @@ const CreateAnnouncement: React.FC = () => {
                 <input
                   type="file"
                   name='images'
-                  onChange={e => setPictures(e.target.files![0])}
-                 
+                  onChange={(e) => setPictures(e.target.files![0])}
                 />
                 <Button type='submit' > Salvar </Button>
               </ContainerRight>

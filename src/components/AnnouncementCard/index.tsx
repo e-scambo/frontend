@@ -10,7 +10,6 @@ import {Title} from './styles';
 import {Description} from './styles';
 import {CardActions} from './styles';
 import {MdOutlinePlace} from 'react-icons/md';
-import {BiImageAlt} from './styles';
 import Button from 'components/Button';
 import useUsers from 'hooks/useUsers';
 import useAuth from 'hooks/useAuth';
@@ -28,9 +27,8 @@ interface CardProps {
 const AnnouncementCard: React.FC<CardProps> = (props) => {
   const navigate = useNavigate();
   const {addFavorite} = useUsers();
-  const img = "https://scambo2.herokuapp.com/images/"+props.image;
-  const {auth} = useAuth();
-  
+  const img = 'https://scambo2.herokuapp.com/images/'+props.image;
+  const {auth} = useAuth(); 
   const favoritar = ()=>{
     addFavorite(auth.user, {announcement: props.id, owner: props.owner.id});
   };
@@ -46,7 +44,6 @@ const AnnouncementCard: React.FC<CardProps> = (props) => {
         <Picture src={img} onClick={() => {
           navigate(`/announcement/${props.id}`);
         }}>
-         
         </Picture>
         <Title onClick={() => {
           navigate(`/announcement/${props.id}`);
