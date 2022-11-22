@@ -3,7 +3,6 @@ import CoreService from './core';
 import {AxiosResponse} from 'axios';
 import {User} from 'types';
 import {UpdatePassword} from 'types';
-
 class UserService extends CoreService {
   private baseRoute = '/users';
 
@@ -64,12 +63,24 @@ class UserService extends CoreService {
 
   async createAnnouncement(userId: string, data): Promise<AxiosResponse|null> {
     try {
-      console.log(data);
       const customRoute = `${this.baseRoute}/${userId}/announcements`;
-      const response = await this.getApi().post(customRoute, data);
+      
+      const formData = new FormData();
+      formData.append('title', data.title);
+      formData.append('description', data.description);
+      formData.append('category', data.category);
+      formData.append('localization', data.localization);
+      formData.append('type', data.type);
+      formData.append('images', data.images[0]);
+      formData.append('usage_time', data.usage_time)
+      const response = await this.getApi().post(customRoute, formData,{
+          headers: {
+          "content-type": "multipart/form-data",
+          }
+      });
       return response;
     } catch (error) {
-      //
+      console.log(error);
     }
     return null;
   }

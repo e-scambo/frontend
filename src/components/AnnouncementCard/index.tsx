@@ -28,8 +28,9 @@ interface CardProps {
 const AnnouncementCard: React.FC<CardProps> = (props) => {
   const navigate = useNavigate();
   const {addFavorite} = useUsers();
+  const img = "https://scambo2.herokuapp.com/images/"+props.image;
   const {auth} = useAuth();
-
+  
   const favoritar = ()=>{
     addFavorite(auth.user, {announcement: props.id, owner: props.owner.id});
   };
@@ -39,15 +40,13 @@ const AnnouncementCard: React.FC<CardProps> = (props) => {
     console.log(phone);
     window.location.replace(`https://api.whatsapp.com/send?phone=55${phone}&text=ass`);
   };
-
-
   return (
     <Paper>
       <Grid>
-        <Picture src={props.image} onClick={() => {
+        <Picture src={img} onClick={() => {
           navigate(`/announcement/${props.id}`);
         }}>
-          {!props.image && <BiImageAlt />}
+         
         </Picture>
         <Title onClick={() => {
           navigate(`/announcement/${props.id}`);

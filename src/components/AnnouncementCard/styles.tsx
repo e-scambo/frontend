@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import {MdOutlineChat as IconChat} from 'react-icons/md';
 import {BiImageAlt as noImage} from 'react-icons/bi';
 
-interface PropsImage {
-  src?: string
-}
 
 export const Paper = styled.div`
 
@@ -39,7 +36,7 @@ export const Grid = styled.div`
 `;
 
 
-export const Picture = styled.div<PropsImage>`
+export const Picture = styled.img`
 
   grid-column: 1 / 2;
   grid-row: 1 / 5;

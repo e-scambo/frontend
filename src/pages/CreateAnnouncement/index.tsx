@@ -4,7 +4,7 @@ import {Form} from '@unform/web';
 import * as Yup from 'yup';
 import translation from 'locales/yup.locale.pt-br';
 import {FormHandles} from '@unform/core';
-
+import {useNavigate} from 'react-router-dom';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
 import JustifyContainer from 'components/JustifyContainer';
@@ -44,7 +44,8 @@ const templateOptions = [
 
 
 const CreateAnnouncement: React.FC = () => {
-  const [pictures, setPictures] = useState(new Map<key, string >());
+  const navigate = useNavigate();
+  const [pictures, setPictures] = useState({});
   const [cities, setCities] = useState<string[]>([]);
   const [serviceOptions, setServiceOptions] = useState<boolean>(false);
   const {createAnnouncement} = useUsers();
@@ -74,17 +75,19 @@ const CreateAnnouncement: React.FC = () => {
 
       const state = states[(Number(data.state))].nome;
       const city = states[(Number(data.state))].cidades[(Number(data.city))];
-      const iterator = pictures.values();
       // console.log('pic', iterator.next().value);
-      createAnnouncement(auth.user, {
+      const anuncio = await createAnnouncement(auth.user, {
         title: data.title,
         description: data.description,
         type: data.type,
         category: categories.Serviço[Number(data.category)],
         localization: `${state} - ${city}`,
         usage_time: data.usage_time,
-        images: iterator.next().value,
+        images: [pictures],
       });
+      if(anuncio?.status === 201){
+        navigate('/announcements');
+      };
 
       // reset
       // reset();
@@ -174,10 +177,11 @@ const CreateAnnouncement: React.FC = () => {
                     setServiceOptions(isServiceAnnouncement());
                   }}
                 />
-                <ProductImages
-                  pictures={pictures}
-                  setPictures={setPictures}
-                  disableEditMode={false}
+                <input
+                  type="file"
+                  name='images'
+                  onChange={e => setPictures(e.target.files![0])}
+                 
                 />
                 <Button type='submit' > Salvar </Button>
               </ContainerRight>

@@ -33,9 +33,7 @@ function useUsers() {
 
   async function createAnnouncement(userId: string, data:AnnouncementForm): Promise<AxiosResponse|null> {
     try {
-      console.log('primeiro', data);
       const response = await userService.createAnnouncement(userId, data);
-      console.log(response);
       return response;
     } catch (error) {
       console.log('erro');

@@ -30,7 +30,7 @@ const Announcements: React.FC = () => {
   const [searchResult, setSearchResult] = useState<Announcement[]>();
   // const [filters, setFilters] = useState<Filters>({} as Filters);
   // const [cities, setCities] = useState<string[]>([]);
-
+  
 
   useEffect(() => {
     fetchAnnouncements();
@@ -65,7 +65,7 @@ const Announcements: React.FC = () => {
             </FiltersBar>
           </Form> */}
           <ListOfCards>
-            {search && searchResult ?
+            {search && searchResult ?        
               searchResult.map((announcement: Announcement, index) => (
                 <AnnouncementCard
                   key={announcement.id}
@@ -84,7 +84,7 @@ const Announcements: React.FC = () => {
                   id={announcement.id}
                   title={announcement.title}
                   description={announcement.description}
-                  image={announcement.images[0] as string}
+                  image={announcement.images[0]?.originalname as string}
                   localization={announcement.localization}
                   owner={announcement.owner}
                 />

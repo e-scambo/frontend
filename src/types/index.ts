@@ -35,7 +35,7 @@ export interface Announcement {
   type: string,
   localization: string,
   usage_time: string,
-  images: string[] | image[]
+  images: string[] | image[] | any,
   owner?: string | Owner
 }
 
@@ -48,7 +48,7 @@ export interface AnnouncementForm {
   city?: string,
   state?: string,
   usage_time?: string,
-  images: string[] | image[]
+  images: any
 }
 
 export interface Favorite {
