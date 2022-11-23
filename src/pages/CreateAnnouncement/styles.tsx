@@ -12,12 +12,23 @@ export const Paper = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 426px) {
+    width: 80vw;
+    height: 100vh;
+    flex-direction: column;
+  }
 `;
 
 export const ContainerLeft = styled.div`
   width: 35vw;
   padding: 5vh 6vw;
   box-sizing: border-box;
+
+  @media (max-width: 426px) {
+    width: 60vw;
+    padding: 0px;
+  }
 `;
 
 export const TitleSection = styled.div`
@@ -63,5 +74,9 @@ export const ContainerRight = styled.div`
   button {
     height: 4vh;
     width: 18vh;
+  }
+  @media (max-width: 426px) {
+    width: 60vw;
+    padding: 0px;
   }
 `;
