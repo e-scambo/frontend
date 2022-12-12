@@ -65,6 +65,8 @@ class UserService extends CoreService {
     try {
       const customRoute = `${this.baseRoute}/${userId}/announcements`;
       const formData = new FormData();
+      console.log(data.usage_time);
+      console.log(data);
       formData.append('title', data.title);
       formData.append('description', data.description);
       formData.append('category', data.category);
