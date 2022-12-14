@@ -27,7 +27,7 @@ interface CardProps {
 const AnnouncementCard: React.FC<CardProps> = (props) => {
   const navigate = useNavigate();
   const {addFavorite} = useUsers();
-  const img = 'http://15.229.1.158:3000/images/'+props.image;
+  const img = 'https://15.228.234.208/images/'+props.image;
   const {auth} = useAuth();
   const favoritar = ()=>{
     addFavorite(auth.user, {announcement: props.id, owner: props.owner.id});
