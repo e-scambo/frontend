@@ -16,11 +16,12 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "@typescript-eslint"
+        "react"
+
     ],
     "rules": {
       "require-jsdoc" : 0,
+      "linebreak-style": 0,
       "camelcase": ["error", {"allow": ["created_at", "update_at", "usage_time"]}]
     }
 }
