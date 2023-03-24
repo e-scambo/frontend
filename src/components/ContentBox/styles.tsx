@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   /* size */
   width: 80vw;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-row-gap: 1.5vh;
+  display: flex;
 
 
   @media (max-width: 2500px) {
