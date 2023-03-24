@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   /* size */
-  width: 200px;
+  width: 100%;
   height: 100%;
 
   min-height: 3.5vh;
@@ -29,16 +29,15 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
 
   font-family: 'Noto Sans', sans-serif;
-  font-weight: bold;
-  font-size: 1.4vh;
-  line-height: 3vh;
+  font-size: 2.3vh;
+  line-height: 7vh;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   color: #FFFFFF;
 
 
   :hover {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   transition: 0.3s;
@@ -46,7 +45,8 @@ export const StyledButton = styled.button`
 
 export const ContainerGrid = styled.div`
   margin: .1vh 0vh;
-  width: 65%;
+  width: 100%;
+  height: 100%
   display: flex;
   flex-direction: row;
   align-items: center;

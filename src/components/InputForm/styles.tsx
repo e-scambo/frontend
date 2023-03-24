@@ -5,12 +5,17 @@ interface Props {
 }
 
 export const Container = styled.div<Props>`
-  display: block;
-  color: #3d346e;
-  border-bottom: ${(props) => props.error?
-    '.1vh solid #a83a3a' : '.1vh solid #666666'};
+  
   width: 100%;
   height: 100%;
+  display: block;
+  box-sizing: border-box;
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  padding: 12px;
+  border: 0.35px solid #d3d3d3;
+  outline: none;
+
 `;
 
 export const Input = styled.input`
@@ -18,10 +23,12 @@ export const Input = styled.input`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 2vh;
+  font-size: 2.3vh;
   line-height: 2vh;
-  color: #7d7d7e;
-  border: none;
+  background-color: #F2F2F2;
+  color: #727171;
+  border: #727171;
+  outline: none;
 
   &:focus {
     border: none;
@@ -36,16 +43,6 @@ export const Input = styled.input`
   margin-top: auto;
   margin-bottom: auto;
   box-sizing: border-box;
-`;
-
-export const Label = styled.p`
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 2vh;
-  line-height: 1vh;
-  color: #000000;
-  margin: .5vh 0vh;
 `;
 
 export const ErrorMessage = styled.span`
