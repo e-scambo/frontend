@@ -1,7 +1,43 @@
-import React, {useRef} from 'react';
+import React from 'react';
+
+import './styles.css';
+import 'assets/Tipografia.css';
+
+import Carousel from 'components/Carousel';
+import SignUpForm from 'components/SignUpForm';
+
+const SignUp = () => {
+  return (
+    <div className="conteiner">
+      <div className='divForm'>
+        <main>
+          <h1 className="h1 roxo1">Crie sua conta</h1>
+          <p className="action cinzaClaro">
+            Já possui uma conta? <a href="/SignIn" className='roxo1'>Login</a>
+          </p>
+
+          <SignUpForm></SignUpForm>
+        </main>
+
+        <footer>
+          <p className='H3 cinzaClaro'>
+            Ao registrar-se você concorda com nossos
+            <a className="roxo1" href="#"> termos </a>
+            e <a className="roxo1" href="#">políticas de privacidade</a>
+          </p>
+        </footer>
+      </div>
+
+      <Carousel></Carousel>
+    </div>
+  );
+};
+
+export default SignUp;
+
+/*
 import {Form} from '@unform/web';
 import * as Yup from 'yup';
-
 import PageContainer from 'components/PageContainer';
 import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
@@ -162,3 +198,4 @@ const SignUp: React.FC = () => {
 };
 
 export default SignUp;
+*/
