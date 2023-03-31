@@ -74,14 +74,13 @@ export const ContainerLogo = styled.div`
 
 export const ContainerPurple = styled.div`
   width: 80%;
-  min-height: 60vh;
+  height: 100%;
   padding: 10vh 1vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 `;
-
 export const Title = styled.div`
     
   justify-content: center;
