@@ -2,18 +2,27 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {ReactComponent as EscamboLogo} from 'assets/img/TESTE.svg';
 
-export const ContainerDraw = styled.div`
-@media (max-width: 426px) {
-  width: 100%;
-  
-}
-  width: 80%;
-  min-height: 60vh;
-  padding: 1vh 1vw;
+export const Principal = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 426px) {
+    flex-direction: column-reverse;
+  }
+`;
+
+export const Left = styled.div`
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+`;
+
+export const Carousel = styled.div`
+  height: 100vh;
 `;
 
 export const ContainerLoginForm = styled.div`
@@ -22,7 +31,7 @@ export const ContainerLoginForm = styled.div`
   padding: 10vh;
   background: #FFFFFF;
   box-sizing: border-box;
-  padding: 3vh 4vh;
+  padding: 0vh 14vh 14vh 14vh;
   
   @media (max-width: 426px) {
     width: 100%;
@@ -31,25 +40,14 @@ export const ContainerLoginForm = styled.div`
   }
 `;
 
-export const LoginSection = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (max-width: 426px) {
-    flex-direction: column-reverse;
-  }
-`;
-
 export const ContainerFields = styled.div`
   width: 100%;
-  height: auto;
+  height: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 1vw;
   div {
     &:not(:first-child) {
@@ -70,17 +68,9 @@ export const ContainerLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 5vh;
 `;
 
-export const ContainerPurple = styled.div`
-  width: 80%;
-  height: 100%;
-  padding: 10vh 1vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-`;
 export const Title = styled.div`
     
   justify-content: center;
@@ -121,7 +111,7 @@ export const ButtonLink = styled(Link)`
   }
 `;
 
-export const ContainerButtons = styled.div`
+export const Button = styled.div`
   width: 100%;
   height: auto;
   display: flex;
@@ -129,13 +119,7 @@ export const ContainerButtons = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 2vw 3vw;
-
-  button {
-    &:not(:first-child) {
-      margin-top: 1vh;
-    }
-  }
+  padding: 3vw 3vw;
 `;
 
 
@@ -147,7 +131,7 @@ export const InfoText = styled.div`
   font-size: 2vh;
   line-height: 3vh;
   color: #727171;
-
+  
   display: inline;
 
   a {

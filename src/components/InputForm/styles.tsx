@@ -12,7 +12,7 @@ export const Container = styled.div<Props>`
   box-sizing: border-box;
   background-color: #F2F2F2;
   border-radius: 10px;
-  padding: 12px;
+  padding: 3px;
   border: 0.35px solid #d3d3d3;
   outline: none;
 
@@ -20,6 +20,7 @@ export const Container = styled.div<Props>`
 
 export const Input = styled.input`
   width: 100%;
+  height: 8vh;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;

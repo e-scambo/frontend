@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
   /* size */
   width: 100%;
-  height: 100%;
-
-  min-height: 3.5vh;
+  height: 9vh;
 
   /* spacing */
   padding-left: .4vh;
@@ -30,7 +28,7 @@ export const StyledButton = styled.button`
 
   font-family: 'Noto Sans', sans-serif;
   font-size: 2.3vh;
-  line-height: 7vh;
+  line-height: 2vh;
   font-style: normal;
   font-weight: 600;
   color: #FFFFFF;
