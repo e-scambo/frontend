@@ -15,25 +15,17 @@ export const Principal = styled.div`
   }
 `;
 
-export const Left = styled.div`
-  position: relative;
-  width: 50%;
-  height: 100vh;
-  padding: 20px;
-  border: solid;
-`;
-
 export const Carousel = styled.div`
   height: 100vh;
 `;
 
 export const ContainerLoginForm = styled.div`
-  width: 100%;
-  padding: 10vh;
+  width: 50%;
+  height: 100vh;
+  padding: 20px;
   background: #FFFFFF;
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
-  border: solid;
   
   @media (max-width: 426px) {
     width: 100%;
@@ -49,8 +41,6 @@ export const ContainerFields = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 1vw;
-  border: solid;
   div {
     &:not(:first-child) {
       margin-top: 2vh;
@@ -101,7 +91,7 @@ export const ButtonLink = styled(Link)`
   font-style: normal;
   font-weight: normal;
   margin-top: 1.5vh;
-  margin-left: 24vw;
+  margin-left: 28vw;
   font-size: 2vh;
   line-height: 3vh;
   text-decoration-line: underline;
@@ -125,7 +115,6 @@ export const Button = styled.div`
 
 
 export const InfoText = styled.div`
-  margin-top: 2vw;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: 900;

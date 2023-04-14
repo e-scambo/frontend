@@ -10,7 +10,6 @@ import InputForm from 'components/InputForm';
 import Button from 'components/Button';
 import Carousel from 'components/Carousel';
 
-import {Left} from './styles';
 import {Principal} from './styles';
 import {ButtonLink} from './styles';
 import {ContainerFields} from './styles';
@@ -49,55 +48,53 @@ const SignIn: React.FC = () => {
 
   return (
     <Principal>
-      <Left>
-        <ContainerLoginForm>
-          <ContainerLogo>
-            <StyledEscamboLogo/>
-          </ContainerLogo>
-          <Title> {data.title} </Title>
-          <Description> {data.description} </Description>
-          <Form onSubmit={handleToSubmit}>
-            <ContainerFields>
-              <InputForm
-                name="email"
-                label="Email"
-                type="text"
-                placeholder={data.placeholders.email}
-              />
-              <InputForm
-                name="password"
-                label="Senha"
-                type="password"
-                placeholder={data.placeholders.password}
-              />
-              <ButtonLink to='/recover' >
-                {data.forgotPassword}
-              </ButtonLink>
-              <Button
-                type='submit'
-                // onClick={() => navigate('/announcements')}
-              > {data.loginButton} </Button>
-              {/* <InfoText> {data.loginWithSocialNetwork} </InfoText>
-              <OutlineButton
-                Icon={<FaFacebook fill='#3b5998' fontSize={24}/>}
-              >
-                {data.facebookLogin}
-              </OutlineButton>
-              <OutlineButton
-                Icon={<FcGoogle fontSize={24} />}
-                onClick={() => loginWithRedirect()}
-              >
-                {data.googleLogin}
-              </OutlineButton> */}
-              <InfoText> {data.doesNotHaveAccount}
-                <Redirect to='/signup' replace >
-                  {data.signUp}
-                </Redirect>
-              </InfoText>
-            </ContainerFields>
-          </Form>
-        </ContainerLoginForm>
-      </Left>
+      <ContainerLoginForm>
+        <ContainerLogo>
+          <StyledEscamboLogo/>
+        </ContainerLogo>
+        <Title> {data.title} </Title>
+        <Description> {data.description} </Description>
+        <Form onSubmit={handleToSubmit}>
+          <ContainerFields>
+            <InputForm
+              name="email"
+              label="Email"
+              type="text"
+              placeholder={data.placeholders.email}
+            />
+            <InputForm
+              name="password"
+              label="Senha"
+              type="password"
+              placeholder={data.placeholders.password}
+            />
+            <ButtonLink to='/recover' >
+              {data.forgotPassword}
+            </ButtonLink>
+            <Button
+              type='submit'
+              // onClick={() => navigate('/announcements')}
+            > {data.loginButton} </Button>
+            {/* <InfoText> {data.loginWithSocialNetwork} </InfoText>
+            <OutlineButton
+              Icon={<FaFacebook fill='#3b5998' fontSize={24}/>}
+            >
+              {data.facebookLogin}
+            </OutlineButton>
+            <OutlineButton
+              Icon={<FcGoogle fontSize={24} />}
+              onClick={() => loginWithRedirect()}
+            >
+              {data.googleLogin}
+            </OutlineButton> */}
+            <InfoText> {data.doesNotHaveAccount}
+              <Redirect to='/signup' replace >
+                {data.signUp}
+              </Redirect>
+            </InfoText>
+          </ContainerFields>
+        </Form>
+      </ContainerLoginForm>
       <Carousel/>
     </Principal>
   );
