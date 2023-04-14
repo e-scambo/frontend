@@ -93,7 +93,7 @@ export const ButtonLink = styled(Link)`
   margin-top: 1.5vh;
   margin-left: 28vw;
   font-size: 2vh;
-  line-height: 3vh;
+  line-height: 1vh;
   text-decoration-line: underline;
   color: #0D4A99;
 
