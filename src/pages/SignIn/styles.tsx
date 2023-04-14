@@ -7,8 +7,8 @@ export const Principal = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 
   @media (max-width: 426px) {
     flex-direction: column-reverse;
@@ -16,9 +16,11 @@ export const Principal = styled.div`
 `;
 
 export const Left = styled.div`
+  position: relative;
   width: 50%;
-  height: 100%;
+  height: 100vh;
   padding: 20px;
+  border: solid;
 `;
 
 export const Carousel = styled.div`
@@ -27,11 +29,11 @@ export const Carousel = styled.div`
 
 export const ContainerLoginForm = styled.div`
   width: 100%;
-  height: 100%;
   padding: 10vh;
   background: #FFFFFF;
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
+  border: solid;
   
   @media (max-width: 426px) {
     width: 100%;
@@ -42,19 +44,18 @@ export const ContainerLoginForm = styled.div`
 
 export const ContainerFields = styled.div`
   width: 100%;
-  height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 1vw;
+  border: solid;
   div {
     &:not(:first-child) {
       margin-top: 2vh;
     }
   }
-
 `;
 
 export const StyledEscamboLogo = styled(EscamboLogo)`

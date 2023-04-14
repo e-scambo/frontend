@@ -50,12 +50,12 @@ const SignIn: React.FC = () => {
   return (
     <Principal>
       <Left>
-        <ContainerLogo>
-          <StyledEscamboLogo/>
-        </ContainerLogo>
-        <Title> {data.title} </Title>
-        <Description> {data.description} </Description>
         <ContainerLoginForm>
+          <ContainerLogo>
+            <StyledEscamboLogo/>
+          </ContainerLogo>
+          <Title> {data.title} </Title>
+          <Description> {data.description} </Description>
           <Form onSubmit={handleToSubmit}>
             <ContainerFields>
               <InputForm
