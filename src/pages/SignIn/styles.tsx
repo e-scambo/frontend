@@ -22,7 +22,6 @@ export const Carousel = styled.div`
 export const ContainerLoginForm = styled.div`
   width: 50%;
   height: 100vh;
-  padding: 20px;
   background: #FFFFFF;
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
@@ -110,18 +109,18 @@ export const Button = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 3vw 3vw;
 `;
 
 
 export const InfoText = styled.div`
+  position: relative;
+  top: -10px;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 2vh;
-  line-height: 3vh;
+  line-height: 2vh;
   color: #727171;
-  
   display: inline;
 
   a {
@@ -134,7 +133,7 @@ export const Redirect = styled(Link)`
   font-style: normal;
   font-weight: bold;
   font-size: 2.4vh;
-  line-height: 3vh;
+  line-height: 2vh;
   color: #4C0C6C;
   cursor: pointer;
   &:hover{

@@ -9,6 +9,7 @@ import {Form} from '@unform/web';
 import InputForm from 'components/InputForm';
 import Button from 'components/Button';
 import Carousel from 'components/Carousel';
+import PasswordInput from 'components/PasswordInput';
 
 import {Principal} from './styles';
 import {ButtonLink} from './styles';
@@ -62,7 +63,7 @@ const SignIn: React.FC = () => {
               type="text"
               placeholder={data.placeholders.email}
             />
-            <InputForm
+            <PasswordInput
               name="password"
               label="Senha"
               type="password"
