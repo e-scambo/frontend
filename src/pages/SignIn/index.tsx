@@ -6,7 +6,7 @@ import {Form} from '@unform/web';
 // import {FcGoogle} from 'react-icons/fc';
 // import {FaFacebook} from 'react-icons/fa';
 // import OutlineButton from 'components/OutlineButton';
-import InputForm from 'components/InputForm';
+import EmailInput from 'components/EmailInput';
 import Button from 'components/Button';
 import Carousel from 'components/Carousel';
 import PasswordInput from 'components/PasswordInput';
@@ -57,7 +57,7 @@ const SignIn: React.FC = () => {
         <Description> {data.description} </Description>
         <Form onSubmit={handleToSubmit}>
           <ContainerFields>
-            <InputForm
+            <EmailInput
               name="email"
               label="Email"
               type="text"
