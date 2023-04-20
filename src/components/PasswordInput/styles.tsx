@@ -5,6 +5,7 @@ interface Props {
 }
 
 export const Container = styled.div<Props>`
+  position: relative;
   width: 100%;
   height: 100%;
   display: block;
@@ -61,9 +62,9 @@ export const ErrorMessage = styled.span`
 
 export const EyeIcon = styled.img`
   position: absolute;
-  left: 38.5vw;
-  bottom: 30.5vh;
+  top: 30%;
+  left: 92%;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 2vw;
+  height: 2vw;
 `;
