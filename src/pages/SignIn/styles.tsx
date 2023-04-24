@@ -90,7 +90,7 @@ export const ButtonLink = styled(Link)`
   font-style: normal;
   font-weight: normal;
   margin-top: 1.5vh;
-  margin-left: 28vw;
+  margin-left: 79%;
   font-size: 2vh;
   line-height: 1vh;
   text-decoration-line: underline;

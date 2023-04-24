@@ -7,7 +7,6 @@ import peopleTalking from 'assets/img/peopleTalking.gif';
 import peopleAnalysing from 'assets/img/peopleAnalysing.gif';
 import womanAtNotebook from 'assets/img/womanAtNotebook.gif';
 
-
 export default function Carousel() {
   const [page, setPage] = useState(0);
 
@@ -29,21 +28,28 @@ export default function Carousel() {
     },
   ];
 
-  function HandleClick() {
-    if (page+1 === data.length) {
-      setPage(0);
-    } else {
-      setPage(page + 1);
-    };
-  };
+  setInterval(function() {
+      if (page === 2) {
+        setPage(0);
+      } else {
+        setPage(page+1);
+      };
+    }, 10000); // Valor do tempo em milissegundos
 
+  // function HandleClick() {
+  //   if (page+1 === data.length) {
+  //     setPage(0);
+  //   } else {
+  //     setPage(page + 1);
+  //   };
+  // };
 
   return (
-    <figure onMouseDown={HandleClick}>
+    <figure>
       <img src={data[page].image} />
       <h1 className="H1 branco">{data[page].title}</h1>
       <p className="branco">{data[page].text}</p>
-      <p className="action laranja">{page + 1} / {data.length}</p>
+      <p className="action laranja">{page+1} / 3</p>
     </figure>
-  );
+  ); // onMouseDown={HandleClick}
 };

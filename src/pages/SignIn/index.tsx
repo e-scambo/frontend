@@ -3,9 +3,6 @@ import useAuth from 'hooks/useAuth';
 import {useNavigate} from 'react-router-dom';
 
 import {Form} from '@unform/web';
-// import {FcGoogle} from 'react-icons/fc';
-// import {FaFacebook} from 'react-icons/fa';
-// import OutlineButton from 'components/OutlineButton';
 import EmailInput from 'components/EmailInput';
 import Button from 'components/Button';
 import Carousel from 'components/Carousel';
@@ -74,20 +71,7 @@ const SignIn: React.FC = () => {
             </ButtonLink>
             <Button
               type='submit'
-              // onClick={() => navigate('/announcements')}
             > {data.loginButton} </Button>
-            {/* <InfoText> {data.loginWithSocialNetwork} </InfoText>
-            <OutlineButton
-              Icon={<FaFacebook fill='#3b5998' fontSize={24}/>}
-            >
-              {data.facebookLogin}
-            </OutlineButton>
-            <OutlineButton
-              Icon={<FcGoogle fontSize={24} />}
-              onClick={() => loginWithRedirect()}
-            >
-              {data.googleLogin}
-            </OutlineButton> */}
             <InfoText> {data.doesNotHaveAccount}
               <Redirect to='/signup' replace >
                 {data.signUp}

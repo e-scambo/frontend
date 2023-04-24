@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 interface Props {
-  error: boolean
+  error: boolean;
 }
 
 export const Container = styled.div<Props>`
-  
+  position: relative;
   width: 100%;
   height: 100%;
   display: block;
@@ -16,6 +16,9 @@ export const Container = styled.div<Props>`
   border: 0.35px solid #d3d3d3;
   outline: none;
 
+  ${(props) => props.error && `
+    border-color: #ff6961;
+  `}
 `;
 
 export const Input = styled.input`
