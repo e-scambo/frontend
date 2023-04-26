@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './styles.css';
 import 'assets/Tipografia.css';
 
@@ -28,28 +27,24 @@ export default function Carousel() {
     },
   ];
 
-  setInterval(function() {
-      if (page === 2) {
-        setPage(0);
-      } else {
-        setPage(page+1);
-      };
-    }, 10000); // Valor do tempo em milissegundos
+  const intervalRef = useRef<number | undefined>();
 
-  // function HandleClick() {
-  //   if (page+1 === data.length) {
-  //     setPage(0);
-  //   } else {
-  //     setPage(page + 1);
-  //   };
-  // };
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setPage((page) => (page + 1) % data.length);
+    }, 10000) as unknown as number;
+
+    return () => {
+      clearInterval(intervalRef.current ?? undefined);
+    };
+  }, [data.length]);
 
   return (
     <figure>
       <img src={data[page].image} />
       <h1 className="H1 branco">{data[page].title}</h1>
       <p className="branco">{data[page].text}</p>
-      <p className="action laranja">{page+1} / 3</p>
+      <p className="action laranja">{page + 1} / 3</p>
     </figure>
-  ); // onMouseDown={HandleClick}
+  );
 };

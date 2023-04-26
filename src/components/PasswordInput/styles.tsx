@@ -63,7 +63,7 @@ export const ErrorMessage = styled.span`
 export const EyeIcon = styled.img`
   position: absolute;
   top: 30%;
-  left: 92%;
+  left: 91.5%;
   cursor: pointer;
   width: 2vw;
   height: 2vw;
