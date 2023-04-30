@@ -1,6 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react';
-import './styles.css';
-import 'assets/Tipografia.css';
+
+import {Moldura} from './styles';
+import {Imagem} from './styles';
+import {Titulo} from './styles';
+import {Descricao} from './styles';
 
 import peopleTalking from 'assets/img/peopleTalking.gif';
 import peopleAnalysing from 'assets/img/peopleAnalysing.gif';
@@ -40,11 +43,14 @@ export default function Carousel() {
   }, [data.length]);
 
   return (
-    <figure>
-      <img src={data[page].image} />
-      <h1 className="H1 branco">{data[page].title}</h1>
-      <p className="branco">{data[page].text}</p>
-      <p className="action laranja">{page + 1} / 3</p>
-    </figure>
+    <Moldura>
+      <Imagem src={data[page].image} />
+      <Titulo>{data[page].title}</Titulo>
+      <Descricao>
+        {data[page].text}
+          <br/>
+        {page + 1} / 3
+      </Descricao>
+    </Moldura>
   );
 };
