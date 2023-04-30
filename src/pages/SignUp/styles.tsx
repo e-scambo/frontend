@@ -36,6 +36,7 @@ export const ContainerLoginForm = styled.div`
 
 export const ContainerTitle = styled.div`
   width: 100%;
+  height: 25vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -74,7 +75,7 @@ export const Description = styled.div`
   height: 15%
   text-align: center;
   padding-top: 10vh;
-  padding-left: 8px;
+  padding-left: 5px;
 `;
 
 export const Linked = styled.a`

@@ -25,6 +25,7 @@ export const Input = styled.input`
   width: 100%;
   height: 8vh;
   padding-right: 50px;
+  padding-left: 10px;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
