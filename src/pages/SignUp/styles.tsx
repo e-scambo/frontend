@@ -37,6 +37,8 @@ export const ContainerLoginForm = styled.div`
 export const ContainerTitle = styled.div`
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ContainerFields = styled.div`
@@ -56,8 +58,8 @@ export const ContainerFields = styled.div`
 export const Title = styled.div`
   font-family: 'Noto Sans';
   font-style: normal;
-  font-weight: 900;
-  font-size: 40px;
+  font-weight: 800;
+  font-size: 23px;
   color: #4E096B;
   height: 20%;
 
@@ -71,7 +73,8 @@ export const Description = styled.div`
   color: #B9B7B7;
   height: 15%
   text-align: center;
-  padding-top: 4vh;
+  padding-top: 10vh;
+  padding-left: 8px;
 `;
 
 export const Linked = styled.a`
