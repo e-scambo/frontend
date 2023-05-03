@@ -24,8 +24,8 @@ export const Container = styled.div<Props>`
 export const Input = styled.input`
   width: 100%;
   height: 8vh;
-  padding-right: 50px;
-  padding-left: 10px;
+  padding-right: 8vh;
+  padding-left: 1.6vh;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: normal;

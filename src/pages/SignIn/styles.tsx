@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {ReactComponent as EscamboLogo} from 'assets/img/TESTE.svg';
 
 export const Principal = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +59,7 @@ export const ContainerLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5vh;
+  padding-top: 3vh;
 `;
 
 export const Title = styled.div`
@@ -70,7 +71,7 @@ export const Title = styled.div`
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 5.8vh;
   color: #4C0C6C;
 `;
 
@@ -81,24 +82,37 @@ export const Description = styled.div`
   font-style: normal;
   color: #727171;
   font-weight: 400;
-  font-size: 14px;
+  padding-bottom: 7vh;
+  font-size: 2.4vh;
   text-align: center;
+`;
+
+export const Checkbox = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const ButtonLink = styled(Link)`
   font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
   font-style: normal;
   font-weight: normal;
-  margin-top: 1.5vh;
-  margin-left: 79%;
+  margin-top: 2.2vh;
+  text-align: right;
   font-size: 2vh;
   line-height: 1vh;
-  text-decoration-line: underline;
+  text-decoration: none;
   color: #0D4A99;
-
   :hover {
     cursor: pointer;
   }
+`;
+
+export const ContainerButton = styled.div`
+  padding-top: 4vh;
+  width: 100%;
 `;
 
 export const Button = styled.div`
@@ -114,13 +128,13 @@ export const Button = styled.div`
 
 export const InfoText = styled.div`
   position: relative;
-  top: -10px;
+  padding-top: 2vh;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
-  font-weight: 900;
-  font-size: 2vh;
+  font-weight: 600;
+  font-size: 2.4vh;
   line-height: 2vh;
-  color: #727171;
+  color: #B9B7B7;
   display: inline;
 
   a {
@@ -134,6 +148,7 @@ export const Redirect = styled(Link)`
   font-weight: bold;
   font-size: 2.4vh;
   line-height: 2vh;
+  text-decoration: none;
   color: #4C0C6C;
   cursor: pointer;
   &:hover{

@@ -13,6 +13,7 @@ import {ButtonLink} from './styles';
 import {ContainerFields} from './styles';
 import {ContainerLogo} from './styles';
 import {ContainerLoginForm} from './styles';
+import {ContainerButton} from './styles';
 import {Title} from './styles';
 import {Description} from './styles';
 import {StyledEscamboLogo} from './styles';
@@ -69,9 +70,11 @@ const SignIn: React.FC = () => {
             <ButtonLink to='/recover' >
               {data.forgotPassword}
             </ButtonLink>
-            <Button
-              type='submit'
-            > {data.loginButton} </Button>
+            <ContainerButton>
+              <Button
+                type='submit'
+              > {data.loginButton} </Button>
+            </ContainerButton>
             <InfoText> {data.doesNotHaveAccount}
               <Redirect to='/signup' replace >
                 {data.signUp}

@@ -1,27 +1,23 @@
-import React from 'react';
 import {Form} from '@unform/web';
-
-import PageContainer from 'components/PageContainer';
-import JustifyContainer from 'components/JustifyContainer';
-import ContentBox from 'components/ContentBox';
+import {Link} from 'react-router-dom';
+import React from 'react';
 import InputForm from 'components/InputForm';
 import Button from 'components/Button';
+import Carousel from 'components/Carousel';
+import ReturnToPage from 'assets/img/ReturnToPage.png';
 
+import {Principal} from './styles';
 import {ContainerFields} from './styles';
-import {ContainerLogo} from './styles';
-import {LoginSection} from './styles';
-import {ContainerDraw} from './styles';
+import {ContainerTitle} from './styles';
 import {ContainerLoginForm} from './styles';
+import {ContainerButton} from './styles';
+import {ContainerReturnToPage} from './styles';
 import {Title} from './styles';
 import {Description} from './styles';
-import {StyledDrawSignUp} from './styles';
-import {StyledEscamboLogo} from './styles';
-import {ContainerButtons} from './styles';
-import {InfoText} from './styles';
-
+import {Terms} from './styles';
+import {PrivacyPolicy} from './styles';
 
 import data from './data.json';
-
 
 const Recover: React.FC = () => {
   const handleToSubmit = (data: object) => {
@@ -29,47 +25,46 @@ const Recover: React.FC = () => {
   };
 
   return (
-    <PageContainer>
-      <JustifyContainer>
-        <ContentBox>
-          <LoginSection>
-            <ContainerDraw>
-              <Title> {data.title} </Title>
-              <Description> {data.description} </Description>
-              <StyledDrawSignUp />
-            </ContainerDraw>
-            <Form onSubmit={handleToSubmit}>
-              <ContainerLoginForm>
-
-
-                <ContainerLogo>
-                  <StyledEscamboLogo />
-                </ContainerLogo>
-
-                <InfoText>
-                  {data.instructions}
-                </InfoText>
-
-                <ContainerFields>
-                  <InputForm
-                    name="email"
-                    label="Email"
-                    type="text"
-                    placeholder="seunome@email.com"
-                  />
-                </ContainerFields>
-
-                <ContainerButtons>
-                  <Button type='submit' > Enviar </Button>
-                </ContainerButtons>
-
-
-              </ContainerLoginForm>
-            </Form>
-          </LoginSection>
-        </ContentBox>
-      </JustifyContainer>
-    </PageContainer>
+    <Principal>
+      <ContainerLoginForm>
+        <ContainerReturnToPage>
+          <Link to="/SignIn">
+            <img src={ReturnToPage} />
+          </Link>
+        </ContainerReturnToPage>
+        <ContainerTitle>
+          <Title>{data.title}</Title>
+          <Description>{data.description}</Description>
+        </ContainerTitle>
+        <Form onSubmit={handleToSubmit}>
+          <ContainerFields>
+            <InputForm
+              name="e-mail"
+              label="E-mail"
+              type="text"
+              placeholder="E-mail"
+              // {data.placeholders.email}
+            />
+            <ContainerButton>
+            <Button
+              type='submit'
+            > Continuar </Button>
+            </ContainerButton>
+            {/* <InfoText> {data.doesNotHaveAccount}
+              <Redirect to='/signup' replace >
+                {data.signUp}
+              </Redirect>
+            </InfoText> */}
+            <Terms> {data.privacy}
+              <PrivacyPolicy>
+              {data.privacyredirect}
+            </PrivacyPolicy>
+            </Terms>
+          </ContainerFields>
+        </Form>
+      </ContainerLoginForm>
+      <Carousel/>
+    </Principal>
   );
 };
 

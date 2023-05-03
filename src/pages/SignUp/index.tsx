@@ -38,9 +38,12 @@ import {Principal} from './styles';
 import {ContainerFields} from './styles';
 import {ContainerTitle} from './styles';
 import {ContainerLoginForm} from './styles';
+import {ContainerButton} from './styles';
 import {Title} from './styles';
 import {Description} from './styles';
 import {Linked} from './styles';
+import {Terms} from './styles';
+import {PrivacyPolicy} from './styles';
 
 // import data from './data.json';
 import messages from './data.json';
@@ -51,6 +54,7 @@ import {useNavigate} from 'react-router-dom';
 import useAuth from 'hooks/useAuth';
 import {useRef} from 'react';
 
+import data from './data.json';
 
 interface FormFields {
   name: string,
@@ -130,10 +134,10 @@ const SignUp: React.FC = () => {
     <Principal>
       <ContainerLoginForm>
         <ContainerTitle>
-          <Title><h1 className="h1 roxo1">Crie sua conta</h1></Title>
-          <Description>Já possui uma conta?
-          <Linked href="/SignIn"> Login</Linked>
-          </Description>
+            <Title><h1 className="h1 roxo1">{data.title}</h1></Title>
+            <Description>
+            {data.description}<Linked href="/SignIn">{data.redirect}</Linked>
+            </Description>
         </ContainerTitle>
         <Form onSubmit={handleToSubmit}>
           <ContainerFields>
@@ -165,14 +169,21 @@ const SignUp: React.FC = () => {
               placeholder="Confirme sua senha"
               // {data.placeholders.password}
             />
+            <ContainerButton>
             <Button
               type='submit'
             > Continuar </Button>
+            </ContainerButton>
             {/* <InfoText> {data.doesNotHaveAccount}
               <Redirect to='/signup' replace >
                 {data.signUp}
               </Redirect>
             </InfoText> */}
+            <Terms> {data.privacy}
+              <PrivacyPolicy>
+              &nbsp;{data.privacyredirect}&nbsp;
+            </PrivacyPolicy>
+            </Terms>
           </ContainerFields>
         </Form>
       </ContainerLoginForm>

@@ -40,6 +40,7 @@ export const ContainerTitle = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 `;
 
 export const ContainerFields = styled.div`
@@ -60,21 +61,20 @@ export const Title = styled.div`
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 800;
-  font-size: 23px;
+  font-size: 4vh;
   color: #4E096B;
   height: 20%;
-
 `;
 
 export const Description = styled.div`
   font-family: 'Noto Sans';
   font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 2.4vh;
   color: #B9B7B7;
-  height: 15%
-  text-align: center;
-  padding-top: 10vh;
+  height: 15%;
+  text-align: left; /* adicionado */
+  padding-top: 11vh;
   padding-left: 5px;
 `;
 
@@ -82,20 +82,16 @@ export const Linked = styled.a`
   color: #4E096B;
   cursor: pointer;
   text-decoration: none;
-  a:hover{
+  margin-left: 0.5em;
+  font-weight: bold;
+  &:hover{
     opacity: 0.8;
     transition: 300ms ease-in;
   }
 `;
-
-export const Button = styled.div`
+export const ContainerButton = styled.div`
+  padding-top: 7vh;
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
 `;
 
 export const InfoText = styled.div`
@@ -127,6 +123,44 @@ export const Redirect = styled(Link)`
     transition: 300ms ease-in;
   }
 `;
+
+export const Terms = styled.div`
+  position: relative;
+  padding-top: 5vh;
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.2vh;
+  line-height: 2vh;
+  color: #727171;
+  display: inline-block;
+  span {
+    display: inline;
+  }
+
+  a {
+    margin-left: .3vw;
+  }
+`;
+
+export const PrivacyPolicy = styled.span`
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.2vh;
+  line-height: 2vh;
+  text-decoration: none;
+  color: #4C0C6C;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.8;
+    transition: 300ms ease-in;
+  }
+
+  span {
+    color: #727171;
+  }
+`;
+
 /* * {
   box-sizing: border-box;
 }

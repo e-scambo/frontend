@@ -24,7 +24,7 @@ export const StyledButton = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
+  text-transform: none;
 
   font-family: 'Noto Sans', sans-serif;
   font-size: 2.3vh;
