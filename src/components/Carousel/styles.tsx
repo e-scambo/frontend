@@ -10,7 +10,7 @@ export const Moldura = styled.figure`
     min-height: 100vh;
     margin: auto;
     background-color: #4E096B;
-    border-radius: 80px 0 0 80px;
+    border-radius: 5vw 0 0 5vw;
 
     text-align: center;
 `;
