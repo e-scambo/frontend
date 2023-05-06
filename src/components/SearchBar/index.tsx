@@ -1,8 +1,11 @@
 import React, {SetStateAction} from 'react';
 import {Container} from './styles';
-import {ContainerInput} from './styles';
 import {Input} from './styles';
-import {MdSearch} from 'react-icons/md';
+import {SearchIcon} from './styles';
+import searchIcon from 'assets/img/lupa.png';
+import arrowIcon from 'assets/img/arrow.png';
+import {ButtonOrange} from './styles';
+import {ArrowIcon} from './styles';
 
 interface SearchPros {
   search: string,
@@ -16,24 +19,24 @@ const SearchBar: React.FC<SearchPros> = ({
   onSearchChange}) => {
   return (
     <Container>
-      <ContainerInput>
-        <Input
-          placeholder='Buscar por ...'
-          type='text'
-          onChange={(e) => {
-            setSearch(e.target.value);
-            onSearchChange(e.target.value);
-          }}
-          value={search}
+      <SearchIcon
+        src={searchIcon}
+      />
+      <Input
+        placeholder='Pesquisar'
+        type='text'
+        onChange={(e) => {
+          setSearch(e.target.value);
+          onSearchChange(e.target.value);
+        }}
+        value={search}
+      />
+      <ButtonOrange type='submit'>
+        Pesquisar
+        <ArrowIcon
+          src={arrowIcon}
         />
-        <MdSearch
-          style={{
-            marginRight: '10px',
-            fontSize: '3vh',
-            fill: '#0D4A99',
-          }}
-        />
-      </ContainerInput>
+      </ButtonOrange>
     </Container>
   );
 };
