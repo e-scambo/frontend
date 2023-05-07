@@ -43,7 +43,7 @@ export const ButtonOrange = styled.button`
   font-weight: 600;
   color: #FFFFFF;
   text-align: left;
-  padding-left: 1.3vw;
+  padding-left: 1.5vw;
   padding-right:  1.3vw;
 
   justify-content: center;
@@ -98,5 +98,6 @@ export const ArrowIcon = styled.img`
   position: absolute;
   width: 1.8vw;
   height: 1.8vw;
+  right: 7%;
   bottom: 14%;
 `;
