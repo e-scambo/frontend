@@ -23,19 +23,18 @@ const SearchBar: React.FC<SearchPros> = ({
         src={searchIcon}
       />
       <Input
-        placeholder='Pesquisar'
-        type='text'
+        placeholder='Pesquisar' type='text'
         onChange={(e) => {
           setSearch(e.target.value);
           onSearchChange(e.target.value);
         }}
-        value={search}
-      />
+        value={search}>
+      </Input>
       <ButtonOrange type='submit'>
         Pesquisar
-        <ArrowIcon
+      <ArrowIcon
           src={arrowIcon}
-        />
+      />
       </ButtonOrange>
     </Container>
   );

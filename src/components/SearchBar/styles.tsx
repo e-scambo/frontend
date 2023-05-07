@@ -6,7 +6,7 @@ export const Container = styled.div`
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  position: relative;
 `;
 
 // export const ContainerInput = styled.div`
@@ -21,13 +21,8 @@ export const ButtonOrange = styled.button`
   width: 10vw;
   height: 5vh;
 
-  /* spacing */
-  left: 39.3vw;
-  padding-right: 2vw;
-
   /* borders */
   border: none;
-  box-sizing: border-box;
   border-radius: 3vw;
 
   /* effects */
@@ -38,8 +33,7 @@ export const ButtonOrange = styled.button`
 
   /* display */
   position: absolute;
-  align-items: center;
-  justify-content: center;
+  right: 0.5vw;
   text-transform: none;
 
   font-family: 'Noto Sans', sans-serif;
@@ -48,10 +42,19 @@ export const ButtonOrange = styled.button`
   font-style: normal;
   font-weight: 600;
   color: #FFFFFF;
+  text-align: left;
+  padding-left: 1.3vw;
+  padding-right:  1.3vw;
 
+  justify-content: center;
+
+  :active {
+    border: none;
+  }
 
   :hover {
     opacity: 0.8;
+    border: none;
   }
 
   transition: 0.3s;
@@ -69,6 +72,7 @@ export const Input = styled.input`
   line-height: 3vh;
   color: #868484;
   border: none;
+  padding-right: 11vw;
 
   &:focus {
     border: none;
@@ -85,15 +89,14 @@ export const Input = styled.input`
 
 export const SearchIcon = styled.img`
   position: absolute;
-  padding-left: 1.5vw;
-  font-size: 3vh;
+  left: 1.5vw;
   width: 1.8vw;
   height: 1.8vw;
 `;
 
 export const ArrowIcon = styled.img`
   position: absolute;
-  padding-left: 0.3vw;
   width: 1.8vw;
   height: 1.8vw;
+  bottom: 14%;
 `;
