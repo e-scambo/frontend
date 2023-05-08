@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
+  width: 75%;
   height: 10vh;
   border-radius: 8px;
   display: flex;
   align-items: center;
   position: relative;
+  margin: auto;
 `;
 
 // export const ContainerInput = styled.div`
