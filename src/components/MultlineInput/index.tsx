@@ -3,7 +3,6 @@ import {useField} from '@unform/core';
 import {ErrorMessage} from './styles';
 import {Container} from './styles';
 import {Input} from './styles';
-import {Label} from './styles';
 
 
 interface Props {
@@ -30,12 +29,11 @@ const MultlineInput: React.FC<Props> = (props) => {
   return (
     <Fragment>
       <Container>
-        <Label> {props.label} </Label>
         <Input
           ref={inputRef}
           placeholder={props.placeholder}
           disabled={props.disabled}
-          rows={3}
+          rows={8}
           error={Boolean(error)}
         />
       </Container>

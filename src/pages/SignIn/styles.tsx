@@ -76,7 +76,6 @@ export const Title = styled.div`
 `;
 
 export const Description = styled.div`
-
   justify-content: center;
   font-family: 'Noto Sans';
   font-style: normal;

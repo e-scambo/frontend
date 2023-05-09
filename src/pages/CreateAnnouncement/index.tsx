@@ -1,6 +1,7 @@
-import React, {useState, useRef, useCallback} from 'react';
+import React, {useState, useRef} from 'react';
 import useUsers from 'hooks/useUsers';
 import {Form} from '@unform/web';
+import {Link} from 'react-router-dom';
 import * as Yup from 'yup';
 import translation from 'locales/yup.locale.pt-br';
 import {FormHandles} from '@unform/core';
@@ -14,14 +15,23 @@ import MultlineInput from 'components/MultlineInput';
 import Select from 'components/Select';
 import RadioGroup from 'components/RadioInput';
 import Button from 'components/Button';
+import ReturnToPage from 'assets/img/ReturnToPage.png';
+import FileInput from 'components/FileInput';
+import FileInputBigger from 'components/FileInputBigger';
 
+import {TitleCreate} from './styles';
 import {Paper} from './styles';
 import {TitleSection} from './styles';
 import {ContainerFields} from './styles';
 import {ContainerLeft} from './styles';
 import {ContainerRight} from './styles';
 import {AnnouncementForm} from 'types';
-import {states, stateNames} from 'locales/states-cities.json';
+import {ContainerButton} from './styles';
+import {ContainerReturnToPage} from './styles';
+import {ContainerMegaFileInput} from './styles';
+import {ContainerFileInput} from './styles';
+
+import {states} from 'locales/states-cities.json';
 import {categories} from './options.json';
 import useAuth from 'hooks/useAuth';
 
@@ -44,12 +54,12 @@ const templateOptions = [
 
 const CreateAnnouncement: React.FC = () => {
   const navigate = useNavigate();
-  const [pictures, setPictures] = useState({});
-  const [cities, setCities] = useState<string[]>([]);
+  // const [cities, setCities] = useState<string[]>([]);
   const [serviceOptions, setServiceOptions] = useState<boolean>(false);
   const {createAnnouncement} = useUsers();
   const formRef = useRef<FormHandles>(null);
   const {auth} = useAuth();
+  const [pictures, setPictures] = useState<File | null>(null);
 
   async function handleToSubmit(data: AnnouncementForm, {reset}) {
     Yup.setLocale(translation);
@@ -105,9 +115,9 @@ const CreateAnnouncement: React.FC = () => {
     }
   };
 
-  const getCities = useCallback((stateIndex: number) => {
-    setCities(states[stateIndex].cidades);
-  }, []);
+  // const getCities = useCallback((stateIndex: number) => {
+  //   setCities(states[stateIndex].cidades);
+  // }, []);
 
   const isServiceAnnouncement = (): boolean => {
     return formRef.current?.getFieldValue('type') === 'Serviço';
@@ -119,11 +129,18 @@ const CreateAnnouncement: React.FC = () => {
       <JustifyContainer thereIsHeader >
         <ContentBox>
           <Form onSubmit={handleToSubmit} ref={formRef} >
+            <TitleCreate>
+                <TitleSection>
+                  <ContainerReturnToPage>
+                  <Link to="/Announcements">
+                    <img src={ReturnToPage} />
+                  </Link>
+                </ContainerReturnToPage>
+                  Anuncie seu produto
+                </TitleSection>
+            </TitleCreate>
             <Paper>
               <ContainerLeft>
-                <TitleSection>
-                  Anunciar
-                </TitleSection>
                 <ContainerFields>
                   <InputForm
                     name="title"
@@ -141,19 +158,17 @@ const CreateAnnouncement: React.FC = () => {
                     name="usage_time"
                     label="Tempo de uso"
                     type="text"
-                    placeholder={serviceOptions? '' : 'Nunca usado'}
+                    placeholder={serviceOptions? '' : 'Tempo de uso'}
                     disabled={serviceOptions}
                   />
                   <Select
-                    name='category'
-                    label='Categoria'
-                    placeholder='Selecione a categoria'
-                    options={serviceOptions?
-                        categories['Serviço'] :
-                        categories['Produto']
-                    }
+                    name="category"
+                    label="Categoria"
+                    placeholder="Categoria"
+                    options={serviceOptions ?
+                       categories['Serviço'] : categories['Produto']}
                   />
-                  <Select
+                  {/* <Select
                     name='state'
                     label='Estado'
                     placeholder='Selecione o estado'
@@ -165,7 +180,7 @@ const CreateAnnouncement: React.FC = () => {
                     label='Cidade'
                     placeholder='Selecione a cidade'
                     options={cities}
-                  />
+                  /> */}
                 </ContainerFields>
               </ContainerLeft>
               <ContainerRight>
@@ -176,14 +191,26 @@ const CreateAnnouncement: React.FC = () => {
                     setServiceOptions(isServiceAnnouncement());
                   }}
                 />
-                <input
+                <ContainerMegaFileInput>
+                  <FileInputBigger onFileSelect={setPictures} />
+                </ContainerMegaFileInput>
+                <ContainerFileInput>
+                  <FileInput onFileSelect={setPictures} />
+                  <FileInput onFileSelect={setPictures} />
+                  <FileInput onFileSelect={setPictures} />
+                </ContainerFileInput>
+                {/* <input
                   type="file"
                   name='images'
                   onChange={(e) => setPictures(e.target.files![0])}
-                />
-                <Button type='submit' > Salvar </Button>
+                /> */}
               </ContainerRight>
             </Paper>
+            <ContainerButton>
+                <Button>
+                  Publicar produto
+                </Button>
+            </ContainerButton>
           </Form>
         </ContentBox>
       </JustifyContainer>
@@ -192,4 +219,3 @@ const CreateAnnouncement: React.FC = () => {
 };
 
 export default CreateAnnouncement;
-

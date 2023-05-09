@@ -55,7 +55,8 @@ export const ErrorMessage = styled.span`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 1vh;
+  font-size: 2vh;
+  padding-top: 1vh;
   line-height: 2vh;
   color: #a83a3a;
   padding-left: 5px;
