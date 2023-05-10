@@ -21,6 +21,7 @@ import {Title} from './styles';
 import {Description} from './styles';
 import logo from 'assets/img/Logo - Simbolo.png';
 import {Logo} from './styles';
+import Footer from 'components/Footer';
 // import {FiltersBar} from './styles';
 // import {stateNames} from 'states-cities.json';
 
@@ -104,6 +105,7 @@ const Announcements: React.FC = () => {
           </ContentBox>
         </HeaderRoxo>
       </JustifyContainer>
+      <Footer/>
     </PageContainer>
   );
 };
