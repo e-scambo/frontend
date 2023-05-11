@@ -7,6 +7,7 @@ import useAnnouncements from 'hooks/useAnnouncements';
 import useAuth from 'hooks/useAuth';
 import {ListOfCards} from 'pages/Announcements/styles';
 import AnnouncementCard from 'components/AnnouncementCard';
+import Footer from 'components/Footer';
 
 
 const Favorites: React.FC = () => {
@@ -37,6 +38,7 @@ const Favorites: React.FC = () => {
           </ListOfCards>
         </ContentBox>
       </JustifyContainer>
+      <Footer/>
     </PageContainer>
   );
 };

@@ -44,7 +44,7 @@ export const StyledButton = styled.button`
 export const ContainerGrid = styled.div`
   margin: .1vh 0vh;
   width: 100%;
-  height: 100%
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;

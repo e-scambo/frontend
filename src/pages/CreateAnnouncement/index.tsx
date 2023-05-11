@@ -35,6 +35,7 @@ import {ContainerFileInput} from './styles';
 import {states} from 'locales/states-cities.json';
 import {categories} from './options.json';
 import useAuth from 'hooks/useAuth';
+import Footer from 'components/Footer';
 
 
 // const templateOptions = [
@@ -215,6 +216,7 @@ const CreateAnnouncement: React.FC = () => {
           </Form>
         </ContentBox>
       </JustifyContainer>
+      <Footer/>
     </PageContainer>
   );
 };

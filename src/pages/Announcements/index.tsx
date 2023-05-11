@@ -15,6 +15,13 @@ import SearchBar from 'components/SearchBar';
 // import Select from 'components/Select';
 
 import {ListOfCards} from './styles';
+import HeaderRoxo from 'components/HeaderRoxo';
+import data from './data.json';
+import {Title} from './styles';
+import {Description} from './styles';
+import logo from 'assets/img/Logo - Simbolo.png';
+import {Logo} from './styles';
+import Footer from 'components/Footer';
 // import {FiltersBar} from './styles';
 // import {stateNames} from 'states-cities.json';
 
@@ -50,47 +57,55 @@ const Announcements: React.FC = () => {
     <PageContainer>
       <Header />
       <JustifyContainer thereIsHeader >
-        <ContentBox>
-          <SearchBar
-            search={search}
-            setSearch={setSearch}
-            onSearchChange={(filterBy: string) => handleWithSearch(filterBy)}
-          />
-          {/* <Form onSubmit={() => {}} ref={formRef} >
-            <FiltersBar>
+        <HeaderRoxo>
+          <ContentBox>
+            <Title> {data.title} </Title>
+            <Description> {data.description} </Description>
+            <SearchBar
+              search={search}
+              setSearch={setSearch}
+              onSearchChange={(filterBy: string) => handleWithSearch(filterBy)}
+              />
+            <Logo
+              src={logo}
+            />
+            {/* <Form onSubmit={() => {}} ref={formRef} >
+              <FiltersBar>
               <Select name="state" options={[]} />
-              <Select name="city" options={[]} />
-            </FiltersBar>
-          </Form> */}
-          <ListOfCards>
-            {search && searchResult ?
-              searchResult.map((announcement: Announcement, index) => (
-                <AnnouncementCard
-                  key={announcement.id}
-                  id={announcement.id}
-                  title={announcement.title}
-                  description={announcement.description}
-                  image={announcement.images[0] as string}
-                  localization={announcement.localization}
-                  owner={announcement.owner}
-                />
-              )) :
-              announcements &&
-              announcements.map((announcement: Announcement, index) => (
-                <AnnouncementCard
-                  key={announcement.id}
-                  id={announcement.id}
-                  title={announcement.title}
-                  description={announcement.description}
-                  image={announcement.images[0]?.originalname as string}
-                  localization={announcement.localization}
-                  owner={announcement.owner}
-                />
-              ))
-            }
-          </ListOfCards>
-        </ContentBox>
+                <Select name="city" options={[]} />
+              </FiltersBar>
+            </Form> */}
+            <ListOfCards>
+              {search && searchResult ?
+                searchResult.map((announcement: Announcement, index) => (
+                  <AnnouncementCard
+                    key={announcement.id}
+                    id={announcement.id}
+                    title={announcement.title}
+                    description={announcement.description}
+                    image={announcement.images[0] as string}
+                    localization={announcement.localization}
+                    owner={announcement.owner}
+                  />
+                )) :
+                announcements &&
+                announcements.map((announcement: Announcement, index) => (
+                  <AnnouncementCard
+                    key={announcement.id}
+                    id={announcement.id}
+                    title={announcement.title}
+                    description={announcement.description}
+                    image={announcement.images[0]?.originalname as string}
+                    localization={announcement.localization}
+                    owner={announcement.owner}
+                  />
+                ))
+              }
+            </ListOfCards>
+          </ContentBox>
+        </HeaderRoxo>
       </JustifyContainer>
+      <Footer/>
     </PageContainer>
   );
 };
