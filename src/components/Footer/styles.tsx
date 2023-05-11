@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const Container = styled.div`
-  position: relative;
-  bottom: 0%;
+  position: absolute;
   width: 100vw;
   height: 30vh;
 
