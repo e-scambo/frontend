@@ -19,9 +19,10 @@ import ReturnToPage from 'assets/img/ReturnToPage.png';
 import FileInput from 'components/FileInput';
 import FileInputBigger from 'components/FileInputBigger';
 
-import {TitleCreate} from './styles';
+import {TitleArea} from './styles';
 import {Paper} from './styles';
 import {TitleSection} from './styles';
+import {ContainerWrapper} from './styles';
 import {ContainerFields} from './styles';
 import {ContainerLeft} from './styles';
 import {ContainerRight} from './styles';
@@ -36,20 +37,20 @@ import {categories} from './options.json';
 import useAuth from 'hooks/useAuth';
 
 
-const templateOptions = [
-  {
-    id: 0,
-    value: 'product',
-    label: 'Produto',
-    checked: false,
-  },
-  {
-    id: 1,
-    value: 'service',
-    label: 'Serviço',
-    checked: false,
-  },
-];
+// const templateOptions = [
+//   {
+//     id: 0,
+//     value: 'product',
+//     label: 'Produto',
+//     checked: false,
+//   },
+//   {
+//     id: 1,
+//     value: 'service',
+//     label: 'Serviço',
+//     checked: false,
+//   },
+// ];
 
 
 const CreateAnnouncement: React.FC = () => {
@@ -129,7 +130,7 @@ const CreateAnnouncement: React.FC = () => {
       <JustifyContainer thereIsHeader >
         <ContentBox>
           <Form onSubmit={handleToSubmit} ref={formRef} >
-            <TitleCreate>
+            <TitleArea>
                 <TitleSection>
                   <ContainerReturnToPage>
                   <Link to="/Announcements">
@@ -138,73 +139,73 @@ const CreateAnnouncement: React.FC = () => {
                 </ContainerReturnToPage>
                   Anuncie seu produto
                 </TitleSection>
-            </TitleCreate>
+            </TitleArea>
             <Paper>
-              <ContainerLeft>
-                <ContainerFields>
-                  <InputForm
-                    name="title"
-                    label="Título do anúncio"
-                    type="text"
-                    placeholder="Título do anúncio"
-                  />
-                  <MultlineInput
-                    name="description"
-                    label="Descrição do anúncio"
-                    type="text"
-                    placeholder="Descrição aqui"
-                  />
-                  <InputForm
-                    name="usage_time"
-                    label="Tempo de uso"
-                    type="text"
-                    placeholder={serviceOptions? '' : 'Tempo de uso'}
-                    disabled={serviceOptions}
-                  />
-                  <Select
-                    name="category"
-                    label="Categoria"
-                    placeholder="Categoria"
-                    options={serviceOptions ?
-                       categories['Serviço'] : categories['Produto']}
-                  />
-                  {/* <Select
-                    name='state'
-                    label='Estado'
-                    placeholder='Selecione o estado'
-                    options={stateNames}
-                    onSelect={(value) => getCities(value)}
-                  />
-                  <Select
-                    name='city'
-                    label='Cidade'
-                    placeholder='Selecione a cidade'
-                    options={cities}
+              <RadioGroup
+                onChange={() => {
+                  setServiceOptions(isServiceAnnouncement());
+                }}
+              />
+              <ContainerWrapper>
+                <ContainerLeft>
+                  <ContainerFields>
+                    <InputForm
+                      name="title"
+                      label="Título do anúncio"
+                      type="text"
+                      placeholder="Título do anúncio"
+                    />
+                    <MultlineInput
+                      name="description"
+                      label="Descrição do anúncio"
+                      type="text"
+                      placeholder="Descrição aqui"
+                    />
+                    <InputForm
+                      name="usage_time"
+                      label="Tempo de uso"
+                      type="text"
+                      placeholder={serviceOptions? '' : 'Tempo de uso'}
+                      disabled={serviceOptions}
+                    />
+                    <Select
+                      name="category"
+                      label="Categoria"
+                      placeholder="Categoria"
+                      options={serviceOptions ?
+                        categories['Serviço'] : categories['Produto']}
+                    />
+                    {/* <Select
+                      name='state'
+                      label='Estado'
+                      placeholder='Selecione o estado'
+                      options={stateNames}
+                      onSelect={(value) => getCities(value)}
+                    />
+                    <Select
+                      name='city'
+                      label='Cidade'
+                      placeholder='Selecione a cidade'
+                      options={cities}
+                    /> */}
+                  </ContainerFields>
+                </ContainerLeft>
+                <ContainerRight>
+                  <ContainerMegaFileInput>
+                    <FileInputBigger onFileSelect={setPictures} />
+                  </ContainerMegaFileInput>
+                  <ContainerFileInput>
+                    <FileInput onFileSelect={setPictures} />
+                    <FileInput onFileSelect={setPictures} />
+                    <FileInput onFileSelect={setPictures} />
+                  </ContainerFileInput>
+                  {/* <input
+                    type="file"
+                    name='images'
+                    onChange={(e) => setPictures(e.target.files![0])}
                   /> */}
-                </ContainerFields>
-              </ContainerLeft>
-              <ContainerRight>
-                <RadioGroup
-                  name='type'
-                  options={templateOptions}
-                  onSelect={() => {
-                    setServiceOptions(isServiceAnnouncement());
-                  }}
-                />
-                <ContainerMegaFileInput>
-                  <FileInputBigger onFileSelect={setPictures} />
-                </ContainerMegaFileInput>
-                <ContainerFileInput>
-                  <FileInput onFileSelect={setPictures} />
-                  <FileInput onFileSelect={setPictures} />
-                  <FileInput onFileSelect={setPictures} />
-                </ContainerFileInput>
-                {/* <input
-                  type="file"
-                  name='images'
-                  onChange={(e) => setPictures(e.target.files![0])}
-                /> */}
-              </ContainerRight>
+                </ContainerRight>
+              </ContainerWrapper>
             </Paper>
             <ContainerButton>
                 <Button>

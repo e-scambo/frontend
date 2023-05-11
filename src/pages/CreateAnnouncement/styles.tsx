@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TitleCreate = styled.div`
+export const TitleArea = styled.div`
   width: 40vw;
   height: auto;
   background: #FFFFFF;
@@ -17,14 +17,15 @@ export const TitleCreate = styled.div`
 `;
 
 export const Paper = styled.div`
-  width: 70vw;
+  width: 80vw;
   height: 100vh;
   background: #FFFFFF;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 8vh;
 
   @media (max-width: 426px) {
     width: 80vw;
@@ -32,9 +33,8 @@ export const Paper = styled.div`
     flex-direction: column;
   }
 `;
-
 export const ContainerLeft = styled.div`
-  width: 65vw;
+  width: 40vw;
   padding: 5vh 6vw;
   box-sizing: border-box;
 
@@ -64,6 +64,12 @@ export const StyledReturnToPage = styled.img`
   cursor: pointer;
 `;
 
+export const ContainerWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 6vh;
+`;
+
 export const ContainerFields = styled.div`
   width: 100%;
   height: auto;
@@ -81,11 +87,10 @@ export const ContainerFields = styled.div`
 `;
 
 export const ContainerRight = styled.div`
-  width: 25vw;
-  height: 55vh;
-  padding: 3vh 0vw;
+  width: 40vw;
+  height: auto;
+  padding-left: 6vw;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -126,11 +131,11 @@ export const ContainerButton = styled.div`
 
 export const ContainerMegaFileInput = styled.div`
   width: 33vw;
-  height: 48.5vh;
+  height: 48vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 4vh;
-  padding-top: 2vh;
+  margin-top: 7.6vh;
 `;
 
 export const ContainerFileInput = styled.div`
