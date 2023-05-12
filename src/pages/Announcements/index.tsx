@@ -56,54 +56,54 @@ const Announcements: React.FC = () => {
   return (
     <PageContainer>
       <Header />
+      <HeaderRoxo>
+        <Title> {data.title} </Title>
+        <Description> {data.description} </Description>
+        <SearchBar
+          search={search}
+          setSearch={setSearch}
+          onSearchChange={(filterBy: string) => handleWithSearch(filterBy)}
+          />
+        <Logo
+          src={logo}
+        />
+      </HeaderRoxo>
       <JustifyContainer thereIsHeader >
-        <HeaderRoxo>
-          <ContentBox>
-            <Title> {data.title} </Title>
-            <Description> {data.description} </Description>
-            <SearchBar
-              search={search}
-              setSearch={setSearch}
-              onSearchChange={(filterBy: string) => handleWithSearch(filterBy)}
-              />
-            <Logo
-              src={logo}
-            />
-            {/* <Form onSubmit={() => {}} ref={formRef} >
-              <FiltersBar>
-              <Select name="state" options={[]} />
-                <Select name="city" options={[]} />
-              </FiltersBar>
-            </Form> */}
-            <ListOfCards>
-              {search && searchResult ?
-                searchResult.map((announcement: Announcement, index) => (
-                  <AnnouncementCard
-                    key={announcement.id}
-                    id={announcement.id}
-                    title={announcement.title}
-                    description={announcement.description}
-                    image={announcement.images[0] as string}
-                    localization={announcement.localization}
-                    owner={announcement.owner}
-                  />
-                )) :
-                announcements &&
-                announcements.map((announcement: Announcement, index) => (
-                  <AnnouncementCard
-                    key={announcement.id}
-                    id={announcement.id}
-                    title={announcement.title}
-                    description={announcement.description}
-                    image={announcement.images[0]?.originalname as string}
-                    localization={announcement.localization}
-                    owner={announcement.owner}
-                  />
-                ))
-              }
-            </ListOfCards>
-          </ContentBox>
-        </HeaderRoxo>
+        <ContentBox>
+          {/* <Form onSubmit={() => {}} ref={formRef} >
+            <FiltersBar>
+            <Select name="state" options={[]} />
+              <Select name="city" options={[]} />
+            </FiltersBar>
+          </Form> */}
+          <ListOfCards>
+            {search && searchResult ?
+              searchResult.map((announcement: Announcement, index) => (
+                <AnnouncementCard
+                  key={announcement.id}
+                  id={announcement.id}
+                  title={announcement.title}
+                  description={announcement.description}
+                  image={announcement.images[0] as string}
+                  localization={announcement.localization}
+                  owner={announcement.owner}
+                />
+              )) :
+              announcements &&
+              announcements.map((announcement: Announcement, index) => (
+                <AnnouncementCard
+                  key={announcement.id}
+                  id={announcement.id}
+                  title={announcement.title}
+                  description={announcement.description}
+                  image={announcement.images[0]?.originalname as string}
+                  localization={announcement.localization}
+                  owner={announcement.owner}
+                />
+              ))
+            }
+          </ListOfCards>
+        </ContentBox>
       </JustifyContainer>
       <Footer/>
     </PageContainer>
