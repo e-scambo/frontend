@@ -26,6 +26,7 @@ export const StyledEscamboLogo = styled(EscamboLogo)`
   @media (max-width: 426px) {
     width: 100%;
     height: 50px;
+  }
 `;
 
 

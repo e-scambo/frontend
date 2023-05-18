@@ -1,32 +1,60 @@
-import React, {useRef} from 'react';
-import {Form} from '@unform/web';
-import * as Yup from 'yup';
 
-import PageContainer from 'components/PageContainer';
-import JustifyContainer from 'components/JustifyContainer';
-import ContentBox from 'components/ContentBox';
+// const SignUp = () => {
+//   return (
+//     <div className="conteiner">
+//       <div className='divForm'>
+//         <main>
+//           <h1 className="h1 roxo1">Crie sua conta</h1>
+//           <p className="action cinzaClaro">
+//            Já possui uma conta? <a href="/SignIn" className='roxo1'>Login</a>
+//           </p>
+
+//           <SignUpForm></SignUpForm>
+//         </main>
+
+//         <footer>
+//           <p className='H3 cinzaClaro'>
+//             Ao registrar-se você concorda com nossos
+//             <a className="roxo1" href="#"> termos </a>
+//             e <a className="roxo1" href="#">políticas de privacidade</a>
+//           </p>
+//         </footer>
+//       </div>
+
+//       <Carousel></Carousel>
+//     </div>
+//   );
+// };
+
+import {Form} from '@unform/web';
+import React from 'react';
+import * as Yup from 'yup';
 import InputForm from 'components/InputForm';
 import Button from 'components/Button';
+import Carousel from 'components/Carousel';
+import PasswordInput from 'components/PasswordInput';
 
+import {Principal} from './styles';
 import {ContainerFields} from './styles';
-import {ContainerLogo} from './styles';
-import {LoginSection} from './styles';
-import {ContainerDraw} from './styles';
+import {ContainerTitle} from './styles';
 import {ContainerLoginForm} from './styles';
+import {ContainerButton} from './styles';
 import {Title} from './styles';
 import {Description} from './styles';
-import {StyledDrawSignUp} from './styles';
-import {StyledEscamboLogo} from './styles';
-import {ContainerButtons} from './styles';
+import {Linked} from './styles';
+import {Terms} from './styles';
+import {PrivacyPolicy} from './styles';
 
-
+// import data from './data.json';
 import messages from './data.json';
 import useUsers from 'hooks/useUsers';
 import translation from 'locales/yup.locale.pt-br';
 import {User} from 'types';
 import {useNavigate} from 'react-router-dom';
 import useAuth from 'hooks/useAuth';
+import {useRef} from 'react';
 
+import data from './data.json';
 
 interface FormFields {
   name: string,
@@ -103,62 +131,118 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <PageContainer>
-      <JustifyContainer>
-        <ContentBox>
-          <LoginSection>
-            <ContainerDraw>
-              <Title> {messages.title} </Title>
-              <Description> {messages.description} </Description>
-              <StyledDrawSignUp />
-            </ContainerDraw>
-            <ContainerLoginForm>
-              <Form ref={formRef} onSubmit={handleToSubmit}>
-                <ContainerLogo>
-                  <StyledEscamboLogo />
-                </ContainerLogo>
-                <ContainerFields>
-                  <InputForm
-                    name="name"
-                    label="Nome"
-                    type="text"
-                    placeholder="Nome de usuário"
-                  />
-                  <InputForm
-                    name="email"
-                    label="Email"
-                    type="text"
-                    placeholder="seunome@email.com"
-                  />
-                  <InputForm
-                    name="phone"
-                    label="Telefone"
-                    type="tel"
-                    placeholder="99999999999"
-                  />
-                  <InputForm
-                    name="password"
-                    label="Senha"
-                    type="password"
-                    placeholder="*******"
-                  />
-                  <InputForm
-                    name="passwordConfirmation"
-                    label="Confirmação de Senha"
-                    type="password"
-                    placeholder="*******"
-                  />
-                </ContainerFields>
-                <ContainerButtons>
-                  <Button type='submit' > Cadastre-se </Button>
-                </ContainerButtons>
-              </Form>
-            </ContainerLoginForm>
-          </LoginSection>
-        </ContentBox>
-      </JustifyContainer>
-    </PageContainer>
+    <Principal>
+      <ContainerLoginForm>
+        <ContainerTitle>
+            <Title><h1 className="h1 roxo1">{data.title}</h1></Title>
+            <Description>
+            {data.description}<Linked href="/SignIn">{data.redirect}</Linked>
+            </Description>
+        </ContainerTitle>
+        <Form onSubmit={handleToSubmit}>
+          <ContainerFields>
+            <InputForm
+              name="nome"
+              label="Nome"
+              type="text"
+              placeholder="Nome"
+              // {data.placeholders.name}
+            />
+            <InputForm
+              name="e-mail"
+              label="E-mail"
+              type="text"
+              placeholder="E-mail"
+              // {data.placeholders.email}
+            />
+            <PasswordInput
+              name="password"
+              label="Senha"
+              type="password"
+              placeholder="Senha"
+              // {data.placeholders.password}
+            />
+            <PasswordInput
+              name="passwordConfirm"
+              label="Confirme sua senha"
+              type="password"
+              placeholder="Confirme sua senha"
+              // {data.placeholders.password}
+            />
+            <ContainerButton>
+            <Button
+              type='submit'
+            > Continuar </Button>
+            </ContainerButton>
+            {/* <InfoText> {data.doesNotHaveAccount}
+              <Redirect to='/signup' replace >
+                {data.signUp}
+              </Redirect>
+            </InfoText> */}
+            <Terms> {data.privacy}
+              <PrivacyPolicy>
+              &nbsp;{data.privacyredirect}&nbsp;
+            </PrivacyPolicy>
+            </Terms>
+          </ContainerFields>
+        </Form>
+      </ContainerLoginForm>
+      <Carousel/>
+    </Principal>
   );
 };
 
+  //   return (
+//     <Principal>
+//       <StyledDrawSignUp />
+//     </ContainerDraw>
+//     <ContainerLoginForm>
+//       <Title> {messages.title} </Title>
+//       <Description> {messages.description} </Description>
+//       <Form ref={formRef} onSubmit={handleToSubmit}>
+//         <ContainerLogo>
+//           <StyledEscamboLogo />
+//         </ContainerLogo>
+//         <ContainerFields>
+//           <InputForm
+//             name="name"
+//             label="Nome"
+//             type="text"
+//             placeholder="Nome de usuário"
+//           />
+//           <InputForm
+//             name="email"
+//             label="Email"
+//             type="text"
+//             placeholder="seunome@email.com"
+//           />
+//           <InputForm
+//             name="phone"
+//             label="Telefone"
+//             type="tel"
+//             placeholder="99999999999"
+//           />
+//           <InputForm
+//             name="password"
+//             label="Senha"
+//             type="password"
+//             placeholder="*******"
+//           />
+//           <InputForm
+//             name="passwordConfirmation"
+//             label="Confirmação de Senha"
+//             type="password"
+//             placeholder="*******"
+//           />
+//         </ContainerFields>
+//         <ContainerButtons>
+//           <Button type='submit' > Cadastre-se </Button>
+//         </ContainerButtons>
+//       </Form>
+//     </ContainerLoginForm>
+//     </Principal>
+//   );
+// };
+
 export default SignUp;
+

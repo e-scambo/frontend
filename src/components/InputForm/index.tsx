@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react';
-import {Container, Input} from './styles';
+import {Container, Input, ErrorMessage} from './styles';
 import {useField} from '@unform/core';
-import {ErrorMessage} from './styles';
 
 interface Props {
   name: string

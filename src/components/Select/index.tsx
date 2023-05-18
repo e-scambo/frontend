@@ -3,16 +3,15 @@ import {useField} from '@unform/core';
 import {Container} from './styles';
 import {StyledSelect} from './styles';
 import {Option} from './styles';
-import {Label} from './styles';
 import {ErrorMessage} from './styles';
 
 interface Props {
-  name: string
-  label?: string,
-  placeholder?: string
-  options: string[]
-  disabled?: boolean,
-  onSelect?: (value: number) => void
+  name: string;
+  label?: string;
+  placeholder?: string;
+  options: string[];
+  disabled?: boolean;
+  onSelect?: (value: number) => void;
 }
 
 const Select: React.FC<Props> = (props) => {
@@ -29,30 +28,31 @@ const Select: React.FC<Props> = (props) => {
 
   return (
     <Fragment>
-      <Container error={Boolean(error)} >
-        {props.label && <Label> {props.label} </Label>}
+      <Container error={Boolean(error)}>
         <StyledSelect
           ref={inputRef}
           disabled={props.disabled}
-          defaultValue={''}
+          defaultValue={props.placeholder ? '' : undefined}
           onChange={(e) => {
             const index = Number(e.target.value);
-            props.onSelect &&
-            props.onSelect(index);
+            props.onSelect && props.onSelect(index);
           }}
         >
-          <Option disabled hidden > {''} </Option>
+          {props.placeholder && (
+            <Option disabled hidden value="">
+              {props.placeholder}
+            </Option>
+          )}
           {props.options.map((option, index) => {
             return (
-              <Option
-                key={option}
-                value={index} > {option}
+              <Option key={option} value={index}>
+                {option}
               </Option>
             );
           })}
-        </StyledSelect>
+      </StyledSelect>
       </Container>
-      {error && <ErrorMessage> {error} </ErrorMessage> }
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </Fragment>
   );
 };

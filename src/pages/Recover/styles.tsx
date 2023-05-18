@@ -1,136 +1,155 @@
 import styled from 'styled-components';
-import {ReactComponent as DrawSignUp} from 'assets/img/DrawSignup.svg';
-import {ReactComponent as EscamboLogo} from 'assets/img/TESTE.svg';
+// import ReturnToPage from 'assets/img/ReturnToPage.png';
 
-export const ContainerDraw = styled.div`
-  width: 36vw;
-  min-height: 60vh;
-  padding: 10vh 1vw;
+export const Principal = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-`;
-
-
-export const ContainerLoginForm = styled.div`
-  width: 24vw;
-  height: 60vh;
-  padding: 10vh;
-  background: #FFFFFF;
-  border: 1px solid #F5F5F5;
-  box-sizing: border-box;
-  box-shadow: 0vh .4vh .6vh rgba(106, 106, 106, 0.12);
-  border-radius: .5vh;
-  padding: 3vh 4vh;
-  
-  @media (max-width: 426px) {
-    width: 100%;
-    height: 40vh;
-  }
-`;
-
-
-export const LoginSection = styled.div`
-  width: 100%;
-  display: flex;
+  justify-content: center;
   flex-direction: row;
-  justify-items: space-between;
-  align-items: center;
+  height: 100vh;
+  width: 100vw;
 
   @media (max-width: 426px) {
     flex-direction: column-reverse;
   }
 `;
 
-export const StyledDrawSignUp = styled(DrawSignUp)`
-  height: 35vh;
+export const Carousel = styled.div`
+  height: 100vh;
 `;
 
-export const StyledEscamboLogo = styled(EscamboLogo)`
-  width: 35%;
-  height: 35%;
-`;
-
-export const ContainerLogo = styled.div`
-  width: 100%;
+export const ContainerReturnToPage = styled.div`
+  width: 1vw;
   height: auto;
   display: flex;
-  padding: 2vh 0vh;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  padding-top: 5vh;
+`;
+
+export const StyledReturnToPage = styled.div`
+  height: 4vh;
+  width: 4vh;
+  cursor: pointer;
+`;
+
+export const ContainerLoginForm = styled.div`
+  width: 50%;
+  height: 100vh;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0vh 14vh 14vh 14vh;
+  
+  @media (max-width: 426px) {
+    width: 100%;
+    height: 45vh;
+    
+  }
 `;
 
 export const ContainerFields = styled.div`
   width: 100%;
-  height: auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
+  align-items: center;
+  padding-top: 23vh;
   div {
     &:not(:first-child) {
       margin-top: 2vh;
     }
   }
+`;
 
+export const ContainerTitle = styled.div`
+  width: 100%;
+  height: 25vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 export const Title = styled.div`
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
+  font-family: 'Noto Sans';
+  font-style: bold;
   font-weight: bold;
-  font-size: 2.5vh;
-  line-height: 3vh;
-  color: #0D4A99;
+  font-size: 8vh;
+  color: #4E096B;
   height: 20%;
-  margin-top: 2vh;
+  padding-top: 12vh;
+  white-space: pre-line;
 `;
 
 export const Description = styled.div`
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.5vh;
-  line-height: 2vh;
-  color: #A8A8A8;
-  width: 70%;
-  text-align: center;
-  padding: 5vh 2vw;
-  box-sizing: border-box;
+  font-family: 'Noto Sans';
+  font-style: semi-bold;
+  font-weight: semi-bold;
+  font-size: 2.5vh;
+  color: #B9B7B7;
+  height: 15%
+  text-align: left; /* adicionado */
+  padding-top: 20vh;
+  padding-left: 5px;
 `;
 
-
-export const ContainerButtons = styled.div`
+export const ContainerButton = styled.div`
+  padding-top: 7vh;
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 2vw 3vw;
-
-  button {
-    &:not(:first-child) {
-      margin-top: 1vh;
-    }
-  }
 `;
 
 export const InfoText = styled.div`
-  margin: 2vh .5vw;
-  box-sizing: border-box;
+  position: relative;
+  top: -10px;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
-  font-weight: bold;
-  font-size: 1.2vh;
-  color: #000000;
-  text-align: center;
-  display: flex;
+  font-weight: 900;
+  font-size: 2vh;
+  line-height: 2vh;
+  color: #727171;
+  display: inline;
 
-  @media (max-width: 426px) {
-    font-size: 1.5vh;
+  a {
+    margin-left: .3vw;
+  }
+`;
+
+export const Terms = styled.div`
+  position: relative;
+  padding-top: 7vh;
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.2vh;
+  line-height: 2vh;
+  color: #727171;
+  display: inline-block;
+  span {
+    display: inline;
+  }
+
+  a {
+    margin-left: .3vw;
+  }
+`;
+
+export const PrivacyPolicy = styled.span`
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-size: 2.2vh;
+  line-height: 2vh;
+  text-decoration: none;
+  color: #4C0C6C;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.8;
+    transition: 300ms ease-in;
+  }
+
+  span {
+    color: #727171;
   }
 `;

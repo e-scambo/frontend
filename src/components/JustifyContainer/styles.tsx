@@ -9,7 +9,7 @@ export const Container = styled.div<Props>`
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   box-sizing: border-box;
+  flex: 1;
 `;

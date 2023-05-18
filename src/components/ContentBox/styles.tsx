@@ -2,8 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   /* size */
+  position: relative;
+  flex-wrap: nowrap;
   width: 80vw;
-  display: flex;
+  padding-bottom: 8vh;
+
 
 
   @media (max-width: 2500px) {
