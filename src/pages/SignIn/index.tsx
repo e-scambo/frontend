@@ -35,6 +35,7 @@ const SignIn: React.FC = () => {
 
 
   const handleToSubmit = async (data: SignInProps) => {
+    console.log('eixe');
     await signIn(data.email, data.password);
     if (localStorage) {
       console.log(auth);
