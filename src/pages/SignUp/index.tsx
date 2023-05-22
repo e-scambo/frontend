@@ -71,6 +71,7 @@ const SignUp: React.FC = () => {
   const formRef = useRef<any>(null);
 
   const handleToSubmit = async (data: FormFields) => {
+    console.log(data);
     Yup.setLocale(translation);
 
     try {
@@ -78,8 +79,8 @@ const SignUp: React.FC = () => {
         formRef.current?.setErrors({});
       }
 
-
-      const schema = Yup.object().shape({
+      
+      /*const schema = Yup.object().shape({
         name: Yup.string().required(),
         email: Yup.string().email().required(),
         phone: Yup.string().required(),
@@ -88,15 +89,15 @@ const SignUp: React.FC = () => {
         passwordConfirmation: Yup.string().required().
             oneOf([Yup.ref('password'), null],
                 messages.validations.password),
-      });
+      });*/
 
-      await schema.validate(data, {
+      /*await schema.validate(data, {
         abortEarly: false,
-      });
+      });*/
       let phone = '(' + data.phone.slice(0, 2) + ') ';
       phone = phone + data.phone.slice(2, 7) + '-';
       phone = phone + data.phone.slice(7, 11);
-      console.log(phone);
+      console.log( data.name);
       const newUser: User = {
         name: data.name,
         email: data.email,
@@ -127,6 +128,7 @@ const SignUp: React.FC = () => {
         });
         formRef.current?.setErrors(validationErrors);
       }
+      console.log(validationErrors);
     }
   };
 
@@ -142,19 +144,25 @@ const SignUp: React.FC = () => {
         <Form onSubmit={handleToSubmit}>
           <ContainerFields>
             <InputForm
-              name="nome"
+              name="name"
               label="Nome"
               type="text"
               placeholder="Nome"
               // {data.placeholders.name}
             />
             <InputForm
-              name="e-mail"
+              name="email"
               label="E-mail"
               type="text"
               placeholder="E-mail"
               // {data.placeholders.email}
             />
+            <InputForm
+             name="phone"
+             label="Telefone"
+             type="tel"
+             placeholder="99999999999"
+           />
             <PasswordInput
               name="password"
               label="Senha"

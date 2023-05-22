@@ -27,9 +27,9 @@ export const ContainerLoginForm = styled.div`
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
   
-  @media (max-width: 426px) {
-    width: 100%;
-    height: 45vh;
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: 100vh;
     
   }
 `;
@@ -51,6 +51,12 @@ export const ContainerFields = styled.div`
 export const StyledEscamboLogo = styled(EscamboLogo)`
   height: 50%;
   width: 50%;
+   
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    
+  }
 `;
 
 export const ContainerLogo = styled.div`
@@ -73,6 +79,10 @@ export const Title = styled.div`
   font-weight: 800;
   font-size: 5.8vh;
   color: #4C0C6C;
+  @media (max-width: 768px) {
+    font-size: 3.5vh;
+    padding: 1vh 0vh;
+  }
 `;
 
 export const Description = styled.div`
@@ -84,6 +94,10 @@ export const Description = styled.div`
   padding-bottom: 7vh;
   font-size: 2.4vh;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 1.8vh;
+    padding-bottom: 4vh;
+  }
 `;
 
 export const Checkbox = styled.div`
@@ -106,6 +120,10 @@ export const ButtonLink = styled(Link)`
   color: #0D4A99;
   :hover {
     cursor: pointer;
+  }
+   @media (max-width: 768px) {
+    font-size: 1.8vh;
+    padding-bottom: 4vh;
   }
 `;
 

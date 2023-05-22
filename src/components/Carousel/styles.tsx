@@ -13,6 +13,9 @@ export const Moldura = styled.figure`
     border-radius: 5vw 0 0 5vw;
 
     text-align: center;
+     @media (max-width: 768px) {
+        display: none;
+  }
 `;
 
 export const Imagem = styled.img`

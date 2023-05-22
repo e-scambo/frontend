@@ -6,12 +6,12 @@ export const StyledButton = styled.button`
   height: 9vh;
 
   /* spacing */
-  padding-left: .4vh;
+  padding: 30px;
 
   /* borders */
   border: none;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 15px;
 
   /* effects */
   cursor: pointer;
@@ -39,6 +39,10 @@ export const StyledButton = styled.button`
   }
 
   transition: 0.3s;
+   @media (max-width: 768px) {
+    font-size: 1.5vh;
+  line-height: 1.5vh;
+  }
 `;
 
 export const ContainerGrid = styled.div`
