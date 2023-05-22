@@ -1,81 +1,53 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: block;
-  color: #3d346e;
-  width: 100%;
-`;
-
-interface RadioProps {
-  error: string | undefined
-}
-
-export const Radio = styled.input<RadioProps>`
-  border: 0px;
-  background-color: transparent;
-
-  outline: none;
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.2vh;
-  line-height: 3vh;
-  color: #7d7d7e;
-
-  margin-top: .5vh;
-  margin-bottom: .5vh;
-  box-sizing: border-box;
-
-  input:checked:after {
-    background-color: #A5A5A5;
-    border: ${({error}) => error && '1px solid #a83a3a'};
-
-  }
-`;
-
-
-export const Option = styled.div`
-  input {
-    margin-right: .2vw
-  }
-
-  &:not(:last-child) {
-    margin-right: .5vh;
-  }
-`;
-
-export const RadioLabel = styled.label`
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.2vh;
-  line-height: 3vh;
-  color: #7d7d7e;
-`;
-
-export const RadioGroup = styled.div`
-  width: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  width: 80vw;
 `;
 
-export const Label = styled.p`
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.3vh;
-  line-height: 1vh;
-  color: #000000;
-  margin: .5vh 0vh;
+export const OptionLabel = styled.label<{active: boolean}>(
+  ({active}) => `
+    color: ${active ? '#FC8404' : 'black'};
+    font-size: 3.25vh;
+    margin-left: 1.25vw;
+    margin-right: 1.25vw;
+    font-weight: bold;
+  `,
+);
+
+export const Switch = styled.div`
+  position: relative;
+  width: 48px;
+  height: 24px;
 `;
 
-export const ErrorMessage = styled.span`
-  font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1vh;
-  line-height: 2vh;
-  color: #a83a3a;
-  padding-left: 5px;
-`;
+export const Slider = styled.label<{active: boolean}>(
+  ({active}) => `
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${active ? '#D9D9D9' : '#D9D9D9'};
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  `,
+);
+
+export const Thumb = styled.span<{active: boolean}>(
+  ({active}) => `
+    position: absolute;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease-in-out;
+    transform: translateX(${active ? '24px' : '0'});
+  `,
+);

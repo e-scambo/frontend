@@ -24,6 +24,7 @@ import {ProfileLocation} from './styles';
 import {User} from 'types';
 import useUsers from 'hooks/useUsers';
 import useAuth from 'hooks/useAuth';
+import Footer from 'components/Footer';
 
 
 const Profile: React.FC = () => {
@@ -154,6 +155,7 @@ const Profile: React.FC = () => {
           </Form>
         </ContentBox>
       </JustifyContainer>
+      <Footer/>
     </PageContainer>
   );
 };

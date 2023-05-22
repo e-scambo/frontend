@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react';
-import {Container, Label, Input} from './styles';
+import {Container, Input, ErrorMessage} from './styles';
 import {useField} from '@unform/core';
-import {ErrorMessage} from './styles';
 
 interface Props {
   name: string
@@ -26,7 +25,6 @@ const InputForm: React.FC<Props> = (props) => {
   return (
     <Fragment>
       <Container error={Boolean(error)}>
-        <Label> {props.label} </Label>
         <Input
           ref={inputRef}
           type={props.type}

@@ -1,128 +1,138 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import {ReactComponent as EscamboDraw} from 'assets/img/DrawLogin.svg';
 import {ReactComponent as EscamboLogo} from 'assets/img/TESTE.svg';
 
-export const ContainerDraw = styled.div`
-@media (max-width: 426px) {
-  width: 100%;
-  
-}
-  width: 50%;
-  min-height: 60vh;
-  padding: 10vh 1vw;
+export const Principal = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-`;
-
-
-export const ContainerLoginForm = styled.div`
-  width: 50%;
-  height: 60vh;
-  padding: 10vh;
-  background: #FFFFFF;
-  border: 1px solid #F5F5F5;
-  box-sizing: border-box;
-  box-shadow: 0vh .4vh .6vh rgba(106, 106, 106, 0.12);
-  border-radius: .5vh;
-  padding: 3vh 4vh;
-  
-  @media (max-width: 426px) {
-    width: 100%;
-    height: 45vh;
-    
-  }
-`;
-
-export const LoginSection = styled.div`
-  width: 100%;
-  display: flex;
+  justify-content: center;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
 
   @media (max-width: 426px) {
     flex-direction: column-reverse;
   }
-
 `;
 
-export const StyledEscamboDraw = styled(EscamboDraw)`
-  height: 35vh;
+export const Carousel = styled.div`
+  height: 100vh;
+`;
+
+export const ContainerLoginForm = styled.div`
+  width: 50%;
+  height: 100vh;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  padding: 0vh 14vh 14vh 14vh;
+  
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+    
+  }
+`;
+
+export const ContainerFields = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div {
+    &:not(:first-child) {
+      margin-top: 2vh;
+    }
+  }
 `;
 
 export const StyledEscamboLogo = styled(EscamboLogo)`
-  height: 35%;
-  width: 35%;
+  height: 50%;
+  width: 50%;
+   
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    
+  }
 `;
 
 export const ContainerLogo = styled.div`
   width: 100%;
   height: auto;
   display: flex;
-  padding: 2vh 0vh;
   justify-content: center;
   align-items: center;
-`;
-
-export const ContainerFields = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  div {
-    &:not(:first-child) {
-      margin-top: 2vh;
-    }
-  }
-
+  padding-top: 3vh;
 `;
 
 export const Title = styled.div`
-  font-family: 'Noto Sans', sans-serif;
+    
+  justify-content: center;
+  display: flex;
+  padding: 2vh 0vh;
+  align-items: center;
+  font-family: 'Noto Sans';
   font-style: normal;
-  font-weight: bold;
-  font-size: 2.5vh;
-  line-height: 3vh;
-  color: #4e096b;
-  height: 20%;
-  margin-top: 2vh;
+  font-weight: 800;
+  font-size: 5.8vh;
+  color: #4C0C6C;
+  @media (max-width: 768px) {
+    font-size: 3.5vh;
+    padding: 1vh 0vh;
+  }
 `;
 
 export const Description = styled.div`
-  font-family: 'Noto Sans', sans-serif;
+  justify-content: center;
+  font-family: 'Noto Sans';
   font-style: normal;
-  font-weight: normal;
-  font-size: 1.5vh;
-  line-height: 2vh;
-  color: #A8A8A8;
-  width: 70%;
+  color: #727171;
+  font-weight: 400;
+  padding-bottom: 7vh;
+  font-size: 2.4vh;
   text-align: center;
-  padding: 5vh 2vw;
-  box-sizing: border-box;
+  @media (max-width: 768px) {
+    font-size: 1.8vh;
+    padding-bottom: 4vh;
+  }
+`;
+
+export const Checkbox = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const ButtonLink = styled(Link)`
   font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
   font-style: normal;
   font-weight: normal;
-  margin-top: 1.5vh;
-  font-size: 1.5vh;
-  line-height: 3vh;
-  text-decoration-line: underline;
+  margin-top: 2.2vh;
+  text-align: right;
+  font-size: 2vh;
+  line-height: 1vh;
+  text-decoration: none;
   color: #0D4A99;
-
   :hover {
     cursor: pointer;
   }
+   @media (max-width: 768px) {
+    font-size: 1.8vh;
+    padding-bottom: 4vh;
+  }
 `;
 
-export const ContainerButtons = styled.div`
+export const ContainerButton = styled.div`
+  padding-top: 4vh;
+  width: 100%;
+`;
+
+export const Button = styled.div`
   width: 100%;
   height: auto;
   display: flex;
@@ -130,25 +140,18 @@ export const ContainerButtons = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 2vw 3vw;
-
-  button {
-    &:not(:first-child) {
-      margin-top: 1vh;
-    }
-  }
 `;
 
 
 export const InfoText = styled.div`
-margin-top: 10px;
+  position: relative;
+  padding-top: 2vh;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
-  font-weight: normal;
-  font-size: 1.5vh;
-  line-height: 3vh;
-  color: #666666;
-
+  font-weight: 600;
+  font-size: 2.4vh;
+  line-height: 2vh;
+  color: #B9B7B7;
   display: inline;
 
   a {
@@ -159,14 +162,14 @@ margin-top: 10px;
 export const Redirect = styled(Link)`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
-  font-weight: normal;
-  font-size: 1.6vh;
-  line-height: 3vh;
-  color: #666666;
-  text-decoration: underline;
+  font-weight: bold;
+  font-size: 2.4vh;
+  line-height: 2vh;
+  text-decoration: none;
+  color: #4C0C6C;
   cursor: pointer;
   &:hover{
-    opacity: 0.3;
+    opacity: 0.8;
     transition: 300ms ease-in;
   }
 `;

@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   /* size */
+  position: relative;
+  flex-wrap: nowrap;
   width: 80vw;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-row-gap: 1.5vh;
+  padding-bottom: 8vh;
+
 
 
   @media (max-width: 2500px) {

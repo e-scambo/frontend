@@ -1,5 +1,7 @@
 {
-  "title": "E-TROKA",
-  "description": "E-TROKA sua nova plataforma de trocas inteligentes",
+  "title": "Esqueceu a \nsenha?",
+  "description": "Digite seu E-mail para que possamos recuperá-la",
+  "privacy": "Ao registrar-se você concorda com nossos ",
+  "privacyredirect": "termos e política de privacidade",
   "instructions": "Um link para redefinir sua senha será enviado para o e-mail cadastrado em sua conta."
 }
