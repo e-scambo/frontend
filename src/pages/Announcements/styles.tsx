@@ -5,6 +5,7 @@ export const ListOfCards = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `;
 export const FiltersBar = styled.div`
   margin: 2vh 0px;
@@ -34,6 +35,11 @@ export const Title = styled.div`
   font-weight: 800;
   font-size: 5.8vh;
   margin-bottom: 5vh;
+
+   @media (max-width: 768px) {
+    font-size: 4vh;
+    margin-bottom: 3vh;
+  }
 `;
 
 export const Description = styled.div`
@@ -49,6 +55,13 @@ export const Description = styled.div`
   padding-right: 16vh;
   padding-bottom: 10vh;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 2vh;
+    padding-left: 8vh;
+    padding-right: 8vh;
+    padding-bottom: 6vh;
+    display:none
+  }
 `;
 
 export const Logo = styled.img`
