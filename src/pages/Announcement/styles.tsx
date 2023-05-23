@@ -13,6 +13,7 @@ export const Paper = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  
 `;
 
 export const AdvertType = styled.div`
@@ -28,7 +29,7 @@ export const AdvertType = styled.div`
 
 export const ContainerLeft = styled.div`
   width: 35vw;
-
+  
   padding: 5vh 6vw;
   box-sizing: border-box;
 `;
@@ -85,4 +86,8 @@ export const DataSection = styled.div`
 export const MdFavoriteBorder = styled(FavIcon)`
   fill: #f1f1f1;
   font-size: 20px;
+`;
+
+export const Footer = styled.div`
+  margin-top: 60vh;
 `;

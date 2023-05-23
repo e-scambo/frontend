@@ -4,6 +4,7 @@ import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
 import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
+// import Footer from 'components/Footer';
 
 import {AdvertType} from './styles';
 import {DataSection} from './styles';
@@ -111,6 +112,7 @@ const Announcement: React.FC = () => {
           )}
         </ContentBox>
       </JustifyContainer>
+      {/* <Footer></Footer> */}
     </PageContainer>
   );
 };
