@@ -102,7 +102,6 @@ export const BigSection = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  border: solid;
 `;
 
 export const ColumnSection = styled.div`
