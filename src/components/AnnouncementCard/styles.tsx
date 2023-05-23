@@ -3,6 +3,7 @@ import {BiImageAlt as noImage} from 'react-icons/bi';
 
 
 export const Paper = styled.div`
+  margin: 0.5vw;
   background: #FFFFFF;
   padding: 2vh;
   border: 1.5px solid #B9B7B7;
