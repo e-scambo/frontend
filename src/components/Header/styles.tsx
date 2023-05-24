@@ -9,7 +9,7 @@ export const Container = styled.div`
   z-index: 1;
 
   width: 100vw;
-  height: 8vh;
+  height: 5vh;
 
   /* spacing */
   margin: 0;
@@ -31,16 +31,17 @@ export const StyledEscamboLogo = styled(EscamboLogo)`
 
 
 export const BoxContent = styled.div`
-  width: 60vw;
-  height: 7vh;
-  margin-left: auto;
+  width: 95vw;
+  height: 5vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
   margin-right: auto;
   display: flex;
+  justify-content: space-between;
 `;
 
 export const ContainerLogo = styled.div`
-  width: 17vw;
-  height: 50px;
+  width: 15vw;
 
   display: flex;
   flex-direction: row;
@@ -65,11 +66,11 @@ export const ContainerLogo = styled.div`
 `;
 
 export const ContainerMenus = styled.div`
-  width: 43vw;
-  height: 7vh;
+  width: 50vw;
+  height: 5vh;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 
   nav {
@@ -88,14 +89,20 @@ export const ContainerMenus = styled.div`
 `;
 
 export const NavDesktop = styled.nav`
+display: flex;
+justify-content: space-between;
+
+width: 80vw;
+
 @media (max-width: 426px) {
   display: none;
 }
 `;
+
 export const NavMobile = styled.nav`
   display: none;
   @media (max-width: 426px) {
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   background: #ffffff;
@@ -113,12 +120,12 @@ export const NavMobile = styled.nav`
 export const NavLink = styled(Link)`
 
   font-style: normal;
-  font-weight: normal;
-  font-size: 2.6vh;
+  font-weight: bold;
+  font-size: 2vh;
   line-height: 3vh;
   letter-spacing: 0.16px;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  color: #0D4A99;
+  color: #4C0C6C;
 
   text-align: center;
 
@@ -141,5 +148,48 @@ export const NavLink = styled(Link)`
     padding: 2rem;
     width: 100%;
     display: table;
+  }
+`;
+
+export const ButtonOrange = styled.button`
+  height: 5vh;
+
+  /* borders */
+  border: none;
+  border-radius: 3vw;
+
+  /* effects */
+  cursor: pointer;
+  transition-duration: 0.5s;
+
+  /* display */
+  background-color: #fc8404;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 2.3vh;
+  font-style: normal;
+  font-weight: 600;
+  color: #FFFFFF;
+
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 2vw;
+  padding-right: 2vw;
+
+  :active {
+    border: none;
+  }
+
+  :hover {
+    opacity: 0.8;
+    border: none;
+  }
+
+  transition: 0.3s;
+  @media (max-width: 768px) {
+    width: 60%;
+    height: 3.5vh;
+    font-size: 1.6vh;
+    border-radius: 3vw;
   }
 `;
