@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import useAuth from 'hooks/useAuth';
 import {useNavigate} from 'react-router-dom';
 
+import MenuOverlay from 'components/MenuOverlay';
+
 import {Container, NavDesktop} from './styles';
 import {BoxContent} from './styles';
 import {ContainerLogo} from './styles';
@@ -12,6 +14,12 @@ import {ButtonOrange} from './styles';
 import Burguer from 'components/Burguer/Burguer.js';
 import MenuMobile from 'components/MenuMobile/Menu';
 import {
+  Li,
+  A,
+  Line,
+  LoginGroup,
+  BotaoOverlay,
+  Menu,
   IconeAnuncios,
   IconeChat,
   IconeFavoritos,
@@ -24,6 +32,11 @@ const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const {signOut} = useAuth();
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!isMenuOpen);
+  }
 
   return (
     <Container>
@@ -39,11 +52,26 @@ const Header: React.FC = () => {
             <NavLink to='/chats'><IconeChat/>Chats</NavLink>
             <NavLink to='/favorites'><IconeFavoritos/>Favoritos</NavLink>
             <NavLink to='/carteira'><IconeCarteira/>Carteira</NavLink>
-            {/* <NavLink to='/profile'>Meu Perfil</NavLink> 
-            <NavLink to='/signin' onClick={() => signOut()}>Sair</NavLink> */}
+            {/*  
+             */}
           </NavDesktop>
         </ContainerMenus>
-        <ButtonOrange onClick={() => navigate('/create')}>Anunciar</ButtonOrange>
+        <LoginGroup>
+          <ButtonOrange onClick={() => navigate('/create')}>Anunciar</ButtonOrange>
+
+          <BotaoOverlay onClick={handleMenuToggle}>
+            <IconeUsuario/>Login<IconeSeta/>
+          </BotaoOverlay>
+
+          <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
+            <Menu>
+              <Li><A to='/profile'>Perfil</A></Li>
+              <Li><A to='/meus anuncios'>Seus Anúncios</A></Li>
+              <Line/>
+              <Li><A to='/signin' onClick={() => signOut()}>Log out</A></Li>
+            </Menu>
+          </MenuOverlay>
+        </LoginGroup>
       </BoxContent>
     </Container>
   );

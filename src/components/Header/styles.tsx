@@ -124,6 +124,19 @@ export const NavMobile = styled.nav`
   }
 `;
 
+export const A = styled(Link)`
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2vh;
+  line-height: 3vh;
+
+  display: flex;
+  text-justify: center;
+  
+  color: #000000;
+`;
+
 export const NavLink = styled(Link)`
   display: flex;
   font-style: normal;
@@ -202,36 +215,99 @@ export const ButtonOrange = styled.button`
 `;
 
 export const IconeAnuncios = styled(Annoucement)`
-  height: auto;
+  height: 3vh;
   width: auto;
   padding-right: 0.5em;
 `;
 
 export const IconeChat = styled(Chat)`
-  height: auto;
+  height: 3vh;
   width: auto;
   padding-right: 0.5em;
 `;
 
 export const IconeFavoritos = styled(Favorite)`
-  height: auto;
+  height: 3vh;
   width: auto;
   padding-right: 0.5em;
 `;
 
 export const IconeCarteira = styled(Wallet)`
-  height: auto;
+  height: 3vh;
   width: auto;
   padding-right: 0.5em;
 `;
 
 export const IconeUsuario = styled(User)`
-  height: auto;
+  height: 3vh;
   width: auto;
   padding-right: 0.5em;
 `;
 
 export const IconeSeta = styled(Arrow)`
-  height: auto;
+  height: 2vh;
   width: auto;
+  padding-top: 0.2em;
+  padding-left: 0.3em;
+`;
+
+export const Li = styled.li`
+  display: block;
+
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(15 / 1440)vw;
+  line-height: 20px;
+`;
+
+export const Line = styled.div`
+  border: 1px solid black;
+`;
+
+export const BotaoOverlay = styled.button`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 2vh;
+  line-height: 3vh;
+
+  :hover {
+    opacity: 0.8;
+    border: none;
+    cursor: pointer;
+  }
+
+  background-color: #ffffff;
+  border: none;
+`;
+
+export const Menu = styled.div`
+  list-style: none;
+
+  width: 12.2vw;
+  height: 6.4vw;
+  padding: 2vw;
+
+  position: absolute;
+  z-index: 1;
+  top: 9vh;
+  right: 2.5vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: solid black 1px;
+  border-radius: 0 0 0.7vw 0.7vw;
+  background-color: white;
+`;
+
+export const LoginGroup = styled.div`
+  min-width: 16vw;
+
+  display: flex;
+  justify-content: space-between;
 `;
