@@ -3,18 +3,21 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
   /* size */
   width: 100%;
-  height: 6vh;
+  height: 9vh;
+
+  /* spacing */
+  padding: 30px;
 
   /* borders */
-  border: none;
+  border: solid 2px #4C0C6C;
   box-sizing: border-box;
-  border-radius: 1vh;
+  border-radius: 15px;
 
   /* effects */
   cursor: pointer;
   transition-duration: 0.5s;
 
-  background-color: #4e096b;
+  background-color: #FBFBFB;
 
   /* display */
   display: flex;
@@ -28,7 +31,7 @@ export const StyledButton = styled.button`
   line-height: 2vh;
   font-style: normal;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #4C0C6C;
 
 
   :hover {

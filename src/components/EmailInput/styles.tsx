@@ -19,6 +19,15 @@ export const Container = styled.div<Props>`
   ${(props) => props.error && `
     border-color: #ff6961;
   `}
+
+  @media (max-width: 768px) {
+    height: 6vh;
+    padding-right: 6vh;
+    padding-left: 1vh;
+    font-size: 1.8vh;
+    line-height: 1.8vh;
+    width: 55vw;
+  }
 `;
 
 export const Input = styled.input`
@@ -35,6 +44,7 @@ export const Input = styled.input`
   color: #727171;
   border: #727171;
   outline: none;
+  caret-color: #9400c2;
 
   &:focus {
     border: none;
@@ -49,6 +59,14 @@ export const Input = styled.input`
   margin-top: auto;
   margin-bottom: auto;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    height: 6vh;
+    padding-right: 6vh;
+    padding-left: 1vh;
+    font-size: 1.8vh;
+    line-height: 1.8vh;
+    width: 50vw;
+  }
 `;
 
 export const ErrorMessage = styled.span`

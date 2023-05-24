@@ -135,7 +135,7 @@ export const ContainerMegaFileInput = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 4vh;
-  margin-top: 7.6vh;
+  margin-top: 3vh;
 `;
 
 export const ContainerFileInput = styled.div`

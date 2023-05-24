@@ -27,9 +27,9 @@ export const ContainerLoginForm = styled.div`
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
   
-  @media (max-width: 426px) {
+  @media (max-width: 768px) {
     width: 100%;
-    height: 45vh;
+    height: 100vh;
     
   }
 `;
@@ -41,6 +41,11 @@ export const ContainerTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+   @media (max-width: 768px) {
+    height: 15vh;
+    align-items: center;
+  }
 `;
 
 export const ContainerFields = styled.div`
@@ -64,6 +69,11 @@ export const Title = styled.div`
   font-size: 4vh;
   color: #4E096B;
   height: 20%;
+
+  @media (max-width: 768px) {
+    font-size: 1.5vh;
+    height: 15%;
+  }
 `;
 
 export const Description = styled.div`
@@ -76,6 +86,11 @@ export const Description = styled.div`
   text-align: left; /* adicionado */
   padding-top: 11vh;
   padding-left: 5px;
+  @media (max-width: 768px) {
+    font-size: 1.6vh;
+    height: 10%;
+    padding-top: 8vh;
+  }
 `;
 
 export const Linked = styled.a`

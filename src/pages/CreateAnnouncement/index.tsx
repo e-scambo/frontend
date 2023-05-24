@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useCallback} from 'react';
 import useUsers from 'hooks/useUsers';
 import {Form} from '@unform/web';
 import {Link} from 'react-router-dom';
@@ -32,7 +32,7 @@ import {ContainerReturnToPage} from './styles';
 import {ContainerMegaFileInput} from './styles';
 import {ContainerFileInput} from './styles';
 
-import {states} from 'locales/states-cities.json';
+import {states, stateNames} from 'locales/states-cities.json';
 import {categories} from './options.json';
 import useAuth from 'hooks/useAuth';
 import Footer from 'components/Footer';
@@ -56,42 +56,41 @@ import Footer from 'components/Footer';
 
 const CreateAnnouncement: React.FC = () => {
   const navigate = useNavigate();
-  // const [cities, setCities] = useState<string[]>([]);
+  const [cities, setCities] = useState<string[]>([]);
   const [serviceOptions, setServiceOptions] = useState<boolean>(false);
   const {createAnnouncement} = useUsers();
   const formRef = useRef<FormHandles>(null);
   const {auth} = useAuth();
   const [pictures, setPictures] = useState<File | null>(null);
+  
 
   async function handleToSubmit(data: AnnouncementForm, {reset}) {
     Yup.setLocale(translation);
-
+    console.log(data);
+    var categorySelect = "";
+    if(serviceOptions === false){
+      data.type = "product";
+      categorySelect = categories.Produto[Number(data.category)];
+    } else{ 
+      data.type = "service";
+      categorySelect = categories.Serviço[Number(data.category)];
+      data.usage_time="Serviço";
+      
+    }
+    console.log(pictures);
     try {
       if (formRef) {
         formRef.current?.setErrors({});
       }
-
-      const schema = Yup.object().shape({
-        title: Yup.string().required(),
-        city: Yup.string().required(),
-        description: Yup.string().required(),
-        state: Yup.string().required(),
-        usageTime: Yup.string(),
-        type: Yup.string().required(),
-      });
-
-      await schema.validate(data, {
-        abortEarly: false,
-      });
-
+      
       const state = states[(Number(data.state))].nome;
       const city = states[(Number(data.state))].cidades[(Number(data.city))];
-      // console.log('pic', iterator.next().value);
+      console.log('pic');
       const anuncio = await createAnnouncement(auth.user, {
         title: data.title,
         description: data.description,
         type: data.type,
-        category: categories.Serviço[Number(data.category)],
+        category: categorySelect,
         localization: `${state} - ${city}`,
         usage_time: data.usage_time,
         images: [pictures],
@@ -117,9 +116,9 @@ const CreateAnnouncement: React.FC = () => {
     }
   };
 
-  // const getCities = useCallback((stateIndex: number) => {
-  //   setCities(states[stateIndex].cidades);
-  // }, []);
+  const getCities = useCallback((stateIndex: number) => {
+    setCities(states[stateIndex].cidades);
+  }, []);
 
   const isServiceAnnouncement = (): boolean => {
     return formRef.current?.getFieldValue('type') === 'Serviço';
@@ -144,7 +143,7 @@ const CreateAnnouncement: React.FC = () => {
             <Paper>
               <RadioGroup
                 onChange={() => {
-                  setServiceOptions(isServiceAnnouncement());
+                  setServiceOptions(!serviceOptions);
                 }}
               />
               <ContainerWrapper>
@@ -162,6 +161,15 @@ const CreateAnnouncement: React.FC = () => {
                       type="text"
                       placeholder="Descrição aqui"
                     />
+                    <div style={{ display: serviceOptions ? 'none' : 'block', width:'100%' }}>
+
+                    {/* <InputForm
+                      name="localization"
+                      label="Localização"
+                      type="text"
+                      placeholder={serviceOptions? '' : 'Localização'}
+                      disabled={serviceOptions}
+                    /> */}
                     <InputForm
                       name="usage_time"
                       label="Tempo de uso"
@@ -169,6 +177,7 @@ const CreateAnnouncement: React.FC = () => {
                       placeholder={serviceOptions? '' : 'Tempo de uso'}
                       disabled={serviceOptions}
                     />
+                    </div>
                     <Select
                       name="category"
                       label="Categoria"
@@ -176,19 +185,16 @@ const CreateAnnouncement: React.FC = () => {
                       options={serviceOptions ?
                         categories['Serviço'] : categories['Produto']}
                     />
-                    {/* <Select
+                    {<><Select
                       name='state'
                       label='Estado'
                       placeholder='Selecione o estado'
                       options={stateNames}
-                      onSelect={(value) => getCities(value)}
-                    />
-                    <Select
-                      name='city'
-                      label='Cidade'
-                      placeholder='Selecione a cidade'
-                      options={cities}
-                    /> */}
+                      onSelect={(value) => getCities(value)} /><Select
+                        name='city'
+                        label='Cidade'
+                        placeholder='Selecione a cidade'
+                        options={cities} /></>}
                   </ContainerFields>
                 </ContainerLeft>
                 <ContainerRight>
@@ -200,11 +206,11 @@ const CreateAnnouncement: React.FC = () => {
                     <FileInput onFileSelect={setPictures} />
                     <FileInput onFileSelect={setPictures} />
                   </ContainerFileInput>
-                  {/* <input
+                  {/*<input
                     type="file"
                     name='images'
                     onChange={(e) => setPictures(e.target.files![0])}
-                  /> */}
+                  />*/}
                 </ContainerRight>
               </ContainerWrapper>
             </Paper>
