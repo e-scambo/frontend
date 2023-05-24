@@ -163,13 +163,13 @@ const CreateAnnouncement: React.FC = () => {
                     />
                     <div style={{ display: serviceOptions ? 'none' : 'block', width:'100%' }}>
 
-                    <InputForm
+                    {/* <InputForm
                       name="localization"
                       label="Localização"
                       type="text"
                       placeholder={serviceOptions? '' : 'Localização'}
                       disabled={serviceOptions}
-                    />
+                    /> */}
                     <InputForm
                       name="usage_time"
                       label="Tempo de uso"
