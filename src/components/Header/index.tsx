@@ -11,6 +11,14 @@ import {NavLink} from './styles';
 import {ButtonOrange} from './styles';
 import Burguer from 'components/Burguer/Burguer.js';
 import MenuMobile from 'components/MenuMobile/Menu';
+import {
+  IconeAnuncios,
+  IconeChat,
+  IconeFavoritos,
+  IconeCarteira,
+  IconeUsuario,
+  IconeSeta
+  } from './styles';
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -27,12 +35,12 @@ const Header: React.FC = () => {
         <ContainerMenus>
           <MenuMobile open={open} ></MenuMobile>
           <NavDesktop>
-            <NavLink to='/announcements'>Anúncios</NavLink>
-            <NavLink to='/chats'>Chats</NavLink>
-            <NavLink to='/favorites'>Favoritos</NavLink>
-            <NavLink to='/carteira'>Carteira</NavLink>
-            <NavLink to='/profile'>Meu Perfil</NavLink> 
-            <NavLink to='/signin' onClick={() => signOut()}>Sair</NavLink>
+            <NavLink to='/announcements'><IconeAnuncios/>Anúncios</NavLink>
+            <NavLink to='/chats'><IconeChat/>Chats</NavLink>
+            <NavLink to='/favorites'><IconeFavoritos/>Favoritos</NavLink>
+            <NavLink to='/carteira'><IconeCarteira/>Carteira</NavLink>
+            {/* <NavLink to='/profile'>Meu Perfil</NavLink> 
+            <NavLink to='/signin' onClick={() => signOut()}>Sair</NavLink> */}
           </NavDesktop>
         </ContainerMenus>
         <ButtonOrange onClick={() => navigate('/create')}>Anunciar</ButtonOrange>

@@ -2,6 +2,13 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {ReactComponent as EscamboLogo} from 'assets/img/logoHorizontal.svg';
 
+import {ReactComponent as Annoucement} from 'assets/icons/AnnoucementsIcon.svg';
+import {ReactComponent as Chat} from 'assets/icons/ChatIcon.svg';
+import {ReactComponent as Favorite} from 'assets/icons/FavoriteIcon.svg';
+import {ReactComponent as Wallet} from 'assets/icons/WalletIcon.svg';
+import {ReactComponent as User} from 'assets/icons/UserIcon.svg';
+import {ReactComponent as Arrow} from 'assets/icons/ArrowIcon.svg';
+
 export const Container = styled.div`
   position: fixed;
   top: 0;
@@ -115,10 +122,10 @@ export const NavMobile = styled.nav`
   left: 0;
   transition: transform 0.3s ease-in-out;
   }
-  `;
+`;
 
 export const NavLink = styled(Link)`
-
+  display: flex;
   font-style: normal;
   font-weight: bold;
   font-size: 2vh;
@@ -127,7 +134,7 @@ export const NavLink = styled(Link)`
   font-feature-settings: 'pnum' on, 'lnum' on;
   color: #4C0C6C;
 
-  text-align: center;
+  align-items: center;
 
   text-decoration: none;
   text-transform: none;
@@ -137,7 +144,7 @@ export const NavLink = styled(Link)`
   }
 
   &:hover {
-    border-bottom: 2px solid #F07D0B;
+    opacity: 0.8;
     transition: ease-in .1s;
   }
 
@@ -192,4 +199,39 @@ export const ButtonOrange = styled.button`
     font-size: 1.6vh;
     border-radius: 3vw;
   }
+`;
+
+export const IconeAnuncios = styled(Annoucement)`
+  height: auto;
+  width: auto;
+  padding-right: 0.5em;
+`;
+
+export const IconeChat = styled(Chat)`
+  height: auto;
+  width: auto;
+  padding-right: 0.5em;
+`;
+
+export const IconeFavoritos = styled(Favorite)`
+  height: auto;
+  width: auto;
+  padding-right: 0.5em;
+`;
+
+export const IconeCarteira = styled(Wallet)`
+  height: auto;
+  width: auto;
+  padding-right: 0.5em;
+`;
+
+export const IconeUsuario = styled(User)`
+  height: auto;
+  width: auto;
+  padding-right: 0.5em;
+`;
+
+export const IconeSeta = styled(Arrow)`
+  height: auto;
+  width: auto;
 `;
