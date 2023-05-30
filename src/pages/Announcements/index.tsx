@@ -58,7 +58,7 @@ const Announcements: React.FC = () => {
       <Header />
       <HeaderRoxo>
         <Title> {data.title} </Title>
-        <Description> {data.description} </Description>
+        
         <SearchBar
           search={search}
           setSearch={setSearch}
