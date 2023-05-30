@@ -1,7 +1,6 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import {MdFavoriteBorder} from 'pages/Announcement/styles';
-import {MdOutlineChat} from './styles';
+// import {MdFavoriteBorder} from 'pages/Announcement/styles';
 import {Localization} from './styles';
 import {Paper} from './styles';
 import {Grid} from './styles';
@@ -45,20 +44,20 @@ const AnnouncementCard: React.FC<CardProps> = (props) => {
           navigate(`/announcement/${props.id}`);
         }}>
         </Picture>
-        <Title onClick={() => {
-          navigate(`/announcement/${props.id}`);
-        }}> {props.title} </Title>
         <Localization>
           <MdOutlinePlace style={{fill: '#C6C6C6'}} fontSize={20}/>
           {props.localization}
         </Localization>
+        <Title onClick={() => {
+          navigate(`/announcement/${props.id}`);
+        }}> {props.title} </Title>
         <Description>
           {props.description}
         </Description>
         <CardActions>
-          <Button Icon={<MdFavoriteBorder />}
-            onClick={ () => favoritar() } > Favoritar </Button>
-          <Button Icon={<MdOutlineChat />}
+          {/* <Button
+            onClick={ () => favoritar() } > Favoritar </Button> */}
+          <Button
             onClick={ () => negociar() } > Negociar </Button>
         </CardActions>
       </Grid>
