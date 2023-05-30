@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const ListOfCards = styled.div`
-  width: 100%;
+  padding-right: 6.6%;
+  padding-left: 6.6%;
+  width: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: left;
 `;
+
 export const FiltersBar = styled.div`
   margin: 2vh 0px;
   width: 100%;

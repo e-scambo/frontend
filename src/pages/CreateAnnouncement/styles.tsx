@@ -180,8 +180,6 @@ export const ContainerMegaFileInput = styled.div`
   flex-direction: column;
   padding-bottom: 4vh;
   margin-top: 7.6vh;
- 
-
   @media (max-width: 768px) {
     width: 70vw;
     height: 60vh;

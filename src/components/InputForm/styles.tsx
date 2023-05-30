@@ -40,6 +40,7 @@ export const Input = styled.input`
   color: #727171;
   border: #727171;
   outline: none;
+  caret-color: #9400c2;
 
   &:focus {
     border: none;
