@@ -36,11 +36,11 @@ const SignIn: React.FC = () => {
 
   const handleToSubmit = async (data: SignInProps) => {
     await signIn(data.email, data.password);
-    if (localStorage) {
+    if (localStorage.getItem('@escambo:token')) {
       console.log(auth);
       navigate('/announcements');
     } else {
-      errorMessage('Email ou senha inválidos');
+      alert('Email ou senha inválidos');
     }
   };
 

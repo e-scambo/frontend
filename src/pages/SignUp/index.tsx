@@ -125,6 +125,8 @@ const SignUp: React.FC = () => {
       }
     } catch (err) {
       console.log(err);
+      setDoingSignUp(false);
+      alert('Erro ao criar usuário por favor tente novamente e verifique os dados inseridos');
       const validationErrors = {};
       if (err instanceof Yup.ValidationError) {
         err.inner.forEach((error) => {
@@ -135,6 +137,7 @@ const SignUp: React.FC = () => {
         });
         formRef.current?.setErrors(validationErrors);
       }
+      
       console.log(validationErrors);
     }
   };
