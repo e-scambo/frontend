@@ -18,6 +18,10 @@ export const Paper = styled.div`
   border-bottom: 2px solid #CCCCCC;
   border-left: 1px solid #CCCCCC;
   border-right: 1px solid #CCCCCC;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+
 `;
 
 export const AdvertType = styled.div`
@@ -35,6 +39,9 @@ export const ContainerLeft = styled.div`
   width: 55vw;
   box-sizing: border-box;
   align-self: flex-start;
+  @media (max-width: 800px) {
+    width: 80vw;
+  }
 `;
 
 export const ContainerRight = styled.div`
@@ -48,6 +55,9 @@ export const ContainerRight = styled.div`
   button {
     height: 4vh;
     width: 18vh;
+  }
+  @media (max-width: 800px) {
+    width: 80vw;
   }
 `;
 
@@ -102,6 +112,15 @@ export const BigSection = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 4px;
+ 
+  @media (max-width: 800px) {
+    width: 20vw;
+    img {
+      position: absolute;
+      width: 46%;
+      top: 0%;
+      height: 134px;}
+  }
 `;
 
 export const ColumnSection = styled.div`
@@ -165,13 +184,13 @@ export const ContainerButton = styled.div`
 
   button {
     height: 4vh;
-    width: 80vh;
+    width: 100%;
     margin: 0 auto;
     border-radius: 50px;
   }
 
   @media (max-width: 426px) {
-    width: 80vw;
+    width: 30vw;
     height: 100vh;
     flex-direction: column;
   }

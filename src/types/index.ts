@@ -36,7 +36,7 @@ export interface Announcement {
   localization: string,
   usage_time: string,
   images: string[] | image[] | any,
-  owner?: string | Owner
+  owner?:  Owner
 }
 
 export interface AnnouncementForm {

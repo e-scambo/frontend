@@ -4,11 +4,15 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70vw;
-  height: 19vh;
+  width: 40vw;
+  height: 60vh;
   background-color: #D9D9D9;
   cursor: pointer;
   border-radius: 7px;
+  @media (max-width: 800px) {
+    width: 40vw;
+    height: 19vh;
+  }
 `;
 
 export const Image = styled.img`
