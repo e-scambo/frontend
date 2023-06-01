@@ -49,10 +49,10 @@ const Header: React.FC = () => {
           <MenuMobile open={open} ></MenuMobile>
           <NavDesktop>
             <NavLink to='/announcements'><IconeAnuncios/>Anúncios</NavLink>
-            <NavLink to='/chats'><IconeChat/>Chats</NavLink>
+            <NavLink to='/chats'><IconeChat/>Chats (em breve)</NavLink>
             <NavLink to='/favorites'><IconeFavoritos/>Favoritos</NavLink>
-            <NavLink to='/carteira'><IconeCarteira/>Carteira</NavLink>
-            {/*  
+            
+            {/*  <NavLink to='/carteira'><IconeCarteira/>Carteira</NavLink>
              */}
           </NavDesktop>
         </ContainerMenus>
@@ -65,8 +65,8 @@ const Header: React.FC = () => {
 
           <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
             <Menu>
-              <Li><A to='/profile'>Perfil</A></Li>
-              <Li><A to='/meus anuncios'>Seus Anúncios</A></Li>
+              {/*<Li><A to='/profile'>Perfil</A></Li>
+              <Li><A to='/meus anuncios'>Seus Anúncios</A></Li>*/}
               <Line/>
               <Li><A to='/signin' onClick={() => signOut()}>Log out</A></Li>
             </Menu>

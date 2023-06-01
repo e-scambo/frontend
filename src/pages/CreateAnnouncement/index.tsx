@@ -97,6 +97,8 @@ const CreateAnnouncement: React.FC = () => {
       });
       if (anuncio?.status === 201) {
         navigate('/announcements');
+      }else{
+        alert("Erro ao criar anúncio tente novamente!");
       };
 
       // reset
@@ -137,7 +139,7 @@ const CreateAnnouncement: React.FC = () => {
                     <img src={ReturnToPage} />
                   </Link>
                 </ContainerReturnToPage>
-                  Anuncie seu produto
+                  Anuncie seu {serviceOptions ? 'serviço' : 'produto'}
                 </TitleSection>
             </TitleArea>
             <Paper>
@@ -174,7 +176,7 @@ const CreateAnnouncement: React.FC = () => {
                       name="usage_time"
                       label="Tempo de uso"
                       type="text"
-                      placeholder={serviceOptions? '' : 'Tempo de uso'}
+                      placeholder={serviceOptions? '' : 'Estado de uso (novo, usado, etc)'}
                       disabled={serviceOptions}
                     />
                     </div>
@@ -201,11 +203,11 @@ const CreateAnnouncement: React.FC = () => {
                   <ContainerMegaFileInput>
                     <FileInputBigger onFileSelect={setPictures} />
                   </ContainerMegaFileInput>
-                  <ContainerFileInput>
+                  {/*<ContainerFileInput>
                     <FileInput onFileSelect={setPictures} />
                     <FileInput onFileSelect={setPictures} />
                     <FileInput onFileSelect={setPictures} />
-                  </ContainerFileInput>
+                  </ContainerFileInput>*/}
                   {/*<input
                     type="file"
                     name='images'
@@ -216,7 +218,7 @@ const CreateAnnouncement: React.FC = () => {
             </Paper>
             <ContainerButton>
                 <Button>
-                  Publicar produto
+                  Publicar {serviceOptions ? 'serviço' : 'produto'}
                 </Button>
             </ContainerButton>
           </Form>

@@ -68,6 +68,7 @@ const SignUp: React.FC = () => {
   const {signIn, auth} = useAuth();
   const navigate = useNavigate();
   const {createUser} = useUsers();
+  const [doingSignUp, setDoingSignUp] = React.useState(false);
   const formRef = useRef<any>(null);
 
   const handleToSubmit = async (data: FormFields) => {
@@ -106,15 +107,21 @@ const SignUp: React.FC = () => {
         state: 'Paraíba',
         phone: phone,
       };
+      setDoingSignUp(true);
       const res = await createUser(newUser);
       console.log(res);
+      
       if (res?.status === 201) {
+        setDoingSignUp(false);
         console.log('Usuário criado com sucesso');
         await signIn(data.email, data.password);
         if (localStorage) {
           console.log(auth);
           navigate('/announcements');
         }
+      }else{
+        setDoingSignUp(false);
+        alert('Erro ao criar usuário por favor tente novamente e verifique os dados inseridos');
       }
     } catch (err) {
       console.log(err);
@@ -131,7 +138,16 @@ const SignUp: React.FC = () => {
       console.log(validationErrors);
     }
   };
-
+  if(doingSignUp){
+    return(
+    <Principal>
+      <ContainerLoginForm>
+        <ContainerTitle>
+            <Title><h1 className="h1 roxo1">Aguarde enquanto Fazemos seu cadastro</h1></Title>
+        </ContainerTitle>
+        </ContainerLoginForm>
+    </Principal>)
+  }
   return (
     <Principal>
       <ContainerLoginForm>
@@ -163,6 +179,7 @@ const SignUp: React.FC = () => {
              type="tel"
              placeholder="99999999999"
            />
+           <p style={{color: 'red', fontSize: '12px'}}>O número deve ser escrito sem traços ou espacos apenas os numeros do DDD e do telefone juntos</p>
             <PasswordInput
               name="password"
               label="Senha"
@@ -177,6 +194,7 @@ const SignUp: React.FC = () => {
               placeholder="Confirme sua senha"
               // {data.placeholders.password}
             />
+            <p style={{color: 'red', fontSize: '12px'}}>A senha deve conter pelo menos 1 letra maiúscula<br></br>1 caracter especial ex : ! # $ % <br></br>1 número </p>
             <ContainerButton>
             <Button
               type='submit'

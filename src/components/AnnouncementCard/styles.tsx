@@ -26,13 +26,14 @@ export const Grid = styled.div`
   grid-template-columns: 10vw 35vw;
   grid-template-rows: 3vh 3vh 1fr 1fr;
   box-sizing: border-box;
+  max-width: 280px;
 
   @media (max-width: 426px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 35vh;
+    height: 100%;
     padding-bottom: 2vh;
   }
 `;
@@ -52,8 +53,8 @@ export const Picture = styled.img`
   background-color: #F2F2F2;
   cursor: pointer;
 
-  width: auto;
-  height: 40vh;
+  width: 100%;
+  height: auto;
   object-fit: fill;
 
   display: flex;
