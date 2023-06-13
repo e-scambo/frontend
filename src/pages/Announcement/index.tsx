@@ -127,19 +127,19 @@ const Announcement: React.FC = () => {
                     </Section>
                   </ContainerSection>
                 </SectionWrapper>
-                  <ContainerButton style={{
-                    
-                  }}>
-                    <Button  onClick={ () => negociar() }>
-                      Negociar
-                    </Button>
-                    <ButtonGhost
-                     onClick={ () => favoritar() } 
-                      Icon={<MdFavoriteBorder/>}
-                    > Favoritar
-                    </ButtonGhost>
-                   { favoritado && <p style={{color: 'green'}}>Favoritado com sucesso!</p>}
-                  </ContainerButton>
+                <ContainerButton style={{
+                  
+                }}>
+                  <Button  onClick={ () => negociar() }>
+                    Negociar
+                  </Button>
+                  <ButtonGhost
+                    onClick={ () => favoritar() } 
+                    Icon={<MdFavoriteBorder/>}
+                  > Favoritar
+                  </ButtonGhost>
+                  { favoritado && <p style={{color: 'green'}}>Favoritado com sucesso!</p>}
+                </ContainerButton>
               </ContainerRight>
             </Paper>
           )}

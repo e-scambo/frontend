@@ -183,8 +183,8 @@ export const ContainerButton = styled.div`
   margin: auto;
 
   button {
-    height: 4vh;
-    width: 100%;
+    height: 11vh;
+    width: 15vw;;
     margin: 0 auto;
     border-radius: 50px;
   }
