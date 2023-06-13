@@ -107,8 +107,7 @@ export const SmallSection = styled.div`
 `;
 
 export const BigSection = styled.div`
-  width: 32vw;
-  height: 80vh;
+  width: 24vw;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
