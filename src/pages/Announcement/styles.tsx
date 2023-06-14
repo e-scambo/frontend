@@ -66,7 +66,7 @@ export const ContainerSection = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  padding-left: 3.5vw;
+  padding-left: 2vw;
 `;
 
 export const SectionWrapper = styled.div`
@@ -170,18 +170,17 @@ export const DataSectionLocalization = styled.div`
   margin: 1vh 0vh;
 `;
 
-export const ContainerButton = styled.div`
-  width: 30vw;
+export const ContainerButtons = styled.div`
+  width: 32vw;
   background: #FFFFFF;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   flex-direction: row;
   padding-top: 4.7vh;
-  gap: 1rem;
   margin: auto;
-
-  button {
+  
+   button {
     height: 11vh;
     width: 15vw;;
     margin: 0 auto;
@@ -194,6 +193,27 @@ export const ContainerButton = styled.div`
     flex-direction: column;
   }
 }
+`;
+
+export const ContainerNormalButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 1vw;
+`;
+
+export const ContainerGhostButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+`;
+
+export const SuccessMessage = styled.p`
+  color: green;
+  position: absolute;
+  top: 10vh; /* Defina o valor adequado de acordo com a necessidade */
+  width: 100%;
+  text-align: center;
 `;
 
 

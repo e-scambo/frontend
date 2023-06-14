@@ -143,7 +143,7 @@ const SignUp: React.FC = () => {
     <Principal>
       <ContainerLoginForm>
         <ContainerTitle>
-            <Title><h1 className="h1 roxo1">Aguarde enquanto Fazemos seu cadastro</h1></Title>
+            <Title><h1 className="h1 roxo1">Aguarde enquanto fazemos seu cadastro</h1></Title>
         </ContainerTitle>
         </ContainerLoginForm>
     </Principal>)

@@ -22,7 +22,10 @@ import {TitleSection} from './styles';
 import {MdFavoriteBorder} from './styles';
 import {ContainerLeft} from './styles';
 import {ContainerRight} from './styles';
-import {ContainerButton} from './styles';
+import {ContainerButtons} from './styles';
+import {ContainerNormalButton} from './styles';
+import {ContainerGhostButton} from './styles';
+import {SuccessMessage} from './styles';
 
 import ProductImages from 'components/ProductImages';
 import Button from 'components/Button';
@@ -127,19 +130,23 @@ const Announcement: React.FC = () => {
                     </Section>
                   </ContainerSection>
                 </SectionWrapper>
-                <ContainerButton style={{
+                <ContainerButtons style={{
                   
                 }}>
-                  <Button  onClick={ () => negociar() }>
-                    Negociar
-                  </Button>
-                  <ButtonGhost
-                    onClick={ () => favoritar() } 
-                    Icon={<MdFavoriteBorder/>}
-                  > Favoritar
-                  </ButtonGhost>
-                  { favoritado && <p style={{color: 'green'}}>Favoritado com sucesso!</p>}
-                </ContainerButton>
+                  <ContainerNormalButton>
+                    <Button  onClick={ () => negociar() }>
+                      Negociar
+                    </Button>
+                  </ContainerNormalButton>
+                  <ContainerGhostButton>
+                    <ButtonGhost
+                      onClick={ () => favoritar() } 
+                      Icon={<MdFavoriteBorder/>}
+                    > Favoritar
+                    </ButtonGhost>
+                    {favoritado && <SuccessMessage>Favoritado com sucesso!</SuccessMessage>}
+                  </ContainerGhostButton>
+                </ContainerButtons>
               </ContainerRight>
             </Paper>
           )}
