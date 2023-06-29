@@ -7,7 +7,7 @@ export const TitleArea = styled.div`
   height: 15vh;
   background: #FFFFFF;
   padding-left: 10vw;
-  padding-top: 10vh;
+  padding-top: 12vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

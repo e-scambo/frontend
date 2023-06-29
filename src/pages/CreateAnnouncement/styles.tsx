@@ -170,11 +170,10 @@ export const ContainerButton = styled.div`
     }
   }
 
- 
 `;
 
 export const ContainerMegaFileInput = styled.div`
-  width: 80vw;
+  width: 50vw;
   height: 48vh;
   display: flex;
   flex-direction: column;
@@ -190,7 +189,7 @@ export const ContainerMegaFileInput = styled.div`
 `;
 
 export const ContainerFileInput = styled.div`
-  width: 28vw;
+  width: 20vw;
   height: 18vh;
   display: flex;
   flex-direction: row;
