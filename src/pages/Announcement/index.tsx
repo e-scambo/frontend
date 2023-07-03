@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
@@ -28,28 +28,45 @@ import ProductImages from 'components/ProductImages';
 import Button from 'components/Button';
 import ButtonGhost from 'components/ButtonGhost';
 import useAnnouncements from 'hooks/useAnnouncements';
+import useUsers from 'hooks/useUsers';
+import useAuth from 'hooks/useAuth';
 
 type key = 0 | 1 | 2 | 3 | 4;
 
 const Announcement: React.FC = () => {
   const {id} = useParams();
   const {announcement, fetchAnnouncementById} = useAnnouncements();
+  const {addFavorite} = useUsers();
+  const {auth} = useAuth();
+  const [favoritado, setFavoritado] = useState(false);
+  const [image, setImage] = useState<string>('');
   useEffect(() => {
     if (id) {
       fetchAnnouncementById(id);
+      imagean();
     }
+    
   }, []);
+   const imagean = ()=>{
+    console.log(announcement);
+    if(announcement?.images[0]){
+      setImage('https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname);
+    }else{
+      return 'https://etrokaapi.herokuapp.com/images/semimagem.png';
+    }
+   }
+  const favoritar = ()=>{
+    addFavorite(auth.user, {announcement: announcement?.id, owner: announcement?.owner?.id});
+    setFavoritado(true);
+  };
 
-  const images: Map<key, string> = useMemo(() => {
-    /* Adapter Images*/
-    const result: Map<key, string> = new Map();
-
-    announcement?.images.forEach((element, index) => {
-      result.set(index as key, element);
-    });
-
-    return result;
-  }, [announcement]);
+  function negociar(): any {
+    const phone = announcement?.owner?.phone.replace('(', '').replace(')', '')
+        .replace(' ', '').replace('-', '');
+    console.log(phone);
+    window.location.replace(`https://api.whatsapp.com/send?phone=55${phone}&text=ass`);
+    console.log(announcement)
+  }
 
   return (
     <PageContainer>
@@ -60,31 +77,9 @@ const Announcement: React.FC = () => {
             <Paper>
               <ContainerLeft>
                 <ImagesSection>
-                  <ColumnSection>
-                    <SmallSection>
-                      <ProductImages
-                        pictures={images}
-                        disableEditMode={true}
-                      />
-                    </SmallSection>
-                    <SmallSection>
-                      <ProductImages
-                        pictures={images}
-                        disableEditMode={true}
-                      />
-                    </SmallSection>
-                    <SmallSection>
-                      <ProductImages
-                        pictures={images}
-                        disableEditMode={true}
-                      />
-                    </SmallSection>
-                  </ColumnSection>
+                  
                   <BigSection>
-                    <ProductImages
-                      pictures={images}
-                      disableEditMode={true}
-                    />
+                    <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto"/>
                   </BigSection>
                 </ImagesSection>
               </ContainerLeft>
@@ -132,14 +127,18 @@ const Announcement: React.FC = () => {
                     </Section>
                   </ContainerSection>
                 </SectionWrapper>
-                  <ContainerButton>
-                    <Button>
+                  <ContainerButton style={{
+                    
+                  }}>
+                    <Button  onClick={ () => negociar() }>
                       Negociar
                     </Button>
                     <ButtonGhost
+                     onClick={ () => favoritar() } 
                       Icon={<MdFavoriteBorder/>}
                     > Favoritar
                     </ButtonGhost>
+                   { favoritado && <p style={{color: 'green'}}>Favoritado com sucesso!</p>}
                   </ContainerButton>
               </ContainerRight>
             </Paper>

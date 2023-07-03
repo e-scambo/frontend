@@ -19,6 +19,11 @@ export const Container = styled.div<Props>`
   ${(props) => props.error && `
     border-color: #ff6961;
   `}
+
+  @media (max-width: 768px) {
+    /* Ajuste as propriedades dimensionais e o preenchimento para dispositivos com largura máxima de 768 pixels */
+    padding: 2px;
+  }
 `;
 
 export const Input = styled.input`
@@ -50,6 +55,16 @@ export const Input = styled.input`
   margin-top: auto;
   margin-bottom: auto;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    /* Ajuste as propriedades dimensionais, de fonte e de preenchimento para dispositivos com largura máxima de 768 pixels */
+    height: 6vh;
+    padding-right: 1.2vh;
+    padding-left: 1.2vh;
+    font-size: 1.8vh;
+    line-height: 1.8vh;
+  }
+
 `;
 
 export const ErrorMessage = styled.span`
@@ -61,4 +76,12 @@ export const ErrorMessage = styled.span`
   line-height: 2vh;
   color: #a83a3a;
   padding-left: 5px;
+
+  @media (max-width: 768px) {
+    /* Ajuste as propriedades de fonte e de preenchimento para dispositivos com largura máxima de 768 pixels */
+    font-size: 1.8vh;
+    line-height: 1.8vh;
+    padding-top: 0.8vh;
+    padding-left: 3px;
+  }
 `;

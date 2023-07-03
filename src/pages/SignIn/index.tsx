@@ -51,8 +51,7 @@ const SignIn: React.FC = () => {
         <ContainerLogo>
           <StyledEscamboLogo/>
         </ContainerLogo>
-        <Title> {data.title} </Title>
-        <Description> {data.description} </Description>
+        
         <Form onSubmit={handleToSubmit}>
           <ContainerFields>
             <EmailInput

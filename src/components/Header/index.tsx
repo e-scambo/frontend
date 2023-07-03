@@ -49,10 +49,10 @@ const Header: React.FC = () => {
           <MenuMobile open={open} ></MenuMobile>
           <NavDesktop>
             <NavLink to='/announcements'><IconeAnuncios/>Anúncios</NavLink>
-            <NavLink to='/chats'><IconeChat/>Chats</NavLink>
+            <NavLink to='/chats'><IconeChat/>Chats (em breve)</NavLink>
             <NavLink to='/favorites'><IconeFavoritos/>Favoritos</NavLink>
-            <NavLink to='/carteira'><IconeCarteira/>Carteira</NavLink>
-            {/*  
+            
+            {/*  <NavLink to='/carteira'><IconeCarteira/>Carteira</NavLink>
              */}
           </NavDesktop>
         </ContainerMenus>

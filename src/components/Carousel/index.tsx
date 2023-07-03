@@ -15,17 +15,17 @@ export default function Carousel() {
   const data = [
     {
       'image': peopleTalking,
-      'title': 'LOREM IPSUM DOL SET AMEM',
+      'title': 'Conecte-se com oportunidades ilimitadas e pessoas inspiradoras',
       'text': 'Lorem ipsum dolor sit amet Nam voluptatem dolorem.',
     },
     {
       'image': peopleAnalysing,
-      'title': 'LOREM IPSUM DOL SET AMEM',
+      'title': 'Desperte a magia da troca, onde cada interação traz novas perspectivas.',
       'text': 'Lorem ipsum dolor sit amet Nam voluptatem dolorem.',
     },
     {
       'image': womanAtNotebook,
-      'title': 'LOREM IPSUM DOL SET AMEM',
+      'title': 'Cultive seu crescimento contínuo, colhendo frutos de realizações extraordinárias.',
       'text': 'Lorem ipsum dolor sit amet Nam voluptatem dolorem.',
     },
   ];
@@ -47,7 +47,7 @@ export default function Carousel() {
       <Imagem src={data[page].image} />
       <Titulo>{data[page].title}</Titulo>
       <Descricao>
-        {data[page].text}
+        
           <br/>
         {page + 1} / 3
       </Descricao>
