@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import {Form} from '@unform/web';
 import * as Yup from 'yup';
 import translation from 'locales/yup.locale.pt-br';
@@ -11,16 +12,23 @@ import Header from 'components/Header';
 import InputForm from 'components/InputForm';
 import ProfileAvatar from 'components/ProfileAvatar';
 import Button from 'components/Button';
+import ReturnToPage from 'assets/img/ReturnToPage.png';
 
 import {ContainerFields} from './styles';
 import {ContainerForm} from './styles';
 import {ContainerProfile} from './styles';
 import {StyledLink} from './styles';
 import {Paper} from './styles';
+import {TitleArea} from './styles';
+import {ContainerAvatar} from './styles';
+import {ContainerReturnToPage} from './styles';
+import {Title} from './styles';
 import {TitleSection} from './styles';
+import {StyledInputForm} from './styles'
 import {InformationSection} from './styles';
 import {ProfileName} from './styles';
 import {ProfileLocation} from './styles';
+import {VerticalLine} from './styles';
 import {User} from 'types';
 import useUsers from 'hooks/useUsers';
 import useAuth from 'hooks/useAuth';
@@ -82,79 +90,98 @@ const Profile: React.FC = () => {
   return (
     <PageContainer>
       <Header />
+      <TitleArea>
+          <Title>
+            <ContainerReturnToPage>
+            <Link to="/Announcements">
+              <img src={ReturnToPage} />
+            </Link>
+          </ContainerReturnToPage>
+            Edite seu perfil
+        </Title>
+      </TitleArea>
       <JustifyContainer thereIsHeader >
-        <ContentBox>
-          <Form
-            onSubmit={handleToSubmit}
-            ref={formRef}
-            initialData={user as Record<string, any>}
-          >
-            <Paper>
+        <Form
+          onSubmit={handleToSubmit}
+          ref={formRef}
+          initialData={user as Record<string, any>}
+        >
+          <Paper>
 
-              <ContainerForm>
+            <ContainerForm>
 
+              <TitleSection>
+                Dados Pessoais
+              </TitleSection>
+
+              <ContainerFields>
+
+                <InputForm
+                  name="name"
+                  label="Nome"
+                  type="text"
+                  placeholder="Nome de usuário"
+                />
+                <InputForm
+                  name="phone"
+                  label="Telefone"
+                  type="text"
+                  placeholder="999999999"
+                />
+                <InputForm
+                  name="city"
+                  label="Cidade"
+                  type="text"
+                  placeholder="Campina Grande - PB"
+                />
+                <InputForm
+                  name="birth"
+                  label="Data de nascimento"
+                  type="text"
+                  placeholder="Data de nascimento"
+                />
+              
+              </ContainerFields>
+            </ContainerForm>
+
+            <VerticalLine></VerticalLine>
+
+            <ContainerProfile>
+
+              <ContainerAvatar>
+                <ProfileAvatar />
+              </ContainerAvatar>
+
+              <InformationSection>
+                <ProfileName>
+                  Nome de Usuário
+                </ProfileName>
+                <ProfileLocation>
+                  Localização
+                </ProfileLocation>
                 <TitleSection>
-                  Meu Perfil
-                </TitleSection>
+                Dados de acesso
+              </TitleSection>
 
-                <ContainerFields>
-
-                  <InputForm
-                    name="name"
-                    label="Nome"
-                    type="text"
-                    placeholder="Nome de usuário"
-                    disabled={disableEditMode}
-                  />
-                  <InputForm
+              <ContainerFields>
+                <div className="input-form-container">
+                  <StyledInputForm
                     name="email"
                     label="Email"
                     type="text"
                     placeholder="seunome@email.com"
-                    disabled={disableEditMode}
                   />
-                  <InputForm
-                    name="city"
-                    label="Cidade"
-                    type="text"
-                    placeholder="Campina Grande - PB"
-                    disabled={disableEditMode}
-                  />
-                  <InputForm
-                    name="phone"
-                    label="Telefone"
-                    type="text"
-                    placeholder="83 9 0000-0000"
-                    disabled={disableEditMode}
-                  />
+                </div>
+              </ContainerFields>
 
-                  <StyledLink to='/profile'>
-                    Termos e condições de uso
-                  </StyledLink>
+              </InformationSection>
+              <Button type='submit'>
+              </Button>
+            </ContainerProfile>
 
-                </ContainerFields>
-
-              </ContainerForm>
-
-              <ContainerProfile>
-                <ProfileAvatar />
-                <InformationSection>
-                  <ProfileName>
-                    Nome de Usuário
-                  </ProfileName>
-                  <ProfileLocation>
-                    Localização
-                  </ProfileLocation>
-                </InformationSection>
-                <Button type='submit'>
-                  {disableEditMode ? 'EDITAR PERFIL' : 'SALVAR'}
-                </Button>
-              </ContainerProfile>
-
-            </Paper>
-          </Form>
-        </ContentBox>
-      </JustifyContainer>
+          </Paper>
+        </Form>
+    </JustifyContainer>
       <Footer/>
     </PageContainer>
   );
