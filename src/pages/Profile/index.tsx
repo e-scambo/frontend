@@ -10,6 +10,8 @@ import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
 import Header from 'components/Header';
 import InputForm from 'components/InputForm';
+import EmailInput from 'components/EmailInput';
+import PasswordInput from 'components/PasswordInput';
 import ProfileAvatar from 'components/ProfileAvatar';
 import Button from 'components/Button';
 import ReturnToPage from 'assets/img/ReturnToPage.png';
@@ -25,6 +27,7 @@ import {ContainerReturnToPage} from './styles';
 import {Title} from './styles';
 import {TitleSection} from './styles';
 import {StyledInputForm} from './styles'
+import {ContainerButton} from './styles';
 import {InformationSection} from './styles';
 import {ProfileName} from './styles';
 import {ProfileLocation} from './styles';
@@ -36,7 +39,8 @@ import Footer from 'components/Footer';
 
 
 const Profile: React.FC = () => {
-  const [disableEditMode, setDisableEditMode] = useState(true);
+  const [disableEditModeFields, setDisableEditModeFields] = useState(true);
+  const [disableEditModeProfile, setDisableEditModeProfile] = useState(true);
   const {user, fetchUserById} = useUsers();
   const {auth} = useAuth();
 
@@ -46,16 +50,16 @@ const Profile: React.FC = () => {
 
   const formRef = useRef<any>(null);
   async function handleToSubmit(data: User) {
-    if (disableEditMode) {
-      setDisableEditMode((prevState) => !prevState);
+    if (disableEditModeFields) {
+      setDisableEditModeFields((prevState) => !prevState);
       return;
     }
 
-    if (!disableEditMode) {
+    if (!disableEditModeFields) {
       Yup.setLocale(translation);
       try {
-        if (formRef) {
-          formRef.current?.setErrors({});
+        if (formRef.current) {
+          formRef.current.setErrors({});
         }
 
         const schema = Yup.object().shape({
@@ -68,12 +72,13 @@ const Profile: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
+
         /* TODO: Send data to Back-end */
         console.log(data);
-        setDisableEditMode((prevState) => !prevState);
+        setDisableEditModeFields((prevState) => !prevState);
       } catch (err) {
         console.log(err);
-        const validationErrors = {};
+        const validationErrors: Record<string, string> = {};
         if (err instanceof Yup.ValidationError) {
           err.inner.forEach((error) => {
             const errorPath = error.path;
@@ -81,11 +86,11 @@ const Profile: React.FC = () => {
               validationErrors[errorPath] = error.message;
             }
           });
-          formRef.current.setErrors(validationErrors);
+          formRef.current?.setErrors(validationErrors);
         }
       }
     }
-  };
+  }
 
   return (
     <PageContainer>
@@ -121,25 +126,55 @@ const Profile: React.FC = () => {
                   label="Nome"
                   type="text"
                   placeholder="Nome de usuário"
+                  disabled={disableEditModeFields}
+                />
+                <EmailInput
+                  name="email"
+                  label="Email"
+                  type="email"
+                  placeholder="Email"
+                  disabled={disableEditModeFields}
+                />
+                <PasswordInput
+                  name="password"
+                  label="Senha"
+                  type="password"
+                  placeholder="Senha"
+                  disabled={disableEditModeFields}
                 />
                 <InputForm
                   name="phone"
                   label="Telefone"
                   type="text"
                   placeholder="999999999"
+                  disabled={disableEditModeFields}
                 />
                 <InputForm
                   name="city"
                   label="Cidade"
                   type="text"
                   placeholder="Campina Grande - PB"
+                  disabled={disableEditModeFields}
                 />
                 <InputForm
                   name="birth"
-                  label="Data de nascimento"
+                  label="Nascimento"
                   type="text"
                   placeholder="Data de nascimento"
+                  disabled={disableEditModeFields}
                 />
+                <ContainerButton>
+                  <Button
+                    type="submit"
+                    onClick={() => {
+                      user && handleToSubmit(user);
+                      setDisableEditModeFields((prev) => !prev);
+                      setDisableEditModeProfile((prev) => !prev);
+                    }}
+                  >
+                    {disableEditModeFields ? 'Editar Dados' : 'Salvar'}
+                  </Button>
+                </ContainerButton>
               
               </ContainerFields>
             </ContainerForm>
@@ -159,26 +194,9 @@ const Profile: React.FC = () => {
                 <ProfileLocation>
                   Localização
                 </ProfileLocation>
-                <TitleSection>
-                Dados de acesso
-              </TitleSection>
-
-              <ContainerFields>
-                <div className="input-form-container">
-                  <StyledInputForm
-                    name="email"
-                    label="Email"
-                    type="text"
-                    placeholder="seunome@email.com"
-                  />
-                </div>
-              </ContainerFields>
-
               </InformationSection>
-              <Button type='submit'>
-              </Button>
-            </ContainerProfile>
 
+            </ContainerProfile>
           </Paper>
         </Form>
     </JustifyContainer>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useField} from '@unform/core';
-import {Container, Input, ErrorMessage, EmailIcon} from './styles';
-import emailIcon from 'assets/img/email.png';
+import {Container, Input, ErrorMessage} from './styles';
+import {Icon} from './styles';
 
 interface Props {
   name: string
@@ -32,9 +32,7 @@ const InputForm: React.FC<Props> = (props) => {
           placeholder={props.placeholder}
           disabled={props.disabled}
         />
-        <EmailIcon
-          src={emailIcon}
-        />
+      <Icon/>
       </Container>
       {error && <ErrorMessage> {error} </ErrorMessage>}
     </>

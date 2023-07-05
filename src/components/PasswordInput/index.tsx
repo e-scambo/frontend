@@ -1,7 +1,7 @@
 import React from 'react';
 import {useField} from '@unform/core';
-import {Container, Input, ErrorMessage, EyeIcon} from './styles';
-import openEye from 'assets/img/openEye.png';
+import {Container, Input, ErrorMessage} from './styles';
+import {Icon} from './styles';
 
 interface Props {
   name: string
@@ -37,9 +37,8 @@ const InputForm: React.FC<Props> = (props) => {
           placeholder={props.placeholder}
           disabled={props.disabled}
         />
-        <EyeIcon
-          src={openEye}
-          alt={showPassword ? 'Hide password' : 'Show password'}
+        <Icon
+          // alt={showPassword ? 'Hide password' : 'Show password'}
           onClick={toggleShowPassword}
         />
       </Container>

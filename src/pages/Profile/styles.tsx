@@ -7,14 +7,12 @@ export const Paper = styled.div`
   width: 75vw;
   min-height: 55vh;
   background: #FFFFFF;
-  border: 1px solid #F5F5F5;
   box-sizing: border-box;
-  box-shadow: 0rem .2rem .2vw rgba(106, 106, 106, 0.12);
-  border-radius: .5rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 10vh;
 `;
 
 export const TitleArea = styled.div`
@@ -38,8 +36,8 @@ export const TitleArea = styled.div`
 export const ContainerAvatar = styled.div`
   width: auto;
   height: auto
-  position: absolute;
-  margin-top: -29vh;
+  align-self: start;
+  padding-bottom: 5vh;
 `;
 
 export const ContainerReturnToPage = styled.div`
@@ -54,6 +52,7 @@ export const ContainerForm = styled.div`
   width: 50vw;
   padding: 3vh 6vw;
   box-sizing: border-box;
+  align-self: start;
 `;
 
 export const Title = styled.div`
@@ -72,18 +71,13 @@ export const Title = styled.div`
 
 export const ContainerProfile = styled.div`
   width: 50vw;
-  height: 55vh;
-  padding: 3vh 0vw;
+  padding: 15vh 0vw;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-
-  button {
-    height: 4vh;
-    width: 18vh;
-  }
+  align-self: flex-start;
 `;
 
 export const InformationSection = styled.section`
@@ -150,10 +144,25 @@ export const StyledInputForm = styled(InputForm)`
   width: 100%;
 `;
 
+export const ContainerButton = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: 20vh;
+    margin-top: 8vh;
+    
+  }
+`;
+
 export const VerticalLine = styled.div`
   align-self: flex-start;
   width: 1px;
-  height: 75vh;
+  height: 87vh;
   background-color: #B9B7B7;
 `;
 
