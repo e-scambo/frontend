@@ -3,12 +3,15 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
   /* size */
   width: 100%;
-  height: 6vh;
+  height: 9vh;
+
+  /* spacing */
+  padding: 30px;
 
   /* borders */
   border: none;
   box-sizing: border-box;
-  border-radius: 1vh;
+  border-radius: 15px;
 
   /* effects */
   cursor: pointer;
