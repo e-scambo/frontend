@@ -10,6 +10,9 @@ export const Paper = styled.div`
   border: 1.5px solid #B9B7B7;
   border-radius: 8px;
   min-height: 16vh;
+  &:not(:last-child) {
+    margin-bottom: 1.5vh;
+  }
   @media (max-width: 426px) {
     width: 70vw;
   }
@@ -51,7 +54,7 @@ export const Picture = styled.img`
   cursor: pointer;
 
   width: 100%;
-  height: 350px;
+  height: auto;
   object-fit: fill;
 
   display: flex;
@@ -107,6 +110,24 @@ export const Description = styled.p`
   white-space: normal;
   text-overflow: ellipsis;
   word-break: break-word;
+`;
+
+export const CardActions = styled.div`
+  margin-top: 2vh;
+  justify-self: start;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+
+  button {
+    width: 20vw;
+  }
+
+  @media (max-width: 426px) {
+    button {
+      width: 25vw;
+    }
+  }
 `;
 
 export const BiImageAlt = styled(noImage)`
