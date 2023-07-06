@@ -65,8 +65,8 @@ const Header: React.FC = () => {
 
           <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
             <Menu>
-              {/*<Li><A to='/profile'>Perfil</A></Li>
-              <Li><A to='/meus anuncios'>Seus Anúncios</A></Li>*/}
+              <Li><A to='/profile'>Perfil</A></Li>
+              <Li><A to='/meus anuncios'>Seus Anúncios</A></Li>
               <Line/>
               <Li><A to='/signin' onClick={() => signOut()}>Log out</A></Li>
             </Menu>

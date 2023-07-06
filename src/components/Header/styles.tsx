@@ -263,6 +263,7 @@ export const Li = styled.li`
 
 export const Line = styled.div`
   border: 1px solid black;
+  width: 177px;
 `;
 
 export const BotaoOverlay = styled.button`
@@ -287,8 +288,6 @@ export const BotaoOverlay = styled.button`
 export const Menu = styled.div`
   list-style: none;
 
-  width: 12.2vw;
-  height: 6.4vw;
   padding: 2vw;
 
   position: absolute;
@@ -298,7 +297,7 @@ export const Menu = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 10px;
 
   border: solid black 1px;
   border-radius: 0 0 0.7vw 0.7vw;
