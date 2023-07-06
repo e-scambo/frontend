@@ -18,6 +18,7 @@ export const Paper = styled.div`
 export const Grid = styled.div`
   width: 100%;
   height: 100%;
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
   grid-template-columns: 10vw 35vw;
@@ -51,7 +52,7 @@ export const Picture = styled.img`
   cursor: pointer;
 
   width: 100%;
-  height: auto;
+  height: 350px;
   object-fit: fill;
 
   display: flex;
