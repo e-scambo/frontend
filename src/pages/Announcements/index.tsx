@@ -12,6 +12,7 @@ import Header from 'components/Header';
 import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
 import SearchBar from 'components/SearchBar';
+import Pagination from 'components/Pagination';
 // import Select from 'components/Select';
 
 import {ListOfCards} from './styles';
@@ -32,6 +33,13 @@ import Footer from 'components/Footer';
 
 const Announcements: React.FC = () => {
   // const formRef = useRef<FormHandles>(null);
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   const {announcements, fetchAnnouncements} = useAnnouncements();
   const [search, setSearch] = useState<string>('');
   const [searchResult, setSearchResult] = useState<Announcement[]>();
@@ -52,6 +60,15 @@ const Announcements: React.FC = () => {
     }
   };
 
+  const [totalPages, setTotalPages] = useState(1); // Inicialmente, assume-se uma página
+
+  useEffect(() => {
+    if (announcements) {
+      const totalComponents = search && searchResult ? searchResult.length : announcements.length;
+      const pages = Math.ceil(totalComponents / 9); // 9 componentes por página
+      setTotalPages(pages);
+    }
+  }, [announcements, search, searchResult]);
 
   return (
     <PageContainer>
@@ -105,6 +122,11 @@ const Announcements: React.FC = () => {
           </ListOfCards>
         </ContentBox>
       </JustifyContainer>
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
       <Footer/>
     </PageContainer>
   );

@@ -5,8 +5,7 @@ export const ListOfCards = styled.div`
   padding-left: 6.6%;
   width: auto;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: left;
+  flex-wrap: wrap;
 `;
 
 export const FiltersBar = styled.div`
@@ -14,7 +13,6 @@ export const FiltersBar = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: flex-end;
 
   div {
@@ -30,7 +28,6 @@ export const FiltersBar = styled.div`
 export const Title = styled.div`
   justify-content: center;
   display: flex;
-  align-items: center;
   color: #ffffff;
   font-family: 'Noto Sans';
   font-style: normal;
@@ -47,7 +44,6 @@ export const Title = styled.div`
 export const Description = styled.div`
   justify-content: center;
   display: flex;
-  align-items: center;
   color: #ffffff;
   font-family: 'Noto Sans';
   font-style: normal;
@@ -72,7 +68,6 @@ export const Logo = styled.img`
   border-radius: 15vh;
   padding: 5vh;
   display: flex;
-  align-items: center;
   background-color: #ffffff;
   position: relative;
   margin: auto;
