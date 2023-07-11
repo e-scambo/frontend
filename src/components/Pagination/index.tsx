@@ -1,6 +1,8 @@
 import React from "react";
 import { Container } from "./styles";
 import { Prev, Next, ListOfPages, Pages, Page } from "./styles";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+
 
 interface PaginationProps {
   totalPages: number;
@@ -17,7 +19,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
 		<Container>
-			<Prev>Anterior</Prev>
+			<Prev><BsArrowLeft size={24}/>Anterior</Prev>
 				<ListOfPages>
 					{pageNumbers.map((pageNumber) => (
 						<Pages
@@ -28,7 +30,7 @@ const Pagination: React.FC<PaginationProps> = ({
 						</Pages>
 					))}
 				</ListOfPages>
-			<Next>Próximo</Next>
+			<Next>Próximo<BsArrowRight size={24}/></Next>
     </Container>
   );
 };
