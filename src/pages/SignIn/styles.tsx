@@ -65,7 +65,8 @@ export const ContainerLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3vh;
+  padding-top: 5vh;
+  padding-bottom: 12vh;
 `;
 
 export const Title = styled.div`

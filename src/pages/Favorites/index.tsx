@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
 import ContentBox from 'components/JustifyContainer';
@@ -8,6 +9,11 @@ import useAuth from 'hooks/useAuth';
 import {ListOfCards} from 'pages/Announcements/styles';
 import AnnouncementCard from 'components/AnnouncementCard';
 import Footer from 'components/Footer';
+
+import {TitleArea} from './styles';
+import {TitleSection} from './styles';
+import {ContainerReturnToPage} from './styles';
+import ReturnToPage from 'assets/img/ReturnToPage.png';
 
 
 const Favorites: React.FC = () => {
@@ -22,6 +28,16 @@ const Favorites: React.FC = () => {
     <PageContainer>
       <Header />
       <JustifyContainer thereIsHeader >
+        <TitleArea>
+          <TitleSection>
+            <ContainerReturnToPage>
+            <Link to="/Announcements">
+              <img src={ReturnToPage} />
+            </Link>
+          </ContainerReturnToPage>
+            Favoritos
+          </TitleSection>
+        </TitleArea>
         <ContentBox>
           <ListOfCards>
             {announcements.map((announcement: any, index) => (

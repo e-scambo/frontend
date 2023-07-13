@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import {Form} from '@unform/web';
 import * as Yup from 'yup';
 import translation from 'locales/yup.locale.pt-br';
@@ -9,18 +10,28 @@ import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
 import Header from 'components/Header';
 import InputForm from 'components/InputForm';
+import EmailInput from 'components/EmailInput';
+import PasswordInput from 'components/PasswordInput';
 import ProfileAvatar from 'components/ProfileAvatar';
 import Button from 'components/Button';
+import ReturnToPage from 'assets/img/ReturnToPage.png';
 
 import {ContainerFields} from './styles';
 import {ContainerForm} from './styles';
 import {ContainerProfile} from './styles';
 import {StyledLink} from './styles';
 import {Paper} from './styles';
+import {TitleArea} from './styles';
+import {ContainerAvatar} from './styles';
+import {ContainerReturnToPage} from './styles';
+import {Title} from './styles';
 import {TitleSection} from './styles';
+import {StyledInputForm} from './styles'
+import {ContainerButton} from './styles';
 import {InformationSection} from './styles';
 import {ProfileName} from './styles';
 import {ProfileLocation} from './styles';
+import {VerticalLine} from './styles';
 import {User} from 'types';
 import useUsers from 'hooks/useUsers';
 import useAuth from 'hooks/useAuth';
@@ -28,7 +39,8 @@ import Footer from 'components/Footer';
 
 
 const Profile: React.FC = () => {
-  const [disableEditMode, setDisableEditMode] = useState(true);
+  const [disableEditModeFields, setDisableEditModeFields] = useState(true);
+  const [disableEditModeProfile, setDisableEditModeProfile] = useState(true);
   const {user, fetchUserById} = useUsers();
   const {auth} = useAuth();
 
@@ -38,16 +50,16 @@ const Profile: React.FC = () => {
 
   const formRef = useRef<any>(null);
   async function handleToSubmit(data: User) {
-    if (disableEditMode) {
-      setDisableEditMode((prevState) => !prevState);
+    if (disableEditModeFields) {
+      setDisableEditModeFields((prevState) => !prevState);
       return;
     }
 
-    if (!disableEditMode) {
+    if (!disableEditModeFields) {
       Yup.setLocale(translation);
       try {
-        if (formRef) {
-          formRef.current?.setErrors({});
+        if (formRef.current) {
+          formRef.current.setErrors({});
         }
 
         const schema = Yup.object().shape({
@@ -60,12 +72,13 @@ const Profile: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
+
         /* TODO: Send data to Back-end */
         console.log(data);
-        setDisableEditMode((prevState) => !prevState);
+        setDisableEditModeFields((prevState) => !prevState);
       } catch (err) {
         console.log(err);
-        const validationErrors = {};
+        const validationErrors: Record<string, string> = {};
         if (err instanceof Yup.ValidationError) {
           err.inner.forEach((error) => {
             const errorPath = error.path;
@@ -73,88 +86,120 @@ const Profile: React.FC = () => {
               validationErrors[errorPath] = error.message;
             }
           });
-          formRef.current.setErrors(validationErrors);
+          formRef.current?.setErrors(validationErrors);
         }
       }
     }
-  };
+  }
 
   return (
     <PageContainer>
       <Header />
+      <TitleArea>
+          <Title>
+            <ContainerReturnToPage>
+            <Link to="/Announcements">
+              <img src={ReturnToPage} />
+            </Link>
+          </ContainerReturnToPage>
+            Edite seu perfil
+        </Title>
+      </TitleArea>
       <JustifyContainer thereIsHeader >
-        <ContentBox>
-          <Form
-            onSubmit={handleToSubmit}
-            ref={formRef}
-            initialData={user as Record<string, any>}
-          >
-            <Paper>
+        <Form
+          onSubmit={handleToSubmit}
+          ref={formRef}
+          initialData={user as Record<string, any>}
+        >
+          <Paper>
 
-              <ContainerForm>
+            <ContainerForm>
 
-                <TitleSection>
-                  Meu Perfil
-                </TitleSection>
+              <TitleSection>
+                Dados Pessoais
+              </TitleSection>
 
-                <ContainerFields>
+              <ContainerFields>
 
-                  <InputForm
-                    name="name"
-                    label="Nome"
-                    type="text"
-                    placeholder="Nome de usuário"
-                    disabled={disableEditMode}
-                  />
-                  <InputForm
-                    name="email"
-                    label="Email"
-                    type="text"
-                    placeholder="seunome@email.com"
-                    disabled={disableEditMode}
-                  />
-                  <InputForm
-                    name="city"
-                    label="Cidade"
-                    type="text"
-                    placeholder="Campina Grande - PB"
-                    disabled={disableEditMode}
-                  />
-                  <InputForm
-                    name="phone"
-                    label="Telefone"
-                    type="text"
-                    placeholder="83 9 0000-0000"
-                    disabled={disableEditMode}
-                  />
+                <InputForm
+                  name="name"
+                  label="Nome"
+                  type="text"
+                  placeholder="Nome de usuário"
+                  disabled={disableEditModeFields}
+                />
+                <EmailInput
+                  name="email"
+                  label="Email"
+                  type="email"
+                  placeholder="Email"
+                  disabled={disableEditModeFields}
+                />
+                <PasswordInput
+                  name="password"
+                  label="Senha"
+                  type="password"
+                  placeholder="Senha"
+                  disabled={disableEditModeFields}
+                />
+                <InputForm
+                  name="phone"
+                  label="Telefone"
+                  type="text"
+                  placeholder="999999999"
+                  disabled={disableEditModeFields}
+                />
+                <InputForm
+                  name="city"
+                  label="Cidade"
+                  type="text"
+                  placeholder="Campina Grande - PB"
+                  disabled={disableEditModeFields}
+                />
+                <InputForm
+                  name="birth"
+                  label="Nascimento"
+                  type="text"
+                  placeholder="Data de nascimento"
+                  disabled={disableEditModeFields}
+                />
+                <ContainerButton>
+                  <Button
+                    type="submit"
+                    onClick={() => {
+                      user && handleToSubmit(user);
+                      setDisableEditModeFields((prev) => !prev);
+                      setDisableEditModeProfile((prev) => !prev);
+                    }}
+                  >
+                    {disableEditModeFields ? 'Editar Dados' : 'Salvar'}
+                  </Button>
+                </ContainerButton>
+              
+              </ContainerFields>
+            </ContainerForm>
 
-                  <StyledLink to='/profile'>
-                    Termos e condições de uso
-                  </StyledLink>
+            <VerticalLine></VerticalLine>
 
-                </ContainerFields>
+            <ContainerProfile>
 
-              </ContainerForm>
-
-              <ContainerProfile>
+              <ContainerAvatar>
                 <ProfileAvatar />
-                <InformationSection>
-                  <ProfileName>
-                    Nome de Usuário
-                  </ProfileName>
-                  <ProfileLocation>
-                    Localização
-                  </ProfileLocation>
-                </InformationSection>
-                <Button type='submit'>
-                  {disableEditMode ? 'EDITAR PERFIL' : 'SALVAR'}
-                </Button>
-              </ContainerProfile>
+              </ContainerAvatar>
 
-            </Paper>
-          </Form>
-        </ContentBox>
-      </JustifyContainer>
+              <InformationSection>
+                <ProfileName>
+                  Nome de Usuário
+                </ProfileName>
+                <ProfileLocation>
+                  Localização
+                </ProfileLocation>
+              </InformationSection>
+
+            </ContainerProfile>
+          </Paper>
+        </Form>
+    </JustifyContainer>
       <Footer/>
     </PageContainer>
   );

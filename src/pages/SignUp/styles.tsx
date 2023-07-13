@@ -55,6 +55,7 @@ export const ContainerFields = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   div {
     &:not(:first-child) {
       margin-top: 2vh;
@@ -83,7 +84,7 @@ export const Description = styled.div`
   font-size: 2.4vh;
   color: #B9B7B7;
   height: 15%;
-  text-align: left; /* adicionado */
+  text-align: left;
   padding-top: 11vh;
   padding-left: 5px;
   @media (max-width: 768px) {
@@ -91,6 +92,14 @@ export const Description = styled.div`
     height: 10%;
     padding-top: 8vh;
   }
+`;
+
+export const Message = styled.p`
+  color: #4E096B;
+  font-size: 2vh;
+  margin-bottom: 0;
+  text-align: left;
+  align-self: flex-start;
 `;
 
 export const Linked = styled.a`
@@ -141,7 +150,8 @@ export const Redirect = styled(Link)`
 
 export const Terms = styled.div`
   position: relative;
-  padding-top: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-size: 2.2vh;
