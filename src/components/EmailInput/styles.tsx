@@ -22,12 +22,11 @@ export const Container = styled.div<Props>`
   `}
 
   @media (max-width: 768px) {
-    height: 6vh;
-    padding-right: 6vh;
-    padding-left: 1vh;
-    font-size: 1.8vh;
-    line-height: 1.8vh;
-    width: 55vw;
+    width: 80vw;
+  }
+
+  @media (max-width: 600px) {
+    width: 80vw;
   }
 `;
 
@@ -66,7 +65,7 @@ export const Input = styled.input`
     padding-left: 1vh;
     font-size: 1.8vh;
     line-height: 1.8vh;
-    width: 50vw;
+    width: 100%;
   }
 `;
 
@@ -81,7 +80,6 @@ export const ErrorMessage = styled.span`
   padding-left: 5px;
 
   @media (max-width: 768px) {
-    /* Ajuste as propriedades de fonte e de preenchimento para dispositivos com largura máxima de 768 pixels */
     font-size: 1.8vh;
     line-height: 1.8vh;
     padding-top: 0.8vh;
@@ -92,5 +90,23 @@ export const ErrorMessage = styled.span`
 export const Icon = styled(FiAtSign)`
   color: #B9B7B7;
   font-size: 5vh;
-  padding-right: 0.8vw;
+  padding-right: 0.5vw;
+
+  @media (max-width: 768px) {
+    align-items: right;
+    font-size: 3.5vh;
+    padding-right: 1.2vw;
+  }
+
+  @media (max-width: 600px) {
+    align-items: center;
+    font-size: 3.5vh;
+    padding-right: 2vw;
+  }
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  flex: 1;
 `;

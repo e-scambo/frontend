@@ -6,6 +6,7 @@ interface Props {
 }
 
 export const Container = styled.div<Props>`
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -22,12 +23,11 @@ export const Container = styled.div<Props>`
   `}
 
   @media (max-width: 768px) {
-    height: 6vh;
-    padding-right: 6vh;
-    padding-left: 1vh;
-    font-size: 1.8vh;
-    line-height: 1.8vh;
-    width: 55vw;
+    width: 80vw;
+  }
+
+  @media (max-width: 600px) {
+    width: 80vw;
   }
 `;
 
@@ -66,7 +66,7 @@ export const Input = styled.input`
     padding-left: 1vh;
     font-size: 1.8vh;
     line-height: 1.8vh;
-    width: 50vw;
+    width: 100%;
   }
 `;
 
@@ -90,8 +90,27 @@ export const ErrorMessage = styled.span`
 `;
 
 export const Icon = styled(FaRegEye)`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
   color: #B9B7B7;
   font-size: 5vh;
-  padding-right: 0.8vw;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    align-items: right;
+    font-size: 3.5vh;
+  }
+
+  @media (max-width: 600px) {
+    align-items: center;
+    font-size: 3.5vh;
+  }
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  flex: 1;
 `;

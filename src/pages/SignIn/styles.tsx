@@ -18,6 +18,9 @@ export const Principal = styled.div`
 
 export const Carousel = styled.div`
   height: 100vh;
+
+  @media (max-width: 768px) {
+    display: none;
 `;
 
 export const ContainerLoginForm = styled.div`
@@ -55,8 +58,13 @@ export const StyledEscamboLogo = styled(EscamboLogo)`
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
-    
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+  }
+
 `;
 
 export const ContainerLogo = styled.div`
@@ -114,7 +122,7 @@ export const ButtonLink = styled(Link)`
   font-style: normal;
   font-weight: normal;
   margin-top: 2.2vh;
-  text-align: right;
+  text-align: end;
   font-size: 2vh;
   line-height: 1vh;
   text-decoration: none;
@@ -122,15 +130,31 @@ export const ButtonLink = styled(Link)`
   :hover {
     cursor: pointer;
   }
-   @media (max-width: 768px) {
-    font-size: 1.8vh;
-    padding-bottom: 4vh;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    text-align: flex-end;
+    font-size: 1.5vh;
+  }
+
+  @media (max-width: 600px) {
+    width: 80vw;
+    text-align: flex-end;
+    font-size: 1.5vh;
   }
 `;
 
 export const ContainerButton = styled.div`
   padding-top: 4vh;
   width: 100%;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
+
+  @media (max-width: 600px) {
+    width: 80vw;
+  }
 `;
 
 export const Button = styled.div`
@@ -145,7 +169,6 @@ export const Button = styled.div`
 
 
 export const InfoText = styled.div`
-  position: relative;
   padding-top: 2vh;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
@@ -157,6 +180,18 @@ export const InfoText = styled.div`
 
   a {
     margin-left: .3vw;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 100vw;
+    font-size: 1.5vh;
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
+    width: 100vw;
+    font-size: 1.5vh;
   }
 `;
 
@@ -172,5 +207,13 @@ export const Redirect = styled(Link)`
   &:hover{
     opacity: 0.8;
     transition: 300ms ease-in;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5vh;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.5vh;
   }
 `;

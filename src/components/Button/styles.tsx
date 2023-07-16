@@ -40,6 +40,18 @@ export const StyledButton = styled.button`
     font-size: 1.5vh;
   line-height: 1.5vh;
   }
+
+  @media (max-width: 768px) {
+    align-self: center;
+    font-size: 1.8vh;
+    height: 6.5vh;
+  }
+
+  @media (max-width: 600px) {
+    align-self: center;
+    font-size: 1.8vh;
+    height: 6.5vh;
+  }
 `;
 
 export const ContainerGrid = styled.div`

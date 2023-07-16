@@ -153,7 +153,7 @@ const SignUp: React.FC = () => {
     <Principal>
       <ContainerLoginForm>
         <ContainerTitle>
-            <Title><h1 className="h1 roxo1">{data.title}</h1></Title>
+            <Title>{data.title}</Title>
             <Description>
             {data.description}<Linked href="/SignIn">{data.redirect}</Linked>
             </Description>
