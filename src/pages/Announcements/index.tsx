@@ -12,6 +12,7 @@ import Header from 'components/Header';
 import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
 import SearchBar from 'components/SearchBar';
+import Pagination from 'components/Pagination';
 // import Select from 'components/Select';
 
 import {ListOfCards} from './styles';
@@ -32,6 +33,14 @@ import Footer from 'components/Footer';
 
 const Announcements: React.FC = () => {
   // const formRef = useRef<FormHandles>(null);
+
+  const componentsPerPage = 9; // Quantidade de componentes por página
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   const {announcements, fetchAnnouncements} = useAnnouncements();
   const [search, setSearch] = useState<string>('');
   const [searchResult, setSearchResult] = useState<Announcement[]>();
@@ -52,6 +61,15 @@ const Announcements: React.FC = () => {
     }
   };
 
+  const [totalPages, setTotalPages] = useState(1); // Inicialmente, assume-se uma página
+
+  useEffect(() => {
+    if (announcements) {
+      const totalComponents = search && searchResult ? searchResult.length : announcements.length;
+      const pages = Math.ceil(totalComponents / componentsPerPage);
+      setTotalPages(pages);
+    }
+  }, [announcements, search, searchResult]);
 
   return (
     <PageContainer>
@@ -77,34 +95,41 @@ const Announcements: React.FC = () => {
             </FiltersBar>
           </Form> */}
           <ListOfCards>
-            {search && searchResult ?
-              searchResult.map((announcement: Announcement, index) => (
-                <AnnouncementCard
-                  key={announcement.id}
-                  id={announcement.id}
-                  title={announcement.title}
-                  description={announcement.description}
-                  image={announcement.images[0] as string}
-                  localization={announcement.localization}
-                  owner={announcement.owner}
-                />
-              )) :
-              announcements &&
-              announcements.map((announcement: Announcement, index) => (
-                <AnnouncementCard
-                  key={announcement.id}
-                  id={announcement.id}
-                  title={announcement.title}
-                  description={announcement.description}
-                  image={announcement.images[0]?.originalname as string}
-                  localization={announcement.localization}
-                  owner={announcement.owner}
-                />
-              ))
-            }
+            {search && searchResult
+              ? searchResult
+                  .slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
+                  .map((announcement: Announcement, index) => (
+                    <AnnouncementCard
+                      key={announcement.id}
+                      id={announcement.id}
+                      title={announcement.title}
+                      description={announcement.description}
+                      image={announcement.images[0] as string}
+                      localization={announcement.localization}
+                      owner={announcement.owner}
+                    />
+                  ))
+              : announcements
+                  ?.slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
+                  .map((announcement: Announcement, index) => (
+                    <AnnouncementCard
+                      key={announcement.id}
+                      id={announcement.id}
+                      title={announcement.title}
+                      description={announcement.description}
+                      image={announcement.images[0]?.originalname as string}
+                      localization={announcement.localization}
+                      owner={announcement.owner}
+                    />
+                  ))}
           </ListOfCards>
         </ContentBox>
       </JustifyContainer>
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
       <Footer/>
     </PageContainer>
   );
