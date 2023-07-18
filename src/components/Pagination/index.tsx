@@ -17,9 +17,24 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+
+  const handlePrevClick = () => {
+    if (currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+  };
+
+  const handleNextClick = () => {
+    if (currentPage < totalPages) {
+      onPageChange(currentPage + 1);
+    }
+  };
+
   return (
 		<Container>
-			<Prev><BsArrowLeft size={24}/>Anterior</Prev>
+			<Prev onClick={handlePrevClick}>
+				<BsArrowLeft size={24}/>Anterior
+			</Prev>
 				<ListOfPages>
 					{pageNumbers.map((pageNumber) => (
 						<Pages
@@ -30,7 +45,9 @@ const Pagination: React.FC<PaginationProps> = ({
 						</Pages>
 					))}
 				</ListOfPages>
-			<Next>Próximo<BsArrowRight size={24}/></Next>
+			<Next onClick={handleNextClick}>
+				Próximo<BsArrowRight size={24}/>
+			</Next>
     </Container>
   );
 };
