@@ -34,7 +34,7 @@ import Footer from 'components/Footer';
 const Announcements: React.FC = () => {
   // const formRef = useRef<FormHandles>(null);
 
-  const componentsPerPage = 9; // Quantidade de componentes por página
+  const componentsPerPage = 1; // Quantidade de componentes por página
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePageChange = (page: number) => {

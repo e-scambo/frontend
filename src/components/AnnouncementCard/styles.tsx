@@ -41,7 +41,7 @@ export const Picture = styled.img`
   background-size: cover;
   align-self: center;
   justify-self: center;
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,9 +51,9 @@ export const Picture = styled.img`
   background-color: #F2F2F2;
   cursor: pointer;
 
-  width: 100%;
-  height: 350px;
-  object-fit: fill;
+  width: 284px;
+  height: 269px;
+  object-fit: cover;
 
   display: flex;
 
