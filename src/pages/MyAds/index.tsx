@@ -1,40 +1,33 @@
-import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
 import ContentBox from 'components/JustifyContainer';
 import JustifyContainer from 'components/JustifyContainer';
-import useAnnouncements from 'hooks/useAnnouncements';
-import useAuth from 'hooks/useAuth';
-import {ListOfCards} from 'pages/Announcements/styles';
+import useMyAds from 'hooks/useMyAds';
+import { ListOfCards } from 'pages/Announcements/styles';
 import AnnouncementCard from 'components/AnnouncementCard';
 import Footer from 'components/Footer';
 
-import {TitleArea} from './styles';
-import {TitleSection} from './styles';
-import {ContainerReturnToPage} from './styles';
+import { TitleArea } from './styles';
+import { TitleSection } from './styles';
+import { ContainerReturnToPage } from './styles';
 import ReturnToPage from 'assets/img/ReturnToPage.png';
 
-
 const MyAds: React.FC = () => {
-  const {auth} = useAuth();
-  const {announcements, fetchFavorites} = useAnnouncements();
-  useEffect(() => {
-    fetchFavorites(auth.user);
-  }, []);
-
+  const { announcements, fetchMyAds } = useMyAds();
 
   return (
     <PageContainer>
       <Header />
-      <JustifyContainer thereIsHeader >
+      <JustifyContainer thereIsHeader>
         <TitleArea>
           <TitleSection>
             <ContainerReturnToPage>
-            <Link to="/Announcements">
-              <img src={ReturnToPage} />
-            </Link>
-          </ContainerReturnToPage>
+              <Link to="/Announcements">
+                <img src={ReturnToPage} />
+              </Link>
+            </ContainerReturnToPage>
             Seus anúncios
           </TitleSection>
         </TitleArea>
@@ -42,19 +35,19 @@ const MyAds: React.FC = () => {
           <ListOfCards>
             {announcements.map((announcement: any, index) => (
               <AnnouncementCard
-                key={announcement.announcement.id}
-                id={announcement.announcementid}
-                title={announcement.announcement.title}
-                description={announcement.announcement.description}
-                image={announcement.announcement.images[0] as string}
-                localization={announcement.announcement.localization}
-                owner={announcement.announcement.owner}
+                key={announcement.id}
+                id={announcement.id}
+                title={announcement.title}
+                description={announcement.description}
+                image={announcement.images[0] as string}
+                localization={announcement.localization}
+                owner={announcement.owner}
               />
             ))}
           </ListOfCards>
         </ContentBox>
       </JustifyContainer>
-      <Footer/>
+      <Footer />
     </PageContainer>
   );
 };

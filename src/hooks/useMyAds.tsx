@@ -3,7 +3,7 @@ import { Announcement } from 'types';
 import AnnouncementService from 'services/Announcement';
 
 function useMyAds() {
-  const [ads, setAds] = useState<Announcement[]>([]);
+  const [announcements, setAds] = useState<Announcement[]>([]);
   const announcementService = new AnnouncementService();
 
   async function fetchMyAds(id: string) {
@@ -16,7 +16,7 @@ function useMyAds() {
   }
 
   return {
-    ads,
+    announcements,
     fetchMyAds,
   };
 }
