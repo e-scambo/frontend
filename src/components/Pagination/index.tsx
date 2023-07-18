@@ -24,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({
 					{pageNumbers.map((pageNumber) => (
 						<Pages
 							key={pageNumber}
-							className={pageNumber === currentPage ? 'active' : ''}
+							className={pageNumber === currentPage ? 'active' : 'disable'}
 						>
 							<Page onClick={() => onPageChange(pageNumber)}>{pageNumber}</Page>
 						</Pages>

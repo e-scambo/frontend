@@ -10,15 +10,14 @@ export const Container = styled.div`
 
 	margin: 5vh 18vw 5vw 18vw;	
 
-	padding: 1vw 0vw 1vw 0vw;
+	padding-top: 1vw;
+  padding-bottom: 1vw;
 `;
 
 export const Prev = styled.button`
   border: none;
   background-color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
   color: black;
   font-size: larger;
   gap: 4px;
@@ -50,12 +49,13 @@ export const ListOfPages = styled.div`
 
 export const Pages = styled.div`
   color: #4C0C6C;
-  opacity: 0.5;
-
   :active {
-    cursor: default;
-    color: #4C0C6C;
+    opacity: 1.0;
   }
+  :disabled {
+    opacity: 0.5;
+  }
+
 `;
 
 export const Page = styled.button`

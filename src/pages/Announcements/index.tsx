@@ -34,6 +34,7 @@ import Footer from 'components/Footer';
 const Announcements: React.FC = () => {
   // const formRef = useRef<FormHandles>(null);
 
+  const componentsPerPage = 9; // Quantidade de componentes por página
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePageChange = (page: number) => {
@@ -65,7 +66,7 @@ const Announcements: React.FC = () => {
   useEffect(() => {
     if (announcements) {
       const totalComponents = search && searchResult ? searchResult.length : announcements.length;
-      const pages = Math.ceil(totalComponents / 9); // 9 componentes por página
+      const pages = Math.ceil(totalComponents / componentsPerPage);
       setTotalPages(pages);
     }
   }, [announcements, search, searchResult]);
@@ -94,31 +95,33 @@ const Announcements: React.FC = () => {
             </FiltersBar>
           </Form> */}
           <ListOfCards>
-            {search && searchResult ?
-              searchResult.map((announcement: Announcement, index) => (
-                <AnnouncementCard
-                  key={announcement.id}
-                  id={announcement.id}
-                  title={announcement.title}
-                  description={announcement.description}
-                  image={announcement.images[0] as string}
-                  localization={announcement.localization}
-                  owner={announcement.owner}
-                />
-              )) :
-              announcements &&
-              announcements.map((announcement: Announcement, index) => (
-                <AnnouncementCard
-                  key={announcement.id}
-                  id={announcement.id}
-                  title={announcement.title}
-                  description={announcement.description}
-                  image={announcement.images[0]?.originalname as string}
-                  localization={announcement.localization}
-                  owner={announcement.owner}
-                />
-              ))
-            }
+            {search && searchResult
+              ? searchResult
+                  .slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
+                  .map((announcement: Announcement, index) => (
+                    <AnnouncementCard
+                      key={announcement.id}
+                      id={announcement.id}
+                      title={announcement.title}
+                      description={announcement.description}
+                      image={announcement.images[0] as string}
+                      localization={announcement.localization}
+                      owner={announcement.owner}
+                    />
+                  ))
+              : announcements
+                  ?.slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
+                  .map((announcement: Announcement, index) => (
+                    <AnnouncementCard
+                      key={announcement.id}
+                      id={announcement.id}
+                      title={announcement.title}
+                      description={announcement.description}
+                      image={announcement.images[0]?.originalname as string}
+                      localization={announcement.localization}
+                      owner={announcement.owner}
+                    />
+                  ))}
           </ListOfCards>
         </ContentBox>
       </JustifyContainer>
