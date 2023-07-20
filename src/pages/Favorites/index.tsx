@@ -43,7 +43,7 @@ const Favorites: React.FC = () => {
             {announcements.map((announcement: any, index) => (
               <AnnouncementCard
                 key={announcement.announcement.id}
-                id={announcement.announcementid}
+                id={announcement.announcement.id}
                 title={announcement.announcement.title}
                 description={announcement.announcement.description}
                 image={announcement.announcement.images[0] as string}
