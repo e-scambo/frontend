@@ -7,31 +7,28 @@ import translation from 'locales/yup.locale.pt-br';
 
 import PageContainer from 'components/PageContainer';
 import JustifyContainer from 'components/JustifyContainer';
-import ContentBox from 'components/ContentBox';
 import Header from 'components/Header';
 import InputForm from 'components/InputForm';
 import EmailInput from 'components/EmailInput';
 import PasswordInput from 'components/PasswordInput';
 import ProfileAvatar from 'components/ProfileAvatar';
 import Button from 'components/Button';
-import ReturnToPage from 'assets/img/ReturnToPage.png';
 
 import {ContainerFields} from './styles';
 import {ContainerForm} from './styles';
 import {ContainerProfile} from './styles';
-import {StyledLink} from './styles';
 import {Paper} from './styles';
 import {TitleArea} from './styles';
 import {ContainerAvatar} from './styles';
 import {ContainerReturnToPage} from './styles';
 import {Title} from './styles';
 import {TitleSection} from './styles';
-import {StyledInputForm} from './styles'
 import {ContainerButton} from './styles';
 import {InformationSection} from './styles';
 import {ProfileName} from './styles';
 import {ProfileLocation} from './styles';
 import {VerticalLine} from './styles';
+import {ReturnToPageIcon} from './styles';
 import {User} from 'types';
 import useUsers from 'hooks/useUsers';
 import useAuth from 'hooks/useAuth';
@@ -99,7 +96,7 @@ const Profile: React.FC = () => {
           <Title>
             <ContainerReturnToPage>
             <Link to="/Announcements">
-              <img src={ReturnToPage} />
+              <ReturnToPageIcon />
             </Link>
           </ContainerReturnToPage>
             Edite seu perfil
