@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {IoChevronBack} from 'react-icons/io5';
 
 export const TitleArea = styled.div`
   width: 40vw;
@@ -8,6 +9,7 @@ export const TitleArea = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-top: 10vh;
 
   @media (max-width: 768px) {
     width: 80vw;
@@ -33,6 +35,7 @@ export const Paper = styled.div`
     flex-direction: column;
   }
 `;
+
 export const ContainerLeft = styled.div`
   width: 40vw;
   padding: 5vh 6vw;
@@ -60,20 +63,27 @@ export const TitleSection = styled.div`
 
 export const ContainerReturnToPage = styled.div`
   padding-right: 2vw;
+  padding-top: 0.5vh;
 
   @media (max-width: 768px) {
     padding-right: 1vw;
   }
 `;
 
-export const StyledReturnToPage = styled.img`
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
+export const ReturnToPageIcon = styled(IoChevronBack)`
+  color: #000;
+  font-size: 5vh;
 
   @media (max-width: 768px) {
-    height: 80%;
-    width: 80%;
+    align-items: right;
+    font-size: 3.5vh;
+    padding-right: 1.2vw;
+  }
+
+  @media (max-width: 600px) {
+    align-items: center;
+    font-size: 3.5vh;
+    padding-right: 2vw;
   }
 `;
 

@@ -12,7 +12,7 @@ import Footer from 'components/Footer';
 import { TitleArea } from './styles';
 import { TitleSection } from './styles';
 import { ContainerReturnToPage } from './styles';
-import ReturnToPage from 'assets/img/ReturnToPage.png';
+import {ReturnToPageIcon} from './styles';
 
 const MyAds: React.FC = () => {
   const { announcements, fetchMyAds } = useMyAds();
@@ -25,7 +25,7 @@ const MyAds: React.FC = () => {
           <TitleSection>
             <ContainerReturnToPage>
               <Link to="/Announcements">
-                <img src={ReturnToPage} />
+                <ReturnToPageIcon />
               </Link>
             </ContainerReturnToPage>
             Seus anúncios
