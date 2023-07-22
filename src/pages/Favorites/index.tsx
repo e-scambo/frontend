@@ -9,6 +9,8 @@ import useAuth from 'hooks/useAuth';
 import {ListOfCards} from './styles';
 import AnnouncementCard from 'components/AnnouncementCard';
 import Footer from 'components/Footer';
+import AdsRight from 'components/AdsRight';
+import AdsLeft from 'components/AdsLeft';
 
 import {Principal} from './styles';
 import {TitleArea} from './styles';
@@ -29,6 +31,7 @@ const Favorites: React.FC = () => {
     <PageContainer>
       <Header />
       <JustifyContainer thereIsHeader >
+        <AdsLeft></AdsLeft>
         <Principal>
           <TitleArea>
               <TitleSection>
@@ -54,6 +57,7 @@ const Favorites: React.FC = () => {
             ))}
           </ListOfCards>
         </Principal>
+        <AdsRight></AdsRight>
       </JustifyContainer>
       <Footer/>
     </PageContainer>

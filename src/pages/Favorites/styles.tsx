@@ -5,6 +5,7 @@ export const Principal = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  border: solid;
 `;
 
 export const TitleArea = styled.div`
