@@ -12,7 +12,7 @@ export const Paper = styled.div`
   flex-direction: row;
   justify-content: center;
   margin-bottom: 9vh;
-  padding-top: 2vh;
+  margin-top: 12vh;
   align-items: center;
 
   border-bottom: 2px solid #CCCCCC;
