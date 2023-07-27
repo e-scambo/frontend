@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import useAnnouncements from 'hooks/useAnnouncements';
 
-// import {Form} from '@unform/web';
-// import {FormHandles} from '@unform/core';
 import {rabinKarpSearch} from 'util/search';
 import {Announcement} from 'types';
 
@@ -13,9 +11,10 @@ import JustifyContainer from 'components/JustifyContainer';
 import ContentBox from 'components/ContentBox';
 import SearchBar from 'components/SearchBar';
 import Pagination from 'components/Pagination';
-// import Select from 'components/Select';
+import Ordenar from 'components/Ordenar'; 
+import { OutlineDownIcon } from './styles';
 
-import {ListOfCards} from './styles';
+import {BotaoOverlay, ListOfCards, OrdenarOverlay} from './styles';
 import HeaderRoxo from 'components/HeaderRoxo';
 import data from './data.json';
 import {Title} from './styles';
@@ -23,16 +22,9 @@ import {Description} from './styles';
 import logo from 'assets/img/Logo - Simbolo.png';
 import {Logo} from './styles';
 import Footer from 'components/Footer';
-// import {FiltersBar} from './styles';
-// import {stateNames} from 'states-cities.json';
-
-/* interface Filters {
-  state: string,
-  city: string
-} */
+import MenuOverlay from 'components/MenuOverlay';
 
 const Announcements: React.FC = () => {
-  // const formRef = useRef<FormHandles>(null);
 
   const componentsPerPage = 9; // Quantidade de componentes por página
   const [currentPage, setCurrentPage] = useState(1);
@@ -44,8 +36,6 @@ const Announcements: React.FC = () => {
   const {announcements, fetchAnnouncements} = useAnnouncements();
   const [search, setSearch] = useState<string>('');
   const [searchResult, setSearchResult] = useState<Announcement[]>();
-  // const [filters, setFilters] = useState<Filters>({} as Filters);
-  // const [cities, setCities] = useState<string[]>([]);
   useEffect(() => {
     fetchAnnouncements();
   }, []);
@@ -71,6 +61,12 @@ const Announcements: React.FC = () => {
     }
   }, [announcements, search, searchResult]);
 
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  
+  const handleMenuToggle = () => {
+    setMenuOpen(!isMenuOpen);
+  }
+
   return (
     <PageContainer>
       <Header />
@@ -88,13 +84,16 @@ const Announcements: React.FC = () => {
       </HeaderRoxo>
       <JustifyContainer thereIsHeader >
         <ContentBox>
-          {/* <Form onSubmit={() => {}} ref={formRef} >
-            <FiltersBar>
-            <Select name="state" options={[]} />
-              <Select name="city" options={[]} />
-            </FiltersBar>
-          </Form> */}
           <ListOfCards>
+            <OrdenarOverlay>
+              <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
+                <Ordenar/>
+              </MenuOverlay>
+
+              <BotaoOverlay onClick={handleMenuToggle}>
+                Ordenar por<OutlineDownIcon/>
+              </BotaoOverlay>
+            </OrdenarOverlay>
             {search && searchResult
               ? searchResult
                   .slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
