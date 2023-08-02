@@ -5,7 +5,7 @@ const SendMessage: React.FC = () => {
   const [message, setMessage] = useState('');
   const inputTextAreaRef = useRef<HTMLTextAreaElement>(null);
   const inputFileRef = useRef<HTMLInputElement>(null);
-  const placeholderText = 'Escreva sua mensagem...';
+  const placeholderText = 'Digite sua mensagem...';
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);

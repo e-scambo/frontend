@@ -11,6 +11,10 @@ export const Container = styled.div`
   margin-top: auto;
   margin-bottom: 4vh;
   position: relative;
+
+  @media (max-width: 600px) {
+    align-items: center;
+  }
 `;
 
 export const InputTextArea = styled.textarea`
@@ -22,10 +26,17 @@ export const InputTextArea = styled.textarea`
   border: none;
   resize: none;
   outline: none;
+  caret-color: #9400c2;
 
   &::placeholder {
     color: #b9b7b7;
   }
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+    margin-top: 1vh;
+  }
+
 `;
 
 export const FilesIcon = styled(AiOutlinePaperClip)`
@@ -33,6 +44,10 @@ export const FilesIcon = styled(AiOutlinePaperClip)`
   font-size: 5vh;
   cursor: pointer;
   margin-right: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 4.5vh;
+  }
 `;
 
 export const SendTextIcon = styled(FiSend)`
@@ -41,4 +56,8 @@ export const SendTextIcon = styled(FiSend)`
   cursor: pointer;
   margin-left: 10px;
   margin-top: 3px;
+
+  @media (max-width: 600px) {
+    font-size: 3.5vh;
+  }
 `;
