@@ -33,6 +33,8 @@ import {User} from 'types';
 import useUsers from 'hooks/useUsers';
 import useAuth from 'hooks/useAuth';
 import Footer from 'components/Footer';
+import AdsRight from 'components/AdsRight';
+import AdsLeft from 'components/AdsLeft';
 
 
 const Profile: React.FC = () => {
