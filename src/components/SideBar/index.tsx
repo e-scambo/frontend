@@ -27,7 +27,7 @@ const SideBar: React.FC<Props> = ({children}) => {
           <SearchInput placeholder='Pesquisar'/>
         </SearchBar>
       </Header>
-    </Container>
+     </Container>
   );
 };
 
