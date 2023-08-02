@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {ContainerReturnToPage, ReturnToPageIcon, SearchIcon, TitleSection} from './styles';
+import {ContainerReturnToPage, ReturnToPageIcon, SearchIcon, TitleSection} from './style';
 import searchIcon from 'assets/img/lupa.png';
 
 import { Link } from 'react-router-dom';
-import { Container, Header, SearchBar, SearchInput } from './styles';
+import { Container, Header, SearchBar, SearchInput } from './style';
 
 interface Props {
     children?: JSX.Element | JSX.Element[];
