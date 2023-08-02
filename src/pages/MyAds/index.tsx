@@ -8,6 +8,8 @@ import useMyAds from 'hooks/useMyAds';
 import { ListOfCards } from 'pages/Announcements/styles';
 import AnnouncementCard from 'components/AnnouncementCard';
 import Footer from 'components/Footer';
+import AdsRight from 'components/AdsRight';
+import AdsLeft from 'components/AdsLeft';
 
 import { TitleArea } from './styles';
 import { TitleSection } from './styles';

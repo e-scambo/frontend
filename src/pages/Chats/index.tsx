@@ -7,6 +7,7 @@ import Footer from 'components/Footer';
 import ChatApp from 'components/ChatApp';
 import SideBar from 'components/SideBar';
 import ChatWindow from 'components/ChatWindow';
+import SendMessage from 'components/SendMessage';
 
 const Chats: React.FC = () => {
   return (
@@ -15,7 +16,9 @@ const Chats: React.FC = () => {
       <JustifyContainer thereIsHeader >
           <ChatApp>
             <SideBar></SideBar>
-            <ChatWindow></ChatWindow>
+            <ChatWindow>
+              <SendMessage></SendMessage>
+            </ChatWindow>
           </ChatApp>
       </JustifyContainer>
       <Footer/>
