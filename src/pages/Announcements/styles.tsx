@@ -35,7 +35,8 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: 800;
   font-size: 5.8vh;
-  margin-bottom: 5vh;
+  margin-bottom: 18vh;
+  margin-top: 10vh;
 
    @media (max-width: 768px) {
     font-size: 4vh;
@@ -52,6 +53,7 @@ export const Logo = styled.img`
   background-color: #ffffff;
   position: relative;
   margin: auto;
+  margin-top: 22vh;
 `;
 
 export const BotaoOverlay = styled.button`
