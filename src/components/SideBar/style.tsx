@@ -4,8 +4,7 @@ import {IoChevronBack} from 'react-icons/io5';
 import {BiSearch} from 'react-icons/bi';
 
 export const Container = styled.div`
-  width: 30vw;
-  max-width: 30vw;
+  width: 25vw;
   height: 100vh;
   background-color: #ffffff;
   border-bottom: 1px solid #B9B7B7;
