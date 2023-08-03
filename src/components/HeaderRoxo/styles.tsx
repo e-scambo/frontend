@@ -4,11 +4,11 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   width: 100vw;
-  height: 30vh;
+  height: 52vh;
 
   /* spacing */
   margin: 0;
-  
+  justify-content: space-between;
 
   /* colors */
   background-color: #4C0C6C;

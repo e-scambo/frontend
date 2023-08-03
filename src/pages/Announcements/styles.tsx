@@ -35,32 +35,12 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: 800;
   font-size: 5.8vh;
-  margin-bottom: 5vh;
+  margin-bottom: 18vh;
+  margin-top: 10vh;
 
    @media (max-width: 768px) {
     font-size: 4vh;
     margin-bottom: 3vh;
-  }
-`;
-
-export const Description = styled.div`
-  justify-content: center;
-  display: flex;
-  color: #ffffff;
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.4vh;
-  padding-left: 16vh;
-  padding-right: 16vh;
-  padding-bottom: 10vh;
-  text-align: center;
-  @media (max-width: 768px) {
-    font-size: 2vh;
-    padding-left: 8vh;
-    padding-right: 8vh;
-    padding-bottom: 6vh;
-    display:none
   }
 `;
 
@@ -73,7 +53,7 @@ export const Logo = styled.img`
   background-color: #ffffff;
   position: relative;
   margin: auto;
-  margin-top: 6vh;
+  margin-top: 22vh;
 `;
 
 export const BotaoOverlay = styled.button`
