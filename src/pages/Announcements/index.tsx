@@ -18,7 +18,6 @@ import {BotaoOverlay, ListOfCards, OrdenarOverlay} from './styles';
 import HeaderRoxo from 'components/HeaderRoxo';
 import data from './data.json';
 import {Title} from './styles';
-import {Description} from './styles';
 import logo from 'assets/img/Logo - Simbolo.png';
 import {Logo} from './styles';
 import Footer from 'components/Footer';

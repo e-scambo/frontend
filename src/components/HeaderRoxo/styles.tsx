@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   /* spacing */
   margin: 0;
-  
+  justify-content: space-between;
 
   /* colors */
   background-color: #4C0C6C;
