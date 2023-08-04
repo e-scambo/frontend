@@ -17,7 +17,7 @@ const Chats: React.FC = () => {
           <ChatApp>
             <SideBar></SideBar>
             <ChatWindow>
-              <SendMessage></SendMessage>
+              {/* <SendMessage></SendMessage> */}
             </ChatWindow>
           </ChatApp>
       </JustifyContainer>

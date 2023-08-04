@@ -8,7 +8,8 @@ export const Container = styled.div`
   max-width: 30vw;
   height: 100vh;
   background-color: #ffffff;
-  border: 1px solid #B9B7B7;
+  border-bottom: 1px solid #B9B7B7;
+  border-top: 1px solid #B9B7B7;
 `;
 
 export const Header = styled.div`
