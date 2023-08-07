@@ -11,6 +11,7 @@ import CreateAnnouncement from 'pages/CreateAnnouncement';
 import Announcement from 'pages/Announcement';
 import Announcements from 'pages/Announcements';
 import Favorites from 'pages/Favorites';
+import MyAds from 'pages/MyAds';
 import Chats from 'pages/Chats';
 
 const Routes: React.FC = () => {
@@ -26,7 +27,8 @@ const Routes: React.FC = () => {
       <Route path="/announcement/:id" element={<Announcement/>} />
       <Route path="/announcements" element={<Announcements/>} />
       <Route path="/favorites" element={<Favorites/>} />
-      <Route path="/chats" element={ <Chats /> } />
+      <Route path="/MeusAnuncios" element={ <MyAds/> } />
+      <Route path="/chats" element={ <Chats/> } />
     </Switch>
   );
 };

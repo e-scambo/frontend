@@ -21,8 +21,11 @@ export const Container = styled.div<Props>`
   `}
 
   @media (max-width: 768px) {
-    /* Ajuste as propriedades dimensionais e o preenchimento para dispositivos com largura máxima de 768 pixels */
-    padding: 2px;
+    width: 80vw;
+  }
+
+  @media (max-width: 600px) {
+    width: 80vw;
   }
 `;
 
@@ -57,10 +60,17 @@ export const Input = styled.input`
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    /* Ajuste as propriedades dimensionais, de fonte e de preenchimento para dispositivos com largura máxima de 768 pixels */
     height: 6vh;
     padding-right: 1.2vh;
     padding-left: 1.2vh;
+    font-size: 1.8vh;
+    line-height: 1.8vh;
+  }
+
+  @media (max-width: 600px) {
+    height: 6vh;
+    padding-right: 1.6vh;
+    padding-left: 1.6vh;
     font-size: 1.8vh;
     line-height: 1.8vh;
   }

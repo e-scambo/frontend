@@ -5,8 +5,8 @@ interface Props {
 }
 
 export const Container = styled.div<Props>`
-  height: 18vh;
-  width: 18vh;
+  height: 25vh;
+  width: 25vh;
   background-color: #C6C6C6;;
   border-radius: 50%;
   border: none;
@@ -15,7 +15,7 @@ export const Container = styled.div<Props>`
   align-items: center;
 
   svg {
-    font-size: 3.5vh;
+    font-size: 6.5vh;
     fill: #ffffff;
     margin-left: auto;
     margin-right: auto;
@@ -37,9 +37,11 @@ export const Container = styled.div<Props>`
 
 
 export const InputImage = styled.input`
-  width: 18vh;
-  height: 18vh;
-  position: fixed;
+  height: 25vh;
+  width: 25vh;
+  position: absolute;
+  top: 60vh;
   opacity: 0;
   z-index: 2;
+  cursor: pointer;
 `;

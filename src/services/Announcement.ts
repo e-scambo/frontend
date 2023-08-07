@@ -34,6 +34,16 @@ class AnnouncementService extends CoreService {
     }
     return null;
   }
+
+  async getMyAds(id: string): Promise<AxiosResponse | null> {
+    try {
+      const response = await this.getApi().get(`/users/${id}/ads`);
+      return response;
+    } catch (error) {
+      //
+    }
+    return null;
+  }
 }
 
 export default AnnouncementService;

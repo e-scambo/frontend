@@ -41,6 +41,7 @@ import {ContainerLoginForm} from './styles';
 import {ContainerButton} from './styles';
 import {Title} from './styles';
 import {Description} from './styles';
+import {Message} from './styles';
 import {Linked} from './styles';
 import {Terms} from './styles';
 import {PrivacyPolicy} from './styles';
@@ -143,7 +144,7 @@ const SignUp: React.FC = () => {
     <Principal>
       <ContainerLoginForm>
         <ContainerTitle>
-            <Title><h1 className="h1 roxo1">Aguarde enquanto Fazemos seu cadastro</h1></Title>
+            <Title><h1 className="h1 roxo1">Aguarde enquanto fazemos seu cadastro</h1></Title>
         </ContainerTitle>
         </ContainerLoginForm>
     </Principal>)
@@ -152,7 +153,7 @@ const SignUp: React.FC = () => {
     <Principal>
       <ContainerLoginForm>
         <ContainerTitle>
-            <Title><h1 className="h1 roxo1">{data.title}</h1></Title>
+            <Title>{data.title}</Title>
             <Description>
             {data.description}<Linked href="/SignIn">{data.redirect}</Linked>
             </Description>
@@ -178,8 +179,10 @@ const SignUp: React.FC = () => {
              label="Telefone"
              type="tel"
              placeholder="99999999999"
-           />
-           <p style={{color: 'red', fontSize: '12px'}}>O número deve ser escrito sem traços ou espacos apenas os numeros do DDD e do telefone juntos</p>
+            />
+            <Message>
+              O número deve ser escrito sem traços e sem espaços.
+            </Message>
             <PasswordInput
               name="password"
               label="Senha"
@@ -194,7 +197,9 @@ const SignUp: React.FC = () => {
               placeholder="Confirme sua senha"
               // {data.placeholders.password}
             />
-            <p style={{color: 'red', fontSize: '12px'}}>A senha deve conter pelo menos 1 letra maiúscula<br></br>1 caracter especial ex : ! # $ % <br></br>1 número </p>
+            <Message>
+              A senha deve conter 1 letra maiúscula, 1 caractere especial (!,#,$,%) e 1 número.
+            </Message>
             <ContainerButton>
             <Button
               type='submit'
