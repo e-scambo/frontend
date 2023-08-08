@@ -17,13 +17,6 @@ export const Container = styled.div`
   }
 `;
 
-export const ContainerIcons = styled.div`
-  display: flex;
-  height: 5vh;
-  width: 3vw;
-  margin-top: auto;
-`;
-
 export const InputTextArea = styled.textarea`
   width: 100%;
   display: flex;
@@ -52,6 +45,7 @@ export const FilesIcon = styled(AiOutlinePaperClip)`
   font-size: 5vh;
   cursor: pointer;
   margin-right: 10px;
+  margin-top: auto;
 
   @media (max-width: 600px) {
     font-size: 4.5vh;
@@ -60,10 +54,10 @@ export const FilesIcon = styled(AiOutlinePaperClip)`
 
 export const SendTextIcon = styled(FiSend)`
   color: #737373;
-  font-size: 4vh;
+  font-size: 4.5vh;
   cursor: pointer;
   margin-left: 10px;
-  margin-top: 3px;
+  margin-top: auto;
 
   @media (max-width: 600px) {
     font-size: 3.5vh;

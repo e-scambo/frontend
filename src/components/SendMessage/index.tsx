@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Container, InputTextArea, FilesIcon, SendTextIcon, ContainerIcons } from './styles';
+import { Container, InputTextArea, FilesIcon, SendTextIcon } from './styles';
 
 const SendMessage: React.FC = () => {
   const [message, setMessage] = useState('');
@@ -59,7 +59,6 @@ const SendMessage: React.FC = () => {
 
   return (
     <Container>
-      <ContainerIcons>
         <FilesIcon onClick={handleAttachmentClick} />
               <input
                 type="file"
@@ -67,7 +66,6 @@ const SendMessage: React.FC = () => {
                 style={{ display: 'none' }}
                 onChange={handleFileChange}
         />
-      </ContainerIcons>
         <InputTextArea
             value={message}
             onChange={handleChange}
@@ -75,9 +73,7 @@ const SendMessage: React.FC = () => {
             placeholder={placeholderText}
             ref={inputTextAreaRef}
           />
-      <ContainerIcons>
         <SendTextIcon onClick={handleSendClick} />
-      </ContainerIcons>
     </Container>
   );
 };
