@@ -77,46 +77,44 @@ const Announcements: React.FC = () => {
           />
       </HeaderRoxo>
       <JustifyContainer thereIsHeader >
-        <ContentBox>
-          <ListOfCards>
-            <OrdenarOverlay>
-              <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
-                <Ordenar/>
-              </MenuOverlay>
+        <ListOfCards>
+          <OrdenarOverlay>
+            <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
+              <Ordenar/>
+            </MenuOverlay>
 
-              <BotaoOverlay onClick={handleMenuToggle}>
-                Ordenar por<OutlineDownIcon/>
-              </BotaoOverlay>
-            </OrdenarOverlay>
-            {search && searchResult
-              ? searchResult
-                  .slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
-                  .map((announcement: Announcement, index) => (
-                    <AnnouncementCard
-                      key={announcement.id}
-                      id={announcement.id}
-                      title={announcement.title}
-                      description={announcement.description}
-                      image={announcement.images[0] as string}
-                      localization={announcement.localization}
-                      owner={announcement.owner}
-                    />
-                  ))
-              : announcements
-                  ?.slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
-                  .map((announcement: Announcement, index) => (
-                    <AnnouncementCard
-                      key={announcement.id}
-                      id={announcement.id}
-                      title={announcement.title}
-                      description={announcement.description}
-                      image={announcement.images[0]?.originalname as string}
-                      localization={announcement.localization}
-                      owner={announcement.owner}
-                    />
-                  ))}
-          </ListOfCards>
-        </ContentBox>
+            <BotaoOverlay onClick={handleMenuToggle}>
+              Ordenar por<OutlineDownIcon/>
+            </BotaoOverlay>
+          </OrdenarOverlay>
+          {search && searchResult
+            ? searchResult
+                .slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
+                .map((announcement: Announcement, index) => (
+                  <AnnouncementCard
+                    key={announcement.id}
+                    id={announcement.id}
+                    title={announcement.title}
+                    description={announcement.description}
+                    image={announcement.images[0] as string}
+                    localization={announcement.localization}
+                    owner={announcement.owner}
+                  />
+                ))
+            : announcements
+                ?.slice((currentPage - 1) * componentsPerPage, currentPage * componentsPerPage)
+                .map((announcement: Announcement, index) => (
+                  <AnnouncementCard
+                    key={announcement.id}
+                    id={announcement.id}
+                    title={announcement.title}
+                    description={announcement.description}
+                    image={announcement.images[0]?.originalname as string}
+                    localization={announcement.localization}
+                    owner={announcement.owner}
+                  />
+                ))}
+        </ListOfCards>
       </JustifyContainer>
       <Pagination
         totalPages={totalPages}
