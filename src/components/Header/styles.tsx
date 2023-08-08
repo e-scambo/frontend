@@ -307,9 +307,9 @@ export const Menu = styled.div`
   gap: 10px;
 
   border: solid black 1px;
-  border-radius: 0 0 0.7vw 0.7vw;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
   background-color: white;
-  border: solid;
 `;
 
 export const LoginGroup = styled.div`
