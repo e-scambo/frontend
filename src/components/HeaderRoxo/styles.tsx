@@ -28,10 +28,6 @@ export const BoxContent = styled.div`
   margin-right: auto;
   display: flex;
   margin-bottom: 10vh;
-  @media (max-width: 768px) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
 `;
 
 export const ContentBox = styled.div`
