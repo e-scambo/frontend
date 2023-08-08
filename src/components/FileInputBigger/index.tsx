@@ -1,10 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {Container, Image, HiddenInput} from './styles';
 import cameraImage from 'assets/img/CameraBigger.png';
- import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-  import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
- 
 
 interface FileInputProps {
     onFileSelect: (file: File | null) => void;
