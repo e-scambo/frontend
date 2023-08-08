@@ -9,16 +9,24 @@ export const Container = styled.div`
   align-self: center;
   display: flex;
   margin-top: auto;
-  margin-bottom: 4vh;
-  position: relative;
+  margin-bottom: 13vh;
+  flex-direction: row;
 
   @media (max-width: 600px) {
     align-items: center;
   }
 `;
 
+export const ContainerIcons = styled.div`
+  display: flex;
+  height: 5vh;
+  width: 3vw;
+  margin-top: auto;
+`;
+
 export const InputTextArea = styled.textarea`
   width: 100%;
+  display: flex;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
   color: #000;
