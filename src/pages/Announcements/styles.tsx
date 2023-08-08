@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {AiOutlineDown} from 'react-icons/ai';
 
 export const ListOfCards = styled.div`
+  margin-top: 3vw;
   padding-right: 6.6%;
   padding-left: 6.6%;
   width: 67vw;
