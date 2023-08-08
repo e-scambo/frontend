@@ -5,7 +5,7 @@ import {AiOutlineDown} from 'react-icons/ai';
 export const ListOfCards = styled.div`
   padding-right: 6.6%;
   padding-left: 6.6%;
-  width: auto;
+  width: 67vw;
   display: flex;
   flex-wrap: wrap;
 `;
