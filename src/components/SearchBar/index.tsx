@@ -19,9 +19,7 @@ const SearchBar: React.FC<SearchPros> = ({
   onSearchChange}) => {
   return (
     <Container>
-      <SearchIcon
-        src={searchIcon}
-      />
+      <SearchIcon src={searchIcon} />
       <Input
         placeholder='Pesquisar' type='text'
         onChange={(e) => {
@@ -30,11 +28,10 @@ const SearchBar: React.FC<SearchPros> = ({
         }}
         value={search}>
       </Input>
-      <ButtonOrange type='submit'>
+
+      <ButtonOrange type='submit'> 
         Pesquisar
-      <ArrowIcon
-          src={arrowIcon}
-      />
+        <ArrowIcon src={arrowIcon} />
       </ButtonOrange>
     </Container>
   );

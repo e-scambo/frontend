@@ -16,14 +16,6 @@ export const Container = styled.div`
   }
 `;
 
-// export const ContainerInput = styled.div`
-//   width: 95%;
-//   height: 4vh;
-//   border-radius: .8vh;
-//   display: flex;
-//   align-items: center;
-// `;
-
 export const ButtonOrange = styled.button`
   width: 10vw;
   height: 5vh;
