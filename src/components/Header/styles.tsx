@@ -18,22 +18,18 @@ export const Container = styled.div`
   width: 100vw;
   height: 5vh;
 
-  /* spacing */
+  /* Espaçamento */
   margin: 0;
 
-  /* colors */
+  /* Cores */
   background-color: #ffffff;
   padding-top: 2vh;
   padding-bottom: 2vh;
 `;
 
 export const StyledEscamboLogo = styled(EscamboLogo)`
-  height: 10vh;
+  height: 20vh;
   width: 60%;
-  @media (max-width: 426px) {
-    width: 100%;
-    height: 50px;
-  }
 `;
 
 
@@ -63,11 +59,13 @@ export const ContainerLogo = styled.div`
   letter-spacing: 0.16px;
   color: #4c0c6c;
 
+
   svg {
     margin: 1vh;
   }
-  @media (max-width: 426px) {
-    width: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
   }
 
 `;
@@ -81,14 +79,14 @@ export const ContainerMenus = styled.div`
   align-items: center;
 
   nav {
-    margin-right: 3vw;
+    margin-right: 5vw;
   }
 
   button {
-    width: 7vw;
+    width: 5vw;
     height: 2vh;
   }
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     button {
       width: 20vw;
     }
@@ -101,26 +99,27 @@ justify-content: space-between;
 
 width: 80vw;
 
-@media (max-width: 426px) {
+@media (max-width: 768px) {
   display: none;
 }
 `;
 
 export const NavMobile = styled.nav`
   display: none;
-  @media (max-width: 426px) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #ffffff;
-  height: 100vh;
-  width: 100vw;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    text-align: left;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+
   }
 `;
 
@@ -207,10 +206,12 @@ export const ButtonOrange = styled.button`
 
   transition: 0.3s;
   @media (max-width: 768px) {
-    width: 60%;
     height: 3.5vh;
     font-size: 1.6vh;
     border-radius: 3vw;
+    display: flex;
+    align-items: center;
+    margin-right: 3vw;
   }
 `;
 
@@ -283,12 +284,18 @@ export const BotaoOverlay = styled.button`
 
   background-color: #ffffff;
   border: none;
+
+  @media (max-width: 768px) {
+    font-size: 1.8vh;
+    display: flex;
+  }
 `;
 
 export const Menu = styled.div`
   list-style: none;
 
   padding: 2vw;
+  border: solid;
 
   position: absolute;
   z-index: 1;
@@ -302,6 +309,7 @@ export const Menu = styled.div`
   border: solid black 1px;
   border-radius: 0 0 0.7vw 0.7vw;
   background-color: white;
+  border: solid;
 `;
 
 export const LoginGroup = styled.div`
@@ -309,4 +317,9 @@ export const LoginGroup = styled.div`
 
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: end;
+  }
 `;
