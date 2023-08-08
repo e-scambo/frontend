@@ -1,6 +1,10 @@
 import React, {useRef, useState} from 'react';
 import {Container, Image, HiddenInput} from './styles';
 import cameraImage from 'assets/img/CameraBigger.png';
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+  import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+ 
 
 interface FileInputProps {
     onFileSelect: (file: File | null) => void;
@@ -12,6 +16,7 @@ interface FileInputProps {
 
     const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
       const file = event.target.files?.[0] || null;
+      
       onFileSelect(file);
 
       if (file) {
@@ -34,8 +39,8 @@ interface FileInputProps {
           {selectedImage ? (
             <Image src={selectedImage} alt="Selected" />
           ) : (
-            <div onClick={handleBrowseClick}>
-                <img src={cameraImage} alt="Camera" />
+            <div >
+                <img  src={cameraImage} alt="Camera" />
             </div>
           )}
           <HiddenInput
