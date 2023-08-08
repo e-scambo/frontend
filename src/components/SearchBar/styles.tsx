@@ -8,11 +8,9 @@ export const Container = styled.div`
   align-items: center;
   position: relative;
   margin: auto;
-
   @media (max-width: 768px) {
-    width: 70%;
-    height: 8vh;
-    border-radius: 6px;
+    width: 100%;
+    height: 7vh;
   }
 `;
 
@@ -58,13 +56,10 @@ export const ButtonOrange = styled.button`
 
   transition: 0.3s;
   @media (max-width: 768px) {
-    width: 60%;
-    height: 3.5vh;
+    width: auto;
+    height: 80%;
+    border-radius: 10vw;
     font-size: 1.6vh;
-    border-radius: 3vw;
-    right: 0vw;
-    padding-left: 0vw;
-    padding-right: 0vw;
   }
 `;
 
@@ -94,11 +89,11 @@ export const Input = styled.input`
 
   box-sizing: border-box;
   @media (max-width: 768px) {
-    padding: 0vw 0vw 0vw 0vw;
+    width: 10vw;
+    height: 90%;
+    padding: 0vw 20vw 0vw 9vw;
     font-size: 2vh;
-    border-radius: 2vw;
-    padding-right: 1vw;
-    width: 45vw;
+    border-radius: 10vw;
   }
 `;
 
@@ -108,9 +103,9 @@ export const SearchIcon = styled.img`
   width: 1.8vw;
   height: 1.8vw;
   @media (max-width: 768px) {
-    left: 3vw;
-    width: 4vw;
-    height: 4vw;
+    left: 5%;
+    width: 5vw;
+    height: 5vw;
   }
 `;
 
@@ -122,9 +117,6 @@ export const ArrowIcon = styled.img`
   bottom: 14%;
 
   @media (max-width: 768px) {
-    width: 4vw;
-    height: 4vw;
-    right: 4vw;
-    bottom: 8vw;
+    display: none;
   }
 `;
