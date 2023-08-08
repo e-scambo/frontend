@@ -18,8 +18,6 @@ import {BotaoOverlay, ListOfCards, OrdenarOverlay} from './styles';
 import HeaderRoxo from 'components/HeaderRoxo';
 import data from './data.json';
 import {Title} from './styles';
-import logo from 'assets/img/Logo - Simbolo.png';
-import {Logo} from './styles';
 import Footer from 'components/Footer';
 import MenuOverlay from 'components/MenuOverlay';
 
@@ -77,9 +75,6 @@ const Announcements: React.FC = () => {
           setSearch={setSearch}
           onSearchChange={(filterBy: string) => handleWithSearch(filterBy)}
           />
-        <Logo
-          src={logo}
-        />
       </HeaderRoxo>
       <JustifyContainer thereIsHeader >
         <ContentBox>

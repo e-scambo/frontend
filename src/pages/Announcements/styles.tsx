@@ -44,18 +44,6 @@ export const Title = styled.div`
   }
 `;
 
-export const Logo = styled.img`
-  width: 15vh;
-  height: 15vh;
-  border-radius: 15vh;
-  padding: 5vh;
-  display: flex;
-  background-color: #ffffff;
-  position: relative;
-  margin: auto;
-  margin-top: 22vh;
-`;
-
 export const BotaoOverlay = styled.button`
   display: flex;
 
