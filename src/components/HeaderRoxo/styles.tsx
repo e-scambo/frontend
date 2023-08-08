@@ -4,11 +4,12 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   width: 100vw;
-  height: 30vh;
+  height: 52vh;
 
   /* spacing */
   margin: 0;
-  
+  justify-content: space-between;
+  text-align: center;
 
   /* colors */
   background-color: #4C0C6C;
@@ -28,10 +29,6 @@ export const BoxContent = styled.div`
   margin-right: auto;
   display: flex;
   margin-bottom: 10vh;
-  @media (max-width: 768px) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
 `;
 
 export const ContentBox = styled.div`
@@ -57,4 +54,16 @@ export const ContentBox = styled.div`
   @media (max-width: 768px) {
     width: 100vw;
   }
+`;
+
+export const Logo = styled.img`
+  width: 15vh;
+  height: 15vh;
+  border-radius: 15vh;
+  padding: 5vh;
+  display: flex;
+  background-color: #ffffff;
+  position: relative;
+  margin: auto;
+  margin-top: 22vh;
 `;

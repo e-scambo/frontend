@@ -6,14 +6,17 @@ import ContentBox from 'components/JustifyContainer';
 import JustifyContainer from 'components/JustifyContainer';
 import useAnnouncements from 'hooks/useAnnouncements';
 import useAuth from 'hooks/useAuth';
-import {ListOfCards} from 'pages/Announcements/styles';
+import {ListOfCards} from './styles';
 import AnnouncementCard from 'components/AnnouncementCard';
 import Footer from 'components/Footer';
+import AdsRight from 'components/AdsRight';
+import AdsLeft from 'components/AdsLeft';
 
+import {Principal} from './styles';
 import {TitleArea} from './styles';
 import {TitleSection} from './styles';
 import {ContainerReturnToPage} from './styles';
-import ReturnToPage from 'assets/img/ReturnToPage.png';
+import {ReturnToPageIcon} from './styles';
 
 
 const Favorites: React.FC = () => {
@@ -28,22 +31,23 @@ const Favorites: React.FC = () => {
     <PageContainer>
       <Header />
       <JustifyContainer thereIsHeader >
-        <TitleArea>
-          <TitleSection>
-            <ContainerReturnToPage>
-            <Link to="/Announcements">
-              <img src={ReturnToPage} />
-            </Link>
-          </ContainerReturnToPage>
-            Favoritos
-          </TitleSection>
-        </TitleArea>
-        <ContentBox>
+        <AdsLeft></AdsLeft>
+        <Principal>
+          <TitleArea>
+              <TitleSection>
+                <ContainerReturnToPage>
+                <Link to="/Announcements">
+                  <ReturnToPageIcon />
+                </Link>
+              </ContainerReturnToPage>
+                Favoritos
+              </TitleSection>
+          </TitleArea>
           <ListOfCards>
             {announcements.map((announcement: any, index) => (
               <AnnouncementCard
                 key={announcement.announcement.id}
-                id={announcement.announcementid}
+                id={announcement.announcement.id}
                 title={announcement.announcement.title}
                 description={announcement.announcement.description}
                 image={announcement.announcement.images[0] as string}
@@ -52,7 +56,8 @@ const Favorites: React.FC = () => {
               />
             ))}
           </ListOfCards>
-        </ContentBox>
+        </Principal>
+        <AdsRight></AdsRight>
       </JustifyContainer>
       <Footer/>
     </PageContainer>

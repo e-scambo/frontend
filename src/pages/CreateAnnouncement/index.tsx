@@ -15,7 +15,6 @@ import MultlineInput from 'components/MultlineInput';
 import Select from 'components/Select';
 import RadioGroup from 'components/RadioInput';
 import Button from 'components/Button';
-import ReturnToPage from 'assets/img/ReturnToPage.png';
 import FileInput from 'components/FileInput';
 import FileInputBigger from 'components/FileInputBigger';
 
@@ -30,7 +29,7 @@ import {AnnouncementForm} from 'types';
 import {ContainerButton} from './styles';
 import {ContainerReturnToPage} from './styles';
 import {ContainerMegaFileInput} from './styles';
-import {ContainerFileInput} from './styles';
+import {ReturnToPageIcon} from './styles';
 
 import {states, stateNames} from 'locales/states-cities.json';
 import {categories} from './options.json';
@@ -136,7 +135,7 @@ const CreateAnnouncement: React.FC = () => {
                 <TitleSection>
                   <ContainerReturnToPage>
                   <Link to="/Announcements">
-                    <img src={ReturnToPage} />
+                    <ReturnToPageIcon />
                   </Link>
                 </ContainerReturnToPage>
                   Anuncie seu {serviceOptions ? 'serviço' : 'produto'}

@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const Container = styled.div<Props>`
-  padding-top: ${({header}) => header ? '15vh' : '10vh' };
+  padding-top: ${({header}) => header ? '9vh' : '10vh' };
   width: 100vw;
   height: 100vh;
   display: flex;

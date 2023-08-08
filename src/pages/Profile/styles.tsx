@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {IoChevronBack} from 'react-icons/io5';
 import InputForm from 'components/InputForm';
 
 export const Paper = styled.div`
@@ -42,9 +43,27 @@ export const ContainerAvatar = styled.div`
 
 export const ContainerReturnToPage = styled.div`
   padding-right: 2vw;
+  padding-top: 0.3vh;
 
   @media (max-width: 768px) {
     padding-right: 1vw;
+  }
+`;
+
+export const ReturnToPageIcon = styled(IoChevronBack)`
+  color: #000;
+  font-size: 5vh;
+
+  @media (max-width: 768px) {
+    align-items: right;
+    font-size: 3.5vh;
+    padding-right: 1.2vw;
+  }
+
+  @media (max-width: 600px) {
+    align-items: center;
+    font-size: 3.5vh;
+    padding-right: 2vw;
   }
 `;
 

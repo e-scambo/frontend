@@ -27,7 +27,7 @@ export const ContainerLoginForm = styled.div`
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     width: 100%;
     height: 100vh;
     
@@ -59,7 +59,7 @@ export const ContainerTitle = styled.div`
   padding-top: 5vh;
   padding-bottom: 5vh;
 
-   @media (max-width: 768px) {
+   @media (max-width: 1115px) {
     display: flex;
     align-items: center;
     margin-left: 10vw;
@@ -80,10 +80,10 @@ export const Title = styled.div`
   color: #4E096B;
   text-align: left;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1115px) {
     align-self: left;
     width: 100vw;
-    font-size: 4vh;
+    font-size: 6vh;
   }
 
   @media (max-width: 600px) {
@@ -102,10 +102,10 @@ export const Description = styled.div`
   color: #B9B7B7;
   text-align: left;
   
-  @media (max-width: 1000px) {
+  @media (max-width: 1115px) {
     align-self: left;
-    width: 98vw;
-    font-size: 1.8vh;
+    width: 99vw;
+    font-size: 2vh;
   }
 
   @media (max-width: 600px) {
@@ -122,13 +122,13 @@ export const Message = styled.p`
   text-align: left;
   align-self: flex-start;
 
-  @media (max-width: 768px) {
-    align-self: center;
+  @media (max-width: 1115px) {
+    align-self: flex-start;
     width: 80vw;
-    font-size: 1.4vh;
+    font-size: 1.8vh;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     align-self: center;
     width: 80vw;
     font-size: 1.4vh;
@@ -151,7 +151,7 @@ export const ContainerButton = styled.div`
   padding-top: 7vh;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     width: 80vw;
   }
 
@@ -202,10 +202,10 @@ export const Terms = styled.div`
   color: #727171;
   display: inline-block;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     text-align: center;
     width: 90vw;
-    font-size: 1.4vh;
+    font-size: 1.8vh;
   }
 
   @media (max-width: 600px) {
@@ -232,10 +232,10 @@ export const PrivacyPolicy = styled.span`
   color: #4C0C6C;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     align-self: center;
     width: 80vw;
-    font-size: 1.4vh;
+    font-size: 1.8vh;
   }
 
   @media (max-width: 600px) {
