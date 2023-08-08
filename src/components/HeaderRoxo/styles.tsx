@@ -9,6 +9,7 @@ export const Container = styled.div`
   /* spacing */
   margin: 0;
   justify-content: space-between;
+  text-align: center;
 
   /* colors */
   background-color: #4C0C6C;
