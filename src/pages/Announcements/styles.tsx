@@ -40,7 +40,6 @@ export const Title = styled.div`
 
    @media (max-width: 768px) {
     font-size: 4vh;
-    margin-bottom: 3vh;
   }
 `;
 
