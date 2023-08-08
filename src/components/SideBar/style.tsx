@@ -62,7 +62,7 @@ export const TitleSection = styled.div`
   flex-direction: row;
 
   @media (max-width: 768px) {
-    font-size: 3vh;
+    font-size: 2.5vh;
   }
 `;
 
@@ -82,12 +82,11 @@ export const ReturnToPageIcon = styled(IoChevronBack)`
   @media (max-width: 768px) {
     align-items: right;
     font-size: 3.5vh;
-    padding-right: 1.2vw;
   }
 
   @media (max-width: 600px) {
     align-items: center;
-    font-size: 3.5vh;
-    padding-right: 2vw;
+    font-size: 3vh;
+
   }
 `;

@@ -60,6 +60,6 @@ export const SendTextIcon = styled(FiSend)`
   margin-top: auto;
 
   @media (max-width: 600px) {
-    font-size: 3.5vh;
+    font-size: 4vh;
   }
 `;
