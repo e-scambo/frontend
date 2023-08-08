@@ -18,9 +18,6 @@ export const Principal = styled.div`
 
 export const Carousel = styled.div`
   height: 100vh;
-
-  @media (max-width: 768px) {
-    display: none;
 `;
 
 export const ContainerLoginForm = styled.div`
@@ -30,7 +27,7 @@ export const ContainerLoginForm = styled.div`
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     width: 100vw;
     height: 100vh;
     
@@ -55,9 +52,9 @@ export const StyledEscamboLogo = styled(EscamboLogo)`
   height: 50%;
   width: 50%;
    
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
+  @media (max-width: 1115px) {
+    width: 60%;
+    height: 60%;
   }
 
   @media (max-width: 600px) {
@@ -88,7 +85,7 @@ export const Title = styled.div`
   font-weight: 800;
   font-size: 5.8vh;
   color: #4C0C6C;
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     font-size: 3.5vh;
     padding: 1vh 0vh;
   }
@@ -103,7 +100,7 @@ export const Description = styled.div`
   padding-bottom: 7vh;
   font-size: 2.4vh;
   text-align: center;
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     font-size: 1.8vh;
     padding-bottom: 4vh;
   }
@@ -131,10 +128,10 @@ export const ButtonLink = styled(Link)`
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     width: 80vw;
     text-align: flex-end;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
   }
 
   @media (max-width: 600px) {
@@ -148,7 +145,7 @@ export const ContainerButton = styled.div`
   padding-top: 4vh;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     width: 80vw;
   }
 
@@ -174,7 +171,7 @@ export const InfoText = styled.div`
   font-style: normal;
   font-weight: 600;
   font-size: 2.4vh;
-  line-height: 2vh;
+  line-height: 3vh;
   color: #B9B7B7;
   display: inline;
 
@@ -182,10 +179,10 @@ export const InfoText = styled.div`
     margin-left: .3vw;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1115px) {
     text-align: center;
     width: 100vw;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
   }
 
   @media (max-width: 600px) {
@@ -209,8 +206,8 @@ export const Redirect = styled(Link)`
     transition: 300ms ease-in;
   }
 
-  @media (max-width: 768px) {
-    font-size: 1.5vh;
+  @media (max-width: 1115px) {
+    font-size: 1.8vh;
   }
 
   @media (max-width: 600px) {

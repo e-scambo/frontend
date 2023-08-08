@@ -1,20 +1,24 @@
 import styled from 'styled-components';
+import {IoChevronBack} from 'react-icons/io5';
+
+export const Principal = styled.div`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const TitleArea = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 15vh;
+  width: 40vw;
+  height: auto;
   background: #FFFFFF;
-  padding-left: 10vw;
-  padding-top: 12vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 5vw;
+  padding-top: 10vh;
 
   @media (max-width: 768px) {
-    top: 5vh; /* Ajuste a posição vertical para telas menores */
-    left: 2vw; /* Ajuste a posição horizontal para telas menores */
     width: 80vw;
     height: 8vh;
     flex-direction: column;
@@ -37,20 +41,34 @@ export const TitleSection = styled.div`
 
 export const ContainerReturnToPage = styled.div`
   padding-right: 2vw;
+  padding-top: 0.5vh;
 
   @media (max-width: 768px) {
     padding-right: 1vw;
   }
 `;
 
-export const StyledReturnToPage = styled.img`
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
+export const ReturnToPageIcon = styled(IoChevronBack)`
+  color: #000;
+  font-size: 5vh;
 
   @media (max-width: 768px) {
-    height: 80%;
-    width: 80%;
+    align-items: right;
+    font-size: 3.5vh;
+    padding-right: 1.2vw;
   }
+
+  @media (max-width: 600px) {
+    align-items: center;
+    font-size: 3.5vh;
+    padding-right: 2vw;
+  }
+`;
+
+export const ListOfCards = styled.div`
+  padding: 10vh 0vw 10vh 12vw;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
 `;
 

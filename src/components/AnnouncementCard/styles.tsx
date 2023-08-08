@@ -4,6 +4,7 @@ import {BiImageAlt as noImage} from 'react-icons/bi';
 
 export const Paper = styled.div`
   display: block;
+  width: 19.2vw;
   margin: 0.5vw;
   background: #FFFFFF;
   padding: 2vh;
@@ -54,7 +55,7 @@ export const Picture = styled.img`
   background-color: #F2F2F2;
   cursor: pointer;
 
-  width: 284px;
+  width: 100%;
   height: 269px;
   object-fit: cover;
 
