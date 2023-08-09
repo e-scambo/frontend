@@ -11,8 +11,9 @@ export const Paper = styled.div`
   border: 1.5px solid #B9B7B7;
   border-radius: 8px;
   min-height: 16vh;
-  @media (max-width: 426px) {
+  @media (max-width: 728px) {
     width: 70vw;
+    align-self: center;
   }
 `;
 

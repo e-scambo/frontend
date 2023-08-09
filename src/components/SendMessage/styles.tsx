@@ -28,6 +28,10 @@ export const InputTextArea = styled.textarea`
   resize: none;
   outline: none;
   caret-color: #9400c2;
+  align-self: center;
+
+  max-height: 200px; /* Altura máxima que o usuário pode digitar. */
+  overflow-y: auto; /* Habilita a scrollbar quando o conteúdo ultrapassar a altura máxima */
 
   &::placeholder {
     color: #b9b7b7;
