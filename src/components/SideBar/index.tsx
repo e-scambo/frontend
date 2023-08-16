@@ -4,7 +4,8 @@ import {ContainerReturnToPage, ReturnToPageIcon, SearchIcon, TitleSection} from 
 import searchIcon from 'assets/img/lupa.png';
 
 import { Link } from 'react-router-dom';
-import { Container, Header, SearchBar, SearchInput } from './style';
+import { Container, Header, SearchBar, SearchInput, ChatList } from './style';
+import ChatSide from 'components/ChatSide';
 
 interface Props {
     children?: JSX.Element | JSX.Element[];
@@ -27,6 +28,7 @@ const SideBar: React.FC<Props> = ({children}) => {
           <SearchInput placeholder='Pesquisar'/>
         </SearchBar>
       </Header>
+      <ChatList> { children } </ChatList>
      </Container>
   );
 };
