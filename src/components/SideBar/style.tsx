@@ -91,3 +91,8 @@ export const ReturnToPageIcon = styled(IoChevronBack)`
     padding-right: 2vw;
   }
 `;
+
+export const ChatList = styled.div`
+  height: 70%;
+  overflow-y: auto;
+`;
