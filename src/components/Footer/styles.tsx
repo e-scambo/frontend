@@ -2,51 +2,90 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const Container = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: 30vh;
-
-  /* spacing */
-  margin: 0;
+  height: 58vh;
+  background-color: #4C0C6C;
+  position: relative;
+  align-items: center;
 
   /* colors */
-  background-color: #4C0C6C;
-  padding-top: 15vh;
-  padding-bottom: 25vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 `;
 
-export const BoxContent = styled.div`
-  color: #ffffff;
-  width: 60vw;
-  height: 7vh;
-  margin-left: auto;
-  margin-right: auto;
+export const ContainerBox = styled.div`
   display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 75%;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ContainerBoxContact = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 15%;
+  justify-content: center;
+  align-items: center
 `;
 
 export const BoxColumn = styled.div`
-  color: #ffffff;
-  margin-right: auto;
-  margin-left: auto;
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.4vw;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 70%;
+  gap: 15%;
+  margin-left: 5vw;
+  margin-right: 5vw;
+`;
+
+export const LogoBoxColumn = styled.div`
+  display: flex;
+  width: 15%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3vw;
+  margin-right: 5vw;
+`;
+
+export const SocialBoxColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 15%;
+  height: auto;
+  margin-right: 5vw;
+  gap: 5%;
+`;
+
+export const BoxColumnContact = styled.div`
+  display: flex;
+  width: auto;
+  margin-left: 2vw;
+  margin-right: 2vw;
 `;
 
 export const Title = styled.div`
   color: #ffffff;
   font-family: 'Noto Sans';
-  font-style: bold;
-  font-weight: 800;
+  font-weight: bold;
   font-size: 1vw;
-  margin-top: 1.4vw;
+`;
+
+export const TitleContact = styled.div`
+  color: #ffffff;
+  font-family: 'Noto Sans';
+  font-style: bold;
+  font-weight: 500;
+  font-size: 1vw;
 `;
 
 export const NavLink = styled(Link)`
   font-style: normal;
-  margin-top: 15vw;
-  font-weight: 200;
+  font-weight: 100;
   font-size: 1vw;
   font-feature-settings: 'pnum' on, 'lnum' on;
   color: rgba(255, 255, 255, 0.75);
@@ -61,36 +100,25 @@ export const NavLink = styled(Link)`
 `;
 
 export const Hr = styled.hr`
-  margin-top: 25vh;
-  margin-right:15vw;
-  margin-left: 15vw;
-  border-top: 0.1px solid;
+  width: 75%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
   color: rgba(255, 255, 255, 0.25);
 `;
 
 export const Logo = styled.img`
-  position: absolute;
   height: auto;
-  width: 12vw;
-  left: 10%;
-  top: 30%;
+  width: 13vw;
 `;
 
-export const Contact = styled.a`
+export const Social = styled.a`
   display: flex;
   align-items: center;
 `;
 
 export const Icon = styled.img`
   display: flex;
-  padding: 1vw;
   height: auto;
-  width: 3vw;
-`;
-
-export const BoxColumnContact = styled.div`
-  display: flex;
-  padding-top: 5vw;
-  padding-left: 2vw;
-  margin-left: 2vw;
+  width: 2vw;
 `;
