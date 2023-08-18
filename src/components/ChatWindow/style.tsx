@@ -10,11 +10,13 @@ export const Container = styled.div`
 `;
 
 export const ChatHeader = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: row;
   padding: 1vh 5vh 1vh 2vh;
   align-items: center;
-  width: auto;
+  background-color: #FFFFFF;
+  width: 71.5vw;
   height: 10vh;
   border-bottom: 1px solid #B9B7B7;
   border-radius: 0vh 0vh 2vh 2vh;
