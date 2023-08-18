@@ -26,11 +26,12 @@ const Chats: React.FC = () => {
             <SideBar>
               <ChatSide onChatClick={handleChatClick} />
             </SideBar>
-            {selectedChat ? (
+            <ChatWindow chatId={''}/>
+            {/* {selectedChat ? (
               <ChatWindow chatId={selectedChat} />
             ) : (
               <DefaultChat />
-            )}
+            )} */}
           </ChatApp>
       </JustifyContainer>
       <Footer/>
