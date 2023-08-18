@@ -9,6 +9,10 @@ export const ListOfCards = styled.div`
   width: 67vw;
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width 768px) {
+    width: 50vw;
+  }
 `;
 
 export const FiltersBar = styled.div`

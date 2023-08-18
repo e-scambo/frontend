@@ -9,8 +9,8 @@ export const Container = styled.div`
   align-self: center;
   display: flex;
   margin-top: auto;
-  margin-bottom: 4vh;
-  position: relative;
+  margin-bottom: 13vh;
+  flex-direction: row;
 
   @media (max-width: 600px) {
     align-items: center;
@@ -19,6 +19,7 @@ export const Container = styled.div`
 
 export const InputTextArea = styled.textarea`
   width: 100%;
+  display: flex;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
   color: #000;
@@ -27,6 +28,10 @@ export const InputTextArea = styled.textarea`
   resize: none;
   outline: none;
   caret-color: #9400c2;
+  align-self: center;
+
+  max-height: 200px; /* Altura máxima que o usuário pode digitar. */
+  overflow-y: auto; /* Habilita a scrollbar quando o conteúdo ultrapassar a altura máxima */
 
   &::placeholder {
     color: #b9b7b7;
@@ -44,6 +49,7 @@ export const FilesIcon = styled(AiOutlinePaperClip)`
   font-size: 5vh;
   cursor: pointer;
   margin-right: 10px;
+  margin-top: auto;
 
   @media (max-width: 600px) {
     font-size: 4.5vh;
@@ -52,12 +58,12 @@ export const FilesIcon = styled(AiOutlinePaperClip)`
 
 export const SendTextIcon = styled(FiSend)`
   color: #737373;
-  font-size: 4vh;
+  font-size: 4.5vh;
   cursor: pointer;
   margin-left: 10px;
-  margin-top: 3px;
+  margin-top: auto;
 
   @media (max-width: 600px) {
-    font-size: 3.5vh;
+    font-size: 4vh;
   }
 `;

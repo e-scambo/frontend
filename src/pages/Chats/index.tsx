@@ -8,6 +8,7 @@ import ChatApp from 'components/ChatApp';
 import SideBar from 'components/SideBar';
 import ChatWindow from 'components/ChatWindow';
 import SendMessage from 'components/SendMessage';
+import ChatSide from 'components/ChatSide';
 
 const Chats: React.FC = () => {
   return (
@@ -15,9 +16,11 @@ const Chats: React.FC = () => {
       <Header />
       <JustifyContainer thereIsHeader >
           <ChatApp>
-            <SideBar></SideBar>
+            <SideBar>
+              <ChatSide></ChatSide>
+            </SideBar>
             <ChatWindow>
-              {/* <SendMessage></SendMessage> */}
+              <SendMessage></SendMessage>
             </ChatWindow>
           </ChatApp>
       </JustifyContainer>
