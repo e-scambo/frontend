@@ -1,80 +1,73 @@
 import React from 'react';
 
-import {Container, Hr} from './styles';
-import {BoxContent} from './styles';
-import {Title} from './styles';
-import {BoxColumn} from './styles';
-import {NavLink} from './styles';
+import {Container, Hr, ContainerBox, ContainerBoxContact, BoxColumn, LogoBoxColumn, SocialBoxColumn, BoxColumnContact} from './styles';
+import {Title, TitleContact, NavLink, Logo, Social, Icon} from './styles';
 import logo from 'assets/img/Logomarca - Branca.png';
-import {Logo} from './styles';
 import twitter from 'assets/img/twitter.png';
 import linkedin from 'assets/img/linkedin.png';
 import facebook from 'assets/img/facebook.png';
-import {Contact} from './styles';
-import {Icon} from './styles';
-import {BoxColumnContact} from './styles';
 
 const Footer = () => {
   return (
     <Container>
-      <BoxContent>
-        <BoxColumn>
+      <ContainerBox>
+        <LogoBoxColumn>
           <Logo
-            src={logo}
-          />
-        </BoxColumn>
+              src={logo}
+            />
+        </LogoBoxColumn>
         <BoxColumn>
           <Title>Empresa</Title>
-          <NavLink to=''>Sobre nós</NavLink> <br />
-          <NavLink to=''>Trabalhe conosco</NavLink> <br />
-          <NavLink to=''>Políticas</NavLink> <br />
+          <NavLink to=''>Sobre nós</NavLink>
+          <NavLink to=''>Trabalhe conosco</NavLink>
+          <NavLink to=''>Políticas</NavLink>
         </BoxColumn>
         <BoxColumn>
           <Title>Categorias</Title>
-          <NavLink to='/favorites'>Favoritos</NavLink> <br />
-          <NavLink to='/profile'>Minha Conta</NavLink> <br />
+          <NavLink to='/favorites'>Favoritos</NavLink>
+          <NavLink to='/profile'>Minha Conta</NavLink>
         </BoxColumn>
-        <BoxColumnContact>
-          <Contact
+        <SocialBoxColumn>
+          <Social
             href={'https://twitter.com/'}
-          >
+            >
             <Icon
               src={twitter}
             />
-          </Contact>
+          </Social>
 
-          <Contact
+          <Social
             href={'https://linkedin.com/'}
-          >
+            >
             <Icon
               src={linkedin}
             />
-          </Contact>
+          </Social>
 
-          <Contact
+          <Social
             href={'https://facebook.com/'}
-          >
+            >
             <Icon
               src={facebook}
             />
-          </Contact>
-        </BoxColumnContact>
-      </BoxContent>
+          </Social>
+        </SocialBoxColumn>
+      </ContainerBox>
       <Hr/>
-      <BoxContent>
-        <BoxColumn>
-          <Title>{'© 2023 E-troka. All Rights Reserved. '}</Title>
-        </BoxColumn>
-        <BoxColumn>
+      <ContainerBoxContact>
+        <BoxColumnContact>
+          <TitleContact>{'© 2023 E-troka. All Rights Reserved. '}</TitleContact>
+        </BoxColumnContact>
+        <BoxColumnContact>
           <NavLink to=''>Política de Privacidade</NavLink> <br />
-        </BoxColumn>
-        <BoxColumn>
+        </BoxColumnContact>
+        <BoxColumnContact>
           <NavLink to=''>Termos e Condições</NavLink> <br />
-        </BoxColumn>
-        <BoxColumn>
+        </BoxColumnContact>
+        <BoxColumnContact>
           <NavLink to=''>Código de Conduta</NavLink> <br />
-        </BoxColumn>
-      </BoxContent>
+        </BoxColumnContact>
+      </ContainerBoxContact>
     </Container>
   );
 };
