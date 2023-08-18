@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-self: center;
   display: flex;
   position: absolute;
-  bottom: 5vh;
+  bottom: 4vh;
   flex-direction: row;
 
   @media (max-width: 600px) {
