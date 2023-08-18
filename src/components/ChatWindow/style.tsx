@@ -3,7 +3,7 @@ import { VscBell } from 'react-icons/all';
 
 export const Container = styled.div`
   width: 75vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #B9B7B7;
@@ -47,3 +47,9 @@ export const BellIcon = styled(VscBell)`
   font-size: 4vh;
   color: #727171;
 `; 
+
+export const ListOfMessages = styled.div`
+  margin-top: 12vh;
+  margin-bottom: 15vh;
+  overflow: auto;
+`;
