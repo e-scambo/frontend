@@ -8,8 +8,8 @@ export const Container = styled.div`
   padding: 15px;
   align-self: center;
   display: flex;
-  margin-top: auto;
-  margin-bottom: 13vh;
+  position: absolute;
+  bottom: 5vh;
   flex-direction: row;
 
   @media (max-width: 600px) {
