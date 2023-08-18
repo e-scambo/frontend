@@ -49,6 +49,7 @@ export const BellIcon = styled(VscBell)`
 `; 
 
 export const ListOfMessages = styled.div`
+  margin-right: 1%;
   margin-top: 12vh;
   margin-bottom: 15vh;
   overflow: auto;
