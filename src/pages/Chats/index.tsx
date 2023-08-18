@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
 import ContentBox from 'components/JustifyContainer';
@@ -9,19 +9,29 @@ import SideBar from 'components/SideBar';
 import ChatWindow from 'components/ChatWindow';
 import SendMessage from 'components/SendMessage';
 import ChatSide from 'components/ChatSide';
+import DefaultChat from 'components/DefaultChat';
 
 const Chats: React.FC = () => {
+  const [selectedChat, setSelectedChat] = useState<string | null>(null);
+
+  const handleChatClick = (chatId: string) => {
+    setSelectedChat(chatId);
+  };
+
   return (
     <PageContainer>
       <Header />
       <JustifyContainer thereIsHeader >
           <ChatApp>
             <SideBar>
-              <ChatSide></ChatSide>
+              <ChatSide onChatClick={handleChatClick} />
             </SideBar>
-            <ChatWindow>
-              <SendMessage></SendMessage>
-            </ChatWindow>
+            <ChatWindow chatId={''}/>
+            {/* {selectedChat ? (
+              <ChatWindow chatId={selectedChat} />
+            ) : (
+              <DefaultChat />
+            )} */}
           </ChatApp>
       </JustifyContainer>
       <Footer/>
