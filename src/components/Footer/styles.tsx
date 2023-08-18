@@ -13,6 +13,10 @@ export const Container = styled.div`
   /* colors */
   padding-top: 5vh;
   padding-bottom: 5vh;
+  @media (max-width: 728px) {
+    height: 70vh;
+    justify-content: space-between;
+  }
 `;
 
 export const ContainerBox = styled.div`
@@ -22,6 +26,12 @@ export const ContainerBox = styled.div`
   height: 75%;
   justify-content: center;
   align-items: center;
+  @media (max-width: 728px) {
+    display: block;
+    width: auto;
+    height: auto;
+    align-self: center;
+  }
 `;
 
 export const ContainerBoxContact = styled.div`
@@ -30,7 +40,13 @@ export const ContainerBoxContact = styled.div`
   width: 100%;
   height: 15%;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  @media (max-width: 728px) {
+    display: block;
+    width: auto;
+    height: auto;
+    align-self: center;
+  }
 `;
 
 export const BoxColumn = styled.div`
@@ -41,6 +57,13 @@ export const BoxColumn = styled.div`
   gap: 15%;
   margin-left: 5vw;
   margin-right: 5vw;
+  @media (max-width: 728px) {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: 5%;
+  }
 `;
 
 export const LogoBoxColumn = styled.div`
@@ -50,6 +73,12 @@ export const LogoBoxColumn = styled.div`
   justify-content: center;
   margin-left: 3vw;
   margin-right: 5vw;
+  @media (max-width: 728px) {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
 `;
 
 export const SocialBoxColumn = styled.div`
@@ -59,6 +88,12 @@ export const SocialBoxColumn = styled.div`
   height: auto;
   margin-right: 5vw;
   gap: 5%;
+  @media (max-width: 728px) {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
 `;
 
 export const BoxColumnContact = styled.div`
@@ -66,6 +101,12 @@ export const BoxColumnContact = styled.div`
   width: auto;
   margin-left: 2vw;
   margin-right: 2vw;
+  @media (max-width: 728px) {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
 `;
 
 export const Title = styled.div`
@@ -73,6 +114,9 @@ export const Title = styled.div`
   font-family: 'Noto Sans';
   font-weight: bold;
   font-size: 1vw;
+  @media (max-width: 728px) {
+    font-size: large;
+  }
 `;
 
 export const TitleContact = styled.div`
@@ -81,6 +125,9 @@ export const TitleContact = styled.div`
   font-style: bold;
   font-weight: 500;
   font-size: 1vw;
+  @media (max-width: 728px) {
+    font-size: large;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -97,6 +144,10 @@ export const NavLink = styled(Link)`
   &:hover {
     transition: ease-in .1s;
   }
+  @media (max-width: 728px) {
+    font-size: large;
+    margin: 1%;
+  }
 `;
 
 export const Hr = styled.hr`
@@ -110,15 +161,24 @@ export const Hr = styled.hr`
 export const Logo = styled.img`
   height: auto;
   width: 13vw;
+  @media (max-width: 728px) {
+    width: 50%;
+  }
 `;
 
 export const Social = styled.a`
   display: flex;
   align-items: center;
+  @media (max-width: 728px) {
+    justify-content: center;
+  }
 `;
 
 export const Icon = styled.img`
   display: flex;
   height: auto;
   width: 2vw;
+  @media (max-width: 728px) {
+    width: 80%;
+  }
 `;
