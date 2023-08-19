@@ -1,14 +1,15 @@
 import React, { ReactNode } from 'react';
-import { Container, ChatHeader, UserProfile, UserName, BellIcon, Online, ListOfMessages } from './style';
+import { Container, ChatHeader, UserProfile, UserName, BellIcon, Online, ListOfMessages, BackToSidebarIcon } from './style';
 import SendMessage from 'components/SendMessage';
 import Message from 'components/Message';
 
 interface Props {
   children?: ReactNode;
   chatId: string;
+  onBackToSideBar: any;
 }
 
-const ChatWindow: React.FC<Props> = ({ children, chatId }) => {
+const ChatWindow: React.FC<Props> = ({ children, chatId, onBackToSideBar }) => {
   // Exemplo de mensagens fictícias
   const messages = [
     { id: '1', content: 'Olá, como você está?', sender: 'user' as const },
@@ -24,6 +25,7 @@ const ChatWindow: React.FC<Props> = ({ children, chatId }) => {
   return (
     <Container>
       <ChatHeader>
+        <BackToSidebarIcon onClick={onBackToSideBar} />
         <UserProfile />
         <UserName>Magno Lindo</UserName>
         <Online />
