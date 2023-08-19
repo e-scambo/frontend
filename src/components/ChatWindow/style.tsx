@@ -1,12 +1,16 @@
 import styled from 'styled-components';
-import { VscBell } from 'react-icons/all';
+import { VscBell, BiArrowBack } from 'react-icons/all';
 
 export const Container = styled.div`
-  width: 75vw;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #B9B7B7;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const ChatHeader = styled.div`
@@ -16,10 +20,15 @@ export const ChatHeader = styled.div`
   padding: 1vh 5vh 1vh 2vh;
   align-items: center;
   background-color: #FFFFFF;
-  width: 71.5vw;
+  width: 71.5%;
+  max-width: 96.5%;
   height: 10vh;
   border-bottom: 1px solid #B9B7B7;
   border-radius: 0vh 0vh 2vh 2vh;
+  
+  @media (max-width: 768px) {
+    width: 84%;
+  }
 `;
 
 export const UserProfile = styled.div`
@@ -53,4 +62,13 @@ export const ListOfMessages = styled.div`
   margin-top: 12vh;
   margin-bottom: 15vh;
   overflow: auto;
+`;
+
+export const BackToSidebarIcon = styled(BiArrowBack)`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    font-size: 4vh;
+    cursor: pointer;
+  }
 `;
