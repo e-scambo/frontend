@@ -9,6 +9,10 @@ export const Container = styled.div`
   background-color: #ffffff;
   border-bottom: 1px solid #B9B7B7;
   border-top: 1px solid #B9B7B7;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const Header = styled.div`

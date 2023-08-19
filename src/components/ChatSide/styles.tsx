@@ -14,14 +14,14 @@ export const Container = styled.div`
 
 export const UserProfile = styled.img`
   background-color: black;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 100%;
 `;
 
 export const ChatInfo = styled.div`
   flex-grow: 1;
-  max-width: 59%;
+  min-width: 40%;
 `;
 
 export const Name = styled.div`
@@ -42,6 +42,7 @@ export const ChatStatus = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: auto;
+  min-width: 20%;
   max-width: 30%;
   justify-content: space-between;
 `;
@@ -58,4 +59,5 @@ export const Status = styled.div`
   padding: 5px;
   background-color: #4C0C6C;
   border-radius: 30px;
+  text-align: center;
 `;

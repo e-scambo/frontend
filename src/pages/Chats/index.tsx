@@ -26,7 +26,7 @@ const Chats: React.FC = () => {
             <SideBar>
               <ChatSide onChatClick={handleChatClick} />
             </SideBar>
-            <ChatWindow chatId={''}/>
+            {/* <ChatWindow chatId={''}/> */}
             {/* {selectedChat ? (
               <ChatWindow chatId={selectedChat} />
             ) : (
