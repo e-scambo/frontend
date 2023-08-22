@@ -95,13 +95,13 @@ const Profile: React.FC = () => {
     <PageContainer>
       <Header />
       <TitleArea>
-          <Title>
-            <ContainerReturnToPage>
+        <Title>
+          <ContainerReturnToPage>
             <Link to="/Announcements">
               <ReturnToPageIcon />
             </Link>
           </ContainerReturnToPage>
-            Edite seu perfil
+          Edite seu perfil
         </Title>
       </TitleArea>
       <JustifyContainer thereIsHeader >
@@ -110,92 +110,92 @@ const Profile: React.FC = () => {
           ref={formRef}
           initialData={user as Record<string, any>}
         >
-          <Paper>
+        <Paper>
 
-            <ContainerForm>
+          <ContainerForm>
 
-              <TitleSection>
-                Dados Pessoais
-              </TitleSection>
+            <TitleSection>
+              Dados Pessoais
+            </TitleSection>
 
-              <ContainerFields>
+            <ContainerFields>
 
-                <InputForm
-                  name="name"
-                  label="Nome"
-                  type="text"
-                  placeholder="Nome de usuário"
-                  disabled={disableEditModeFields}
-                />
-                <EmailInput
-                  name="email"
-                  label="Email"
-                  type="email"
-                  placeholder="Email"
-                  disabled={disableEditModeFields}
-                />
-                <PasswordInput
-                  name="password"
-                  label="Senha"
-                  type="password"
-                  placeholder="Senha"
-                  disabled={disableEditModeFields}
-                />
-                <InputForm
-                  name="phone"
-                  label="Telefone"
-                  type="text"
-                  placeholder="999999999"
-                  disabled={disableEditModeFields}
-                />
-                <InputForm
-                  name="city"
-                  label="Cidade"
-                  type="text"
-                  placeholder="Campina Grande - PB"
-                  disabled={disableEditModeFields}
-                />
-                <InputForm
-                  name="birth"
-                  label="Nascimento"
-                  type="text"
-                  placeholder="Data de nascimento"
-                  disabled={disableEditModeFields}
-                />
-                <ContainerButton>
-                  <Button
-                    type="submit"
-                    onClick={() => {
-                      user && handleToSubmit(user);
-                      setDisableEditModeFields((prev) => !prev);
-                      setDisableEditModeProfile((prev) => !prev);
-                    }}
-                  >
-                    {disableEditModeFields ? 'Editar Dados' : 'Salvar'}
-                  </Button>
-                </ContainerButton>
-              
-              </ContainerFields>
-            </ContainerForm>
+              <InputForm
+                name="name"
+                label="Nome"
+                type="text"
+                placeholder="Nome de usuário"
+                disabled={disableEditModeFields}
+              />
+              <EmailInput
+                name="email"
+                label="Email"
+                type="email"
+                placeholder="Email"
+                disabled={disableEditModeFields}
+              />
+              <PasswordInput
+                name="password"
+                label="Senha"
+                type="password"
+                placeholder="Senha"
+                disabled={disableEditModeFields}
+              />
+              <InputForm
+                name="phone"
+                label="Telefone"
+                type="text"
+                placeholder="999999999"
+                disabled={disableEditModeFields}
+              />
+              <InputForm
+                name="city"
+                label="Cidade"
+                type="text"
+                placeholder="Campina Grande - PB"
+                disabled={disableEditModeFields}
+              />
+              <InputForm
+                name="birth"
+                label="Nascimento"
+                type="text"
+                placeholder="Data de nascimento"
+                disabled={disableEditModeFields}
+              />
+              <ContainerButton>
+                <Button
+                  type="submit"
+                  onClick={() => {
+                    user && handleToSubmit(user);
+                    setDisableEditModeFields((prev) => !prev);
+                    setDisableEditModeProfile((prev) => !prev);
+                  }}
+                >
+                  {disableEditModeFields ? 'Editar Dados' : 'Salvar'}
+                </Button>
+              </ContainerButton>
+            
+            </ContainerFields>
+          </ContainerForm>
 
-            <VerticalLine></VerticalLine>
+          <VerticalLine></VerticalLine>
 
-            <ContainerProfile>
+          <ContainerProfile>
 
-              <ContainerAvatar>
-                <ProfileAvatar />
-              </ContainerAvatar>
+            <ContainerAvatar>
+              <ProfileAvatar />
+            </ContainerAvatar>
 
-              <InformationSection>
-                <ProfileName>
-                  Nome de Usuário
-                </ProfileName>
-                <ProfileLocation>
-                  Localização
-                </ProfileLocation>
-              </InformationSection>
+            <InformationSection>
+              <ProfileName>
+                Nome de Usuário
+              </ProfileName>
+              <ProfileLocation>
+                Localização
+              </ProfileLocation>
+            </InformationSection>
 
-            </ContainerProfile>
+          </ContainerProfile>
           </Paper>
         </Form>
     </JustifyContainer>
