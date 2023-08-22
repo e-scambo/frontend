@@ -14,6 +14,14 @@ export const Paper = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 10vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 2vh;
+    height: auto;
+    width: 90vw;
+    padding: 0%;
+  }
 `;
 
 export const TitleArea = styled.div`
@@ -36,8 +44,8 @@ export const TitleArea = styled.div`
 
 export const ContainerAvatar = styled.div`
   width: auto;
-  height: auto
-  align-self: start;
+  height: auto;
+  justify-content: center;
   padding-bottom: 5vh;
 `;
 
@@ -72,6 +80,14 @@ export const ContainerForm = styled.div`
   padding: 3vh 6vw;
   box-sizing: border-box;
   align-self: start;
+
+  @media (max-width: 768px) {
+    padding: 0%;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const Title = styled.div`
@@ -97,6 +113,10 @@ export const ContainerProfile = styled.div`
   justify-content: center;
   align-items: center;
   align-self: flex-start;
+  
+  @media (max-width: 768px) {
+    margin: auto;
+  }
 `;
 
 export const InformationSection = styled.section`
@@ -113,6 +133,11 @@ export const ProfileName = styled.div`
   color: #000;
   width: 100%;
   text-align: center;
+  
+  @media (max-width: 768px) {
+    font-size: 4vh;
+    line-height: normal;
+  }
 `;
 
 export const ProfileLocation = styled.div`
@@ -136,6 +161,12 @@ export const TitleSection = styled.div`
   letter-spacing: 0.16px;
   font-feature-settings: 'pnum' on, 'lnum' on;
   color: #727171;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    justify-content: center;;
+  }
 `;
 
 
@@ -157,6 +188,11 @@ export const ContainerFields = styled.div`
       margin-top: 2vh;
     }
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const StyledInputForm = styled(InputForm)`
@@ -171,10 +207,8 @@ export const ContainerButton = styled.div`
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    width: 90vw;
-    height: 20vh;
-    margin-top: 8vh;
-    
+    width: 89%;
+    margin: 0%;
   }
 `;
 
@@ -183,6 +217,9 @@ export const VerticalLine = styled.div`
   width: 1px;
   height: 87vh;
   background-color: #B9B7B7;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 
