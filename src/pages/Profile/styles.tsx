@@ -16,11 +16,12 @@ export const Paper = styled.div`
   margin-bottom: 10vh;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin-bottom: 2vh;
     height: auto;
     width: 90vw;
     padding: 0%;
+    margin-bottom: 30%;
   }
 `;
 
@@ -115,6 +116,7 @@ export const ContainerProfile = styled.div`
   align-self: flex-start;
   
   @media (max-width: 768px) {
+    padding: 0;
     margin: auto;
   }
 `;
