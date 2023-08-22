@@ -138,7 +138,7 @@ export const ContainerRight = styled.div`
     height: auto;
     width: auto;
     justify-content: center;
-    padding: none;
+    padding: 0;
   }
 
   button {
@@ -148,7 +148,6 @@ export const ContainerRight = styled.div`
     @media (max-width: 768px) {
       height: auto;
       width: auto;
-      padding: none;
     }
   }
 `;
@@ -195,6 +194,8 @@ export const ContainerMegaFileInput = styled.div`
   @media (max-width: 768px) {
     width: auto;
     height: auto;
+    margin: auto;
+    padding: 0;
   }
 `;
 
