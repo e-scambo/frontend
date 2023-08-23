@@ -95,13 +95,13 @@ const Profile: React.FC = () => {
     <PageContainer>
       <Header />
       <TitleArea>
-          <Title>
-            <ContainerReturnToPage>
+        <Title>
+          <ContainerReturnToPage>
             <Link to="/Announcements">
               <ReturnToPageIcon />
             </Link>
           </ContainerReturnToPage>
-            Edite seu perfil
+          Edite seu perfil
         </Title>
       </TitleArea>
       <JustifyContainer thereIsHeader >

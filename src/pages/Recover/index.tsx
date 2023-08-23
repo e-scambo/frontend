@@ -57,8 +57,8 @@ const Recover: React.FC = () => {
             </InfoText> */}
             <Terms> {data.privacy}
               <PrivacyPolicy>
-              {data.privacyredirect}
-            </PrivacyPolicy>
+                {data.privacyredirect}
+              </PrivacyPolicy>
             </Terms>
           </ContainerFields>
         </Form>

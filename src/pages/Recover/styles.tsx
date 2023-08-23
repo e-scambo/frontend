@@ -9,13 +9,20 @@ export const Principal = styled.div`
   height: 100vh;
   width: 100vw;
 
-  @media (max-width: 426px) {
-    flex-direction: column-reverse;
+  @media (max-width: 768px) {
+    width: auto;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10%;
+    height: 100vh;
   }
 `;
 
 export const Carousel = styled.div`
   height: 100vh;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ContainerReturnToPage = styled.div`
@@ -25,6 +32,11 @@ export const ContainerReturnToPage = styled.div`
   justify-content: center;
   align-items: left;
   padding-top: 5vh;
+  
+  @media (max-width: 768px) {
+    width: 1vw;
+    justify-content: flex-start;
+  }
 `;
 
 export const StyledReturnToPage = styled.div`
@@ -43,8 +55,9 @@ export const ContainerLoginForm = styled.div`
   padding: 0vh 14vh 14vh 14vh;
   
   @media (max-width: 426px) {
-    width: 100%;
-    height: 45vh;
+    width: auto;
+    height: auto;
+    padding: 0;
     
   }
 `;
@@ -62,6 +75,22 @@ export const ContainerFields = styled.div`
       margin-top: 2vh;
     }
   }
+
+  @media (max-width: 1115px) {
+    padding: 0;
+    padding-top: 2vh;
+    font-size: 2vh;
+    height: auto;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0;
+    padding-top: 2vh;
+    font-size: 1.6vh;
+    height: auto;
+    justify-content: center;
+  }
 `;
 
 export const ContainerTitle = styled.div`
@@ -71,6 +100,11 @@ export const ContainerTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
+  @media (max-width: 768px) {
+    height: auto;
+    width: auto;
+  }
 `;
 
 export const Title = styled.div`
@@ -82,6 +116,18 @@ export const Title = styled.div`
   height: 20%;
   padding-top: 12vh;
   white-space: pre-line;
+  
+  @media (max-width: 1115px) {
+    padding: 0;
+    font-size: 6vh;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0;
+    font-size: 4vh;
+    height: auto;
+  }
 `;
 
 export const Description = styled.div`
@@ -90,15 +136,41 @@ export const Description = styled.div`
   font-weight: semi-bold;
   font-size: 2.5vh;
   color: #B9B7B7;
-  height: 15%
+  height: 15%;
   text-align: left; /* adicionado */
   padding-top: 20vh;
   padding-left: 5px;
+  
+  @media (max-width: 1115px) {
+    padding: 0;
+    padding-top: 10vh;
+    font-size: 2vh;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0;
+    padding-top: 10vh;
+    font-size: 1.6vh;
+    height: auto;
+  }
 `;
 
 export const ContainerButton = styled.div`
   padding-top: 7vh;
   width: 100%;
+  
+  @media (max-width: 1115px) {
+    padding: 0;
+    padding-top: 2vh;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0;
+    padding-top: 2vh;
+    height: auto;
+  }
 `;
 
 export const InfoText = styled.div`
@@ -133,6 +205,18 @@ export const Terms = styled.div`
   a {
     margin-left: .3vw;
   }
+
+  @media (max-width: 1115px) {
+    padding-top: auto;
+    font-size: 2vh;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.8vh;
+    height: auto;
+    padding-top: 7vh;
+  }
 `;
 
 export const PrivacyPolicy = styled.span`
@@ -151,5 +235,15 @@ export const PrivacyPolicy = styled.span`
 
   span {
     color: #727171;
+  }
+
+  @media (max-width: 1115px) {
+    font-size: 2vh;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.8vh;
+    height: auto;
   }
 `;

@@ -15,6 +15,7 @@ export const TitleArea = styled.div`
     width: 80vw;
     height: 8vh;
     flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -30,9 +31,11 @@ export const Paper = styled.div`
   margin-top: 8vh;
 
   @media (max-width: 768px) {
-    width: 80vw;
-    height: 100vh;
+    width: 90%;
+    height: auto;
     flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
   }
 `;
 
@@ -42,8 +45,7 @@ export const ContainerLeft = styled.div`
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    width: 60vw;
-    padding: 0px;
+    width: auto;
   }
 `;
 
@@ -94,7 +96,7 @@ export const ContainerWrapper = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 4vh;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -125,7 +127,7 @@ export const ContainerFields = styled.div`
 export const ContainerRight = styled.div`
   width: 40vw;
   height: auto;
-  padding-left: 6vw;
+  padding-left: 5vw;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -133,9 +135,10 @@ export const ContainerRight = styled.div`
   align-items: flex-start;
 
   @media (max-width: 768px) {
-    width: 70vw;
-    padding-left: 4vw;
-   
+    height: auto;
+    width: auto;
+    justify-content: center;
+    padding: 0;
   }
 
   button {
@@ -143,8 +146,8 @@ export const ContainerRight = styled.div`
     width: 18vh;
 
     @media (max-width: 768px) {
-      height: 6vh;
-      width: 25vh;
+      height: auto;
+      width: auto;
     }
   }
 `;
@@ -160,10 +163,9 @@ export const ContainerButton = styled.div`
   margin-bottom: 5vh;
 
   @media (max-width: 768px) {
-    width: 90vw;
-    height: 20vh;
-    margin-top: 8vh;
-    
+    width: 80vw;
+    height: auto;
+    margin: auto;
   }
 
   button {
@@ -190,11 +192,10 @@ export const ContainerMegaFileInput = styled.div`
   padding-bottom: 4vh;
   margin-top: 7.6vh;
   @media (max-width: 768px) {
-    width: 70vw;
-    height: 60vh;
-    padding-bottom: 3vh;
-    margin-top: 4vh;
-
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 0;
   }
 `;
 

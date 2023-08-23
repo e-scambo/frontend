@@ -1,6 +1,7 @@
 // Menu.styled.js
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
@@ -17,6 +18,7 @@ export const StyledMenu = styled.nav`
     display: flex;
     width: 100%;
     text-align: left;
+    padding-left: 2rem;
   }
 
   a {
@@ -60,7 +62,7 @@ export const NavLink = styled(Link)`
     font-size: 3vh;
     line-height: 5vh;
     text-align: left;
-    margin-left: 2rem;
+    margin-left: 0rem;
     width: 100%;
     display: table;
   }
