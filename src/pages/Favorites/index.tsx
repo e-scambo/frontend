@@ -18,6 +18,11 @@ import {ContainerReturnToPage} from './styles';
 import {ReturnToPageIcon} from './styles';
 import Pagination from 'components/Pagination';
 import { Announcement } from 'types';
+import { OutlineDownIcon } from './styles';
+import { OrdenarOverlay } from './styles';
+import MenuOverlay from 'components/MenuOverlay';
+import Ordenar from 'components/Ordenar';
+import { BotaoOverlay } from './styles';
 
 
 const Favorites: React.FC = () => {
@@ -51,6 +56,12 @@ const Favorites: React.FC = () => {
     }
   }, [announcements, search, searchResult]);
 
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  
+  const handleMenuToggle = () => {
+    setMenuOpen(!isMenuOpen);
+  }
+
   return (
     <PageContainer>
       <Header />
@@ -67,6 +78,15 @@ const Favorites: React.FC = () => {
       <JustifyContainer thereIsHeader >
         <AdsLeft/>
         <ListOfCards>
+        <OrdenarOverlay>
+          <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
+            <Ordenar/>
+          </MenuOverlay>
+
+          <BotaoOverlay onClick={handleMenuToggle}>
+            Ordenar por<OutlineDownIcon/>
+          </BotaoOverlay>
+        </OrdenarOverlay>
           {announcements.map((announcement: any, index) => (
             <AnnouncementCard
               key={announcement.announcement.id}
