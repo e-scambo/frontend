@@ -31,7 +31,7 @@ const Favorites: React.FC = () => {
     <PageContainer>
       <Header />
       <JustifyContainer thereIsHeader >
-        <AdsLeft></AdsLeft>
+        <AdsLeft/>
         <Principal>
           <TitleArea>
               <TitleSection>
@@ -57,7 +57,7 @@ const Favorites: React.FC = () => {
             ))}
           </ListOfCards>
         </Principal>
-        <AdsRight></AdsRight>
+        <AdsRight/>
       </JustifyContainer>
       <Footer/>
     </PageContainer>

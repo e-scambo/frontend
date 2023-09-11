@@ -4,13 +4,13 @@ import {AiOutlineDown} from 'react-icons/ai';
 
 export const ListOfCards = styled.div`
   margin-top: 3vw;
-  padding-right: 6.6%;
-  padding-left: 6.6%;
+  padding-right: 4.5%;
+  padding-left: 4.5%;
   width: 67vw;
   display: flex;
   flex-wrap: wrap;
 
-  @media (max-width 768px) {
+  @media (max-width: 768px) {
     width: 50vw;
   }
 `;
