@@ -14,7 +14,7 @@ export const Container = styled.div`
   padding-top: 5vh;
   padding-bottom: 5vh;
   @media (max-width: 728px) {
-    height: 70vh;
+    height: auto;
     justify-content: space-between;
   }
 `;
