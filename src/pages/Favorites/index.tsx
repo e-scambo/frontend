@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
@@ -12,11 +12,12 @@ import Footer from 'components/Footer';
 import AdsRight from 'components/AdsRight';
 import AdsLeft from 'components/AdsLeft';
 
-import {Principal} from './styles';
 import {TitleArea} from './styles';
 import {TitleSection} from './styles';
 import {ContainerReturnToPage} from './styles';
 import {ReturnToPageIcon} from './styles';
+import Pagination from 'components/Pagination';
+import { Announcement } from 'types';
 
 
 const Favorites: React.FC = () => {
@@ -26,39 +27,65 @@ const Favorites: React.FC = () => {
     fetchFavorites(auth.user);
   }, []);
 
+  const componentsPerPage = 9; // Quantidade de componentes por página
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const {announcement, fetchAnnouncements} = useAnnouncements();
+  const [search, setSearch] = useState<string>('');
+  const [searchResult, setSearchResult] = useState<Announcement[]>();
+  useEffect(() => {
+    fetchAnnouncements();
+  }, []);
+
+  const [totalPages, setTotalPages] = useState(1); // Inicialmente, assume-se uma página
+
+  useEffect(() => {
+    if (announcements) {
+      const totalComponents = search && searchResult ? searchResult.length : announcements.length;
+      const pages = Math.ceil(totalComponents / componentsPerPage);
+      setTotalPages(pages);
+    }
+  }, [announcements, search, searchResult]);
 
   return (
     <PageContainer>
       <Header />
+      <TitleArea>
+          <TitleSection>
+            <ContainerReturnToPage>
+            <Link to="/Announcements">
+              <ReturnToPageIcon />
+            </Link>
+          </ContainerReturnToPage>
+            Favoritos
+          </TitleSection>
+      </TitleArea>
       <JustifyContainer thereIsHeader >
         <AdsLeft/>
-        <Principal>
-          <TitleArea>
-              <TitleSection>
-                <ContainerReturnToPage>
-                <Link to="/Announcements">
-                  <ReturnToPageIcon />
-                </Link>
-              </ContainerReturnToPage>
-                Favoritos
-              </TitleSection>
-          </TitleArea>
-          <ListOfCards>
-            {announcements.map((announcement: any, index) => (
-              <AnnouncementCard
-                key={announcement.announcement.id}
-                id={announcement.announcement.id}
-                title={announcement.announcement.title}
-                description={announcement.announcement.description}
-                image={announcement.announcement.images[0] as string}
-                localization={announcement.announcement.localization}
-                owner={announcement.announcement.owner}
-              />
-            ))}
-          </ListOfCards>
-        </Principal>
-        <AdsRight/>
+        <ListOfCards>
+          {announcements.map((announcement: any, index) => (
+            <AnnouncementCard
+              key={announcement.announcement.id}
+              id={announcement.announcement.id}
+              title={announcement.announcement.title}
+              description={announcement.announcement.description}
+              image={announcement.announcement.images[0] as string}
+              localization={announcement.announcement.localization}
+              owner={announcement.announcement.owner}
+            />
+          ))}
+        </ListOfCards>
+        <AdsRight/>        
       </JustifyContainer>
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
       <Footer/>
     </PageContainer>
   );

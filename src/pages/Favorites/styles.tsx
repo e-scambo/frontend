@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import {IoChevronBack} from 'react-icons/io5';
 
-export const Principal = styled.div`
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-`;
-
 export const TitleArea = styled.div`
   width: 40vw;
   height: auto;
@@ -66,9 +60,15 @@ export const ReturnToPageIcon = styled(IoChevronBack)`
 `;
 
 export const ListOfCards = styled.div`
-  padding: 10vh 0vw 10vh 12vw;
-  width: auto;
+  margin-top: 3vw;
+  padding-right: 4.5%;
+  padding-left: 4.5%;
+  width: 67vw;
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    width: 50vw;
+  }
 `;
 
