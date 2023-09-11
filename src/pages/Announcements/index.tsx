@@ -20,6 +20,8 @@ import data from './data.json';
 import {Title} from './styles';
 import Footer from 'components/Footer';
 import MenuOverlay from 'components/MenuOverlay';
+import AdsRight from 'components/AdsRight';
+import AdsLeft from 'components/AdsLeft';
 
 const Announcements: React.FC = () => {
 
@@ -77,6 +79,7 @@ const Announcements: React.FC = () => {
           />
       </HeaderRoxo>
       <JustifyContainer thereIsHeader >
+        <AdsLeft/>
         <ListOfCards>
           <OrdenarOverlay>
             <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
@@ -115,6 +118,7 @@ const Announcements: React.FC = () => {
                   />
                 ))}
         </ListOfCards>
+        <AdsRight/>
       </JustifyContainer>
       <Pagination
         totalPages={totalPages}

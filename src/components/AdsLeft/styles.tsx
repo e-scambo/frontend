@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
   height: 80vh;
   width: 10vw;
-    // background-color: #f2f2f2;
-  float: left;
-  margin-top: 50vh;
+  background-color: gray;
+  // background-color: #f2f2f2;
   margin-left: 2vw;
-  margin-right: 2vw;
-  transform: translateY(-50%);
+  
+  @media (max-width: 768px) {
+    margin-left: none;
+    margin-top: 2vh;
+    height: 10vh;
+    width: 80vw;
+  }
 `;

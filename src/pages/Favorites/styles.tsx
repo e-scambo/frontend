@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import {IoChevronBack} from 'react-icons/io5';
-
-export const Principal = styled.div`
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-`;
+import { AiOutlineDown } from 'react-icons/ai';
 
 export const TitleArea = styled.div`
   width: 40vw;
@@ -66,9 +61,62 @@ export const ReturnToPageIcon = styled(IoChevronBack)`
 `;
 
 export const ListOfCards = styled.div`
-  padding: 10vh 0vw 10vh 12vw;
-  width: auto;
+  margin-top: 3vw;
+  padding-right: 4.5%;
+  padding-left: 4.5%;
+  width: 67vw;
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    width: 50vw;
+  }
 `;
 
+export const BotaoOverlay = styled.button`
+  display: flex;
+
+  position: relative;
+  margin-left: auto;
+
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  justify-self: right;
+  font-size: 3vh;
+  line-height: 3vh;
+
+  margin-top: 3%;
+  margin-bottom: 3%;
+
+  :hover {
+    opacity: 0.8;
+    border: none;
+    cursor: pointer;
+  }
+
+  background-color: #ffffff;
+  border: none;
+`;
+
+export const OrdenarOverlay = styled.div`
+  display: block;
+  width: 100%;
+`;
+
+export const OutlineDownIcon = styled(AiOutlineDown)`
+  color: #000;
+  font-size: 2vh;
+
+  @media (max-width: 768px) {
+    align-items: right;
+    font-size: 3.5vh;
+    padding-right: 1.2vw;
+  }
+
+  @media (max-width: 600px) {
+    align-items: center;
+    font-size: 3.5vh;
+    padding-right: 2vw;
+  }
+`;

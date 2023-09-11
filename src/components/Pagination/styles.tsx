@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -15,14 +15,21 @@ export const Container = styled.div`
 `;
 
 export const Prev = styled.button`
+  display: flex;
   border: none;
   background-color: white;
-  display: flex;
-  color: black;
-  font-size: larger;
   gap: 4px;
   :hover{
     cursor: pointer;
+  }
+`;
+
+export const Span = styled.span`
+  display: flex;
+  color: black;
+  font-size: large;
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
