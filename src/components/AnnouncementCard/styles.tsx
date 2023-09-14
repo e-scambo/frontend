@@ -3,7 +3,9 @@ import {BiImageAlt as noImage} from 'react-icons/bi';
 
 
 export const Paper = styled.div`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 19.2vw;
   margin: 0.5vw;
   background: #FFFFFF;
@@ -18,6 +20,7 @@ export const Paper = styled.div`
 `;
 
 export const Grid = styled.div`
+  display: flex;
   width: 100%;
   height: 100%;
   justify-content: space-between;
@@ -27,13 +30,12 @@ export const Grid = styled.div`
   grid-template-rows: 3vh 3vh 1fr 1fr;
   box-sizing: border-box;
   max-width: 280px;
-
+  
   @media (max-width: 426px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
     padding-bottom: 2vh;
   }
 `;
