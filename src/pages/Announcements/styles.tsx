@@ -11,7 +11,9 @@ export const ListOfCards = styled.div`
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    width: 50vw;
+    width: 80vw;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
