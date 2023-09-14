@@ -10,6 +10,13 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+
 const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   currentPage,
@@ -20,12 +27,14 @@ const Pagination: React.FC<PaginationProps> = ({
   const handlePrevClick = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
+      scrollToTop();
     }
   };
 
   const handleNextClick = () => {
     if (currentPage < totalPages) {
       onPageChange(currentPage + 1);
+      scrollToTop();
     }
   };
 
