@@ -269,6 +269,7 @@ export const Line = styled.div`
 
 export const BotaoOverlay = styled.button`
   display: flex;
+  margin-left: 1vw;
   align-items: center;
   text-align: center;
   font-style: normal;
@@ -316,7 +317,6 @@ export const LoginGroup = styled.div`
   min-width: 16vw;
 
   display: flex;
-  justify-content: space-between;
 
   @media (max-width: 768px) {
     display: flex;
