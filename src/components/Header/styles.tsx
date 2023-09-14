@@ -296,6 +296,7 @@ export const Menu = styled.div`
   list-style: none;
 
   padding: 2vw;
+  padding-top: 1vw;
   border: solid;
 
   position: absolute;
