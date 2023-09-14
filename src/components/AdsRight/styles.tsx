@@ -9,7 +9,7 @@ export const Container = styled.div`
   margin-right: 2vw;
   
   @media (max-width: 768px) {
-    margin-right: 0;
+    margin-right: none;
     margin-top: 2vh;
     height: 10vh;
     width: 80vw;
