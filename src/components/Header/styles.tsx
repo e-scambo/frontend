@@ -269,6 +269,7 @@ export const Line = styled.div`
 
 export const BotaoOverlay = styled.button`
   display: flex;
+  margin-left: 1vw;
   align-items: center;
   text-align: center;
   font-style: normal;
@@ -295,6 +296,7 @@ export const Menu = styled.div`
   list-style: none;
 
   padding: 2vw;
+  padding-top: 1vw;
   border: solid;
 
   position: absolute;
@@ -316,7 +318,6 @@ export const LoginGroup = styled.div`
   min-width: 16vw;
 
   display: flex;
-  justify-content: space-between;
 
   @media (max-width: 768px) {
     display: flex;
