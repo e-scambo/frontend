@@ -3,15 +3,28 @@ import styled from 'styled-components';
 import {AiOutlineDown} from 'react-icons/ai';
 
 export const ListOfCards = styled.div`
+  display: flex;
   margin-top: 3vw;
   padding-right: 4.5%;
   padding-left: 4.5%;
   width: 67vw;
-  display: flex;
   flex-wrap: wrap;
 
+
+  @media (max-width: 1654px) {
+    width: 90vw;
+    justify-content: center;
+  }
+
+  @media (max-width: 1282px) {
+    width: 80vw;
+    justify-content: center;
+  }
+
   @media (max-width: 768px) {
-    width: 50vw;
+    width: 80vw;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

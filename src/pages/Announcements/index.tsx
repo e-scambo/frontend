@@ -8,7 +8,6 @@ import AnnouncementCard from 'components/AnnouncementCard';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
 import JustifyContainer from 'components/JustifyContainer';
-import ContentBox from 'components/ContentBox';
 import SearchBar from 'components/SearchBar';
 import Pagination from 'components/Pagination';
 import Ordenar from 'components/Ordenar'; 
