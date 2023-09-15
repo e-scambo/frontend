@@ -14,19 +14,19 @@ export const Paper = styled.div`
   min-height: 16vh;
 
   /* Desktops e telas grandes */
-  @media (min-width: 1200px) {
+  @media (max-width: 1200px) {
   }
 
   /* Telas pequenas e laptops */
-  @media (min-width: 1024px) {
+  @media (max-width: 1024px) {
   }
 
   /* IPads e tablets */
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
   }
 
   /* Dispositivos Mobile */
-  @media (min-width: 480px) {
+  @media (max-width: 480px) {
   }
 `;
 
