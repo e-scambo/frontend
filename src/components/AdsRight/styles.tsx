@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 10vw;
   background-color: gray;
   // background-color: #f2f2f2;
-  margin-right: 2vw;
+  margin-right: 1.75vw;
   
   @media (max-width: 768px) {
     margin-right: 0;

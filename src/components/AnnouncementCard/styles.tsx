@@ -5,28 +5,28 @@ import {BiImageAlt as noImage} from 'react-icons/bi';
 export const Paper = styled.div`
   display: flex;
   justify-content: center;
-  width: 19.2vw;
-  margin: 0.5vw;
+  width: 19.48vw;
+  margin: 0.87vw;
   background: #FFFFFF;
   padding: 2vh;
   border: 1.5px solid #B9B7B7;
   border-radius: 8px;
   min-height: 16vh;
 
-  @media (max-width: 1282px) {
-    width: 45vw;
+  /* Desktops e telas grandes */
+  @media (min-width: 1200px) {
   }
 
-  @media (max-width: 768px) {
-    width: 55vw;
+  /* Telas pequenas e laptops */
+  @media (min-width: 1024px) {
   }
 
-  @media (max-width: 557px) {
-    width: 65vw;
+  /* IPads e tablets */
+  @media (min-width: 768px) {
   }
 
-  @media (max-width: 426px) {
-    width: 80vw;
+  /* Dispositivos Mobile */
+  @media (min-width: 480px) {
   }
 `;
 

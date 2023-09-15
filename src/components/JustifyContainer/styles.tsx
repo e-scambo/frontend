@@ -13,6 +13,7 @@ export const Container = styled.div<Props>`
   justify-content: center;
   box-sizing: border-box;
   flex: 1;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     flex-direction: column;
