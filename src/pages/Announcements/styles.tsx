@@ -7,6 +7,7 @@ export const ListOfCards = styled.div`
   margin: 1.75vw;
   width: 69.99vw;
   flex-wrap: wrap;
+  gap: 1.75vw;
 
   /* Desktops e telas grandes */
   @media (max-width: 1200px) {

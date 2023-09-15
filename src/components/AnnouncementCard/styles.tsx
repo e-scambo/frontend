@@ -6,7 +6,6 @@ export const Paper = styled.div`
   display: flex;
   justify-content: center;
   width: 19.48vw;
-  margin: 0.87vw;
   background: #FFFFFF;
   padding: 2vh;
   border: 1.5px solid #B9B7B7;
