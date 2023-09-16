@@ -93,7 +93,7 @@ const Favorites: React.FC = () => {
               id={announcement.announcement.id}
               title={announcement.announcement.title}
               description={announcement.announcement.description}
-              image={announcement.announcement.images[0] as string}
+              image={announcement.announcement.images[0]?.originalname as string}
               localization={announcement.announcement.localization}
               owner={announcement.announcement.owner}
             />

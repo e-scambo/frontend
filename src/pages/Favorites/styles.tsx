@@ -25,6 +25,7 @@ export const TitleSection = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: 7vh;
+  margin-top: 5vh;
   color: #4C0C6C;
   display: flex;
   flex-direction: row;
@@ -61,17 +62,29 @@ export const ReturnToPageIcon = styled(IoChevronBack)`
 `;
 
 export const ListOfCards = styled.div`
-  margin-top: 3vw;
-  padding-right: 4.5%;
-  padding-left: 4.5%;
-  width: 67vw;
   display: flex;
   flex-wrap: wrap;
 
+  width: 65.35vw;
+
+  gap: 1.5vw;
+
+  /* Telas pequenas e laptops */
+  @media (max-width: 1024px) {
+    width: 72vw;
+  }
+  
+  /* IPads e tablets */
   @media (max-width: 768px) {
-    width: 50vw;
+    width: 90vw;
+  }
+  
+  /* Dispositivos Mobile */
+  @media (max-width: 480px) {
+    width: 85vw;
   }
 `;
+
 
 export const BotaoOverlay = styled.button`
   display: flex;
