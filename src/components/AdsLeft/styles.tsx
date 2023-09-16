@@ -7,8 +7,10 @@ export const Container = styled.div`
   background-color: #f2f2f2;
   margin-left: 1.75vw;
   align-self: center;
+  margin-right: auto;
   
   @media (max-width: 768px) {
+    margin-right: 0;
     margin-left: 0;
     margin-top: 2vh;
     height: 10vh;
