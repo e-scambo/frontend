@@ -4,27 +4,26 @@ import {AiOutlineDown} from 'react-icons/ai';
 
 export const ListOfCards = styled.div`
   display: flex;
-  margin-top: 3vw;
-  padding-right: 4.5%;
-  padding-left: 4.5%;
-  width: 67vw;
   flex-wrap: wrap;
 
+  margin-top: 5vh;
+  width: 65.35vw;
 
-  @media (max-width: 1654px) {
-    width: 90vw;
-    justify-content: center;
+  gap: 1.5vw;
+
+  /* Telas pequenas e laptops */
+  @media (max-width: 1024px) {
+    width: 72vw;
   }
-
-  @media (max-width: 1282px) {
-    width: 80vw;
-    justify-content: center;
-  }
-
+  
+  /* IPads e tablets */
   @media (max-width: 768px) {
-    width: 80vw;
-    align-items: center;
-    justify-content: center;
+    width: 90vw;
+  }
+  
+  /* Dispositivos Mobile */
+  @media (max-width: 480px) {
+    width: 85vw;
   }
 `;
 
