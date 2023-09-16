@@ -4,10 +4,9 @@ import {AiOutlineDown} from 'react-icons/ai';
 
 export const ListOfCards = styled.div`
   display: flex;
-  margin: 1.75vw;
-  width: 69.99vw;
+  width: 65.35vw;
   flex-wrap: wrap;
-  gap: 1.75vw;
+  gap: 1.5vw;
 
   /* Desktops e telas grandes */
   @media (max-width: 1200px) {

@@ -5,12 +5,15 @@ import {BiImageAlt as noImage} from 'react-icons/bi';
 export const Paper = styled.div`
   display: flex;
   justify-content: center;
-  width: 19.48vw;
+  
+  width: 20.78vw;
+  min-height: 19vh;
+  box-sizing: border-box;
   background: #FFFFFF;
-  padding: 2vh;
+  
+  padding: 1%;
   border: 1.5px solid #B9B7B7;
   border-radius: 8px;
-  min-height: 16vh;
 
   /* Desktops e telas grandes */
   @media (max-width: 1200px) {
@@ -31,41 +34,29 @@ export const Paper = styled.div`
 
 export const Grid = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
   flex-direction: column;
-  grid-template-columns: 10vw 35vw;
-  grid-template-rows: 3vh 3vh 1fr 1fr;
+  
+  width: 100vw;
+  max-width: 269px;
   box-sizing: border-box;
-  max-width: 280px;
-  @media (max-width: 426px) {
-    justify-content: space-between;
-  }
-
+  
+  gap: 1%;
 `;
 
 
 export const Picture = styled.img`
-  background-size: cover;
-  align-self: center;
-  justify-self: center;
-  
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  background-size: cover;
+  object-fit: cover;
+  
+  width: 100%;
+  height: 269px;
+  background-color: #F2F2F2;
   border-radius: 4px;
 
   box-sizing: border-box;
-  background-color: #F2F2F2;
   cursor: pointer;
-
-  width: 100%;
-  height: 269px;
-  object-fit: cover;
-
-  display: flex;
-
 `;
 
 
@@ -75,7 +66,7 @@ export const Title = styled.div`
   font-family: 'Noto Sans' sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 3vh;
+  font-size: 2.5vh;
   color: #4C0C6C;
 `;
 
