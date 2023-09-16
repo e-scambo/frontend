@@ -10,7 +10,7 @@ export const TitleArea = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding-left: 5vw;
-  padding-top: 10vh;
+  padding-top: 11vh;
 
   @media (max-width: 768px) {
     width: 80vw;
