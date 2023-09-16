@@ -14,7 +14,8 @@ export const Container = styled.div<Props>`
   box-sizing: border-box;
   flex: 1;
   justify-content: space-between;
-
+  
+  /* IPads e tablets */
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: center;

@@ -15,29 +15,29 @@ export const Paper = styled.div`
   border: 1.5px solid #B9B7B7;
   border-radius: 8px;
 
-  /* Desktops e telas grandes */
-  @media (max-width: 1200px) {
-  }
-
   /* Telas pequenas e laptops */
   @media (max-width: 1024px) {
+    width: 23vw;
   }
 
   /* IPads e tablets */
   @media (max-width: 768px) {
+    width: 29vw;
   }
-
+  
   /* Dispositivos Mobile */
   @media (max-width: 480px) {
+    padding: 3%;
+    width: 85vw;
   }
 `;
 
 export const Grid = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   
   width: 100vw;
-  max-width: 269px;
   box-sizing: border-box;
   
   gap: 1%;
@@ -66,7 +66,7 @@ export const Title = styled.div`
   font-family: 'Noto Sans' sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 2.5vh;
+  font-size: 1em;
   color: #4C0C6C;
 `;
 
@@ -78,7 +78,7 @@ export const Localization = styled.div`
   font-family: 'Noto Sans', sans-serif ;
   font-style: normal;
   font-weight: normal;
-  font-size: 2vh;
+  font-size: 0.8em;
   line-height: 2vh;
   color: #C6C6C6;
 
@@ -98,7 +98,7 @@ export const Description = styled.p`
   font-family: 'Noto Sans', sans-serif ;
   font-style: normal;
   font-weight: normal;
-  font-size: 2vh;
+  font-size: 0.8em;
   line-height: 2vh;
   color: #727171;
   height: 4vh;

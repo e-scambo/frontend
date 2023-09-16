@@ -4,24 +4,26 @@ import {AiOutlineDown} from 'react-icons/ai';
 
 export const ListOfCards = styled.div`
   display: flex;
-  width: 65.35vw;
   flex-wrap: wrap;
-  gap: 1.5vw;
 
-  /* Desktops e telas grandes */
-  @media (max-width: 1200px) {
-  }
+  margin-top: 5vh;
+  width: 65.35vw;
+
+  gap: 1.5vw;
 
   /* Telas pequenas e laptops */
   @media (max-width: 1024px) {
+    width: 72vw;
   }
-
+  
   /* IPads e tablets */
   @media (max-width: 768px) {
+    width: 90vw;
   }
-
+  
   /* Dispositivos Mobile */
   @media (max-width: 480px) {
+    width: 85vw;
   }
 `;
 
