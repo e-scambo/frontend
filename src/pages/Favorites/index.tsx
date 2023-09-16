@@ -28,6 +28,7 @@ import { BotaoOverlay } from './styles';
 const Favorites: React.FC = () => {
   const {auth} = useAuth();
   const {announcements, fetchFavorites} = useAnnouncements();
+  
   useEffect(() => {
     fetchFavorites(auth.user);
   }, []);
@@ -39,9 +40,9 @@ const Favorites: React.FC = () => {
     setCurrentPage(page);
   };
 
-  const {announcement, fetchAnnouncements} = useAnnouncements();
-  const [search, setSearch] = useState<string>('');
-  const [searchResult, setSearchResult] = useState<Announcement[]>();
+  const {fetchAnnouncements} = useAnnouncements();
+  const [search] = useState<string>('');
+  const [searchResult] = useState<Announcement[]>();
   useEffect(() => {
     fetchAnnouncements();
   }, []);
