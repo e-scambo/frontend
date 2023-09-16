@@ -39,9 +39,9 @@ const Favorites: React.FC = () => {
     setCurrentPage(page);
   };
 
-  const {announcement, fetchAnnouncements} = useAnnouncements();
-  const [search, setSearch] = useState<string>('');
-  const [searchResult, setSearchResult] = useState<Announcement[]>();
+  const {fetchAnnouncements} = useAnnouncements();
+  const [search] = useState<string>('');
+  const [searchResult] = useState<Announcement[]>();
   useEffect(() => {
     fetchAnnouncements();
   }, []);

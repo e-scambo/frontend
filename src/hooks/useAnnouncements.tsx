@@ -26,6 +26,15 @@ function useAnnouncements() {
     }
   }
 
+  async function fetchMyAds(id: string) {
+    try {
+      const response = await announcementService.getMyAds(id);
+      setAnnouncements(response?.data as Announcement[]);
+    } catch (error) {
+      //
+    }
+  }
+
   async function fetchAnnouncements() {
     try {
       const response = await announcementService.getAnnouncements();
@@ -42,6 +51,7 @@ function useAnnouncements() {
     fetchAnnouncements,
     fetchAnnouncementById,
     fetchFavorites,
+    fetchMyAds,
   };
 }
 
