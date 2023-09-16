@@ -84,17 +84,21 @@ const MyAds: React.FC = () => {
             Ordenar por<OutlineDownIcon/>
           </BotaoOverlay>
         </OrdenarOverlay>
-          {announcements.map((announcement: any, index) => (
+        {announcements && announcements.length > 0 ? (
+          announcements.map((announcement: any, index) => (
             <AnnouncementCard
-              key={announcement.announcement.id}
-              id={announcement.announcement.id}
-              title={announcement.announcement.title}
-              description={announcement.announcement.description}
-              image={announcement.announcement.images[0]?.originalname as string}
-              localization={announcement.announcement.localization}
-              owner={announcement.announcement.owner}
+              key={announcement.id}
+              id={announcement.id}
+              title={announcement.title}
+              description={announcement.description}
+              image={announcement.images[0]?.originalname as string}
+              localization={announcement.localization}
+              owner={announcement.owner}
             />
-          ))}
+          ))
+        ) : (
+          <p>Nenhum anúncio encontrado.</p>
+        )}
         </ListOfCards>
         <AdsRight/>        
       </JustifyContainer>

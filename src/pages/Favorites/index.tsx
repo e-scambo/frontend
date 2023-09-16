@@ -28,6 +28,7 @@ import { BotaoOverlay } from './styles';
 const Favorites: React.FC = () => {
   const {auth} = useAuth();
   const {announcements, fetchFavorites} = useAnnouncements();
+  
   useEffect(() => {
     fetchFavorites(auth.user);
   }, []);
