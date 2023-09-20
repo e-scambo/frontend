@@ -1,6 +1,5 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-// import {MdFavoriteBorder} from 'pages/Announcement/styles';
 import {Localization} from './styles';
 import {Paper} from './styles';
 import {Grid} from './styles';

@@ -8,17 +8,19 @@ export const Container = styled.div`
   padding: 15px;
   align-self: center;
   display: flex;
-  margin-top: auto;
-  margin-bottom: 4vh;
-  position: relative;
+  position: absolute;
+  bottom: 4vh;
+  flex-direction: row;
 
   @media (max-width: 600px) {
+    width: 80vw;
     align-items: center;
   }
 `;
 
 export const InputTextArea = styled.textarea`
   width: 100%;
+  display: flex;
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
   color: #000;
@@ -27,6 +29,10 @@ export const InputTextArea = styled.textarea`
   resize: none;
   outline: none;
   caret-color: #9400c2;
+  align-self: center;
+
+  max-height: 200px; /* Altura máxima que o usuário pode digitar. */
+  overflow-y: auto; /* Habilita a scrollbar quando o conteúdo ultrapassar a altura máxima */
 
   &::placeholder {
     color: #b9b7b7;
@@ -44,6 +50,7 @@ export const FilesIcon = styled(AiOutlinePaperClip)`
   font-size: 5vh;
   cursor: pointer;
   margin-right: 10px;
+  margin-top: auto;
 
   @media (max-width: 600px) {
     font-size: 4.5vh;
@@ -52,12 +59,12 @@ export const FilesIcon = styled(AiOutlinePaperClip)`
 
 export const SendTextIcon = styled(FiSend)`
   color: #737373;
-  font-size: 4vh;
+  font-size: 4.5vh;
   cursor: pointer;
   margin-left: 10px;
-  margin-top: 3px;
+  margin-top: auto;
 
   @media (max-width: 600px) {
-    font-size: 3.5vh;
+    font-size: 4vh;
   }
 `;

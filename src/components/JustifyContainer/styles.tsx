@@ -9,7 +9,15 @@ export const Container = styled.div<Props>`
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   box-sizing: border-box;
   flex: 1;
+  
+  /* IPads e tablets */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;

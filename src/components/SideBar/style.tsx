@@ -9,6 +9,10 @@ export const Container = styled.div`
   background-color: #ffffff;
   border-bottom: 1px solid #B9B7B7;
   border-top: 1px solid #B9B7B7;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const Header = styled.div`
@@ -62,7 +66,7 @@ export const TitleSection = styled.div`
   flex-direction: row;
 
   @media (max-width: 768px) {
-    font-size: 3vh;
+    font-size: 2.5vh;
   }
 `;
 
@@ -82,12 +86,16 @@ export const ReturnToPageIcon = styled(IoChevronBack)`
   @media (max-width: 768px) {
     align-items: right;
     font-size: 3.5vh;
-    padding-right: 1.2vw;
   }
 
   @media (max-width: 600px) {
     align-items: center;
-    font-size: 3.5vh;
-    padding-right: 2vw;
+    font-size: 3vh;
+
   }
+`;
+
+export const ChatList = styled.div`
+  height: 70%;
+  overflow-y: auto;
 `;

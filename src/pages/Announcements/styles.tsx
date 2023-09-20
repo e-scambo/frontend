@@ -3,12 +3,28 @@ import styled from 'styled-components';
 import {AiOutlineDown} from 'react-icons/ai';
 
 export const ListOfCards = styled.div`
-  margin-top: 3vw;
-  padding-right: 6.6%;
-  padding-left: 6.6%;
-  width: 67vw;
   display: flex;
   flex-wrap: wrap;
+
+  margin-top: 5vh;
+  width: 65.35vw;
+
+  gap: 1.5vw;
+
+  /* Telas pequenas e laptops */
+  @media (max-width: 1024px) {
+    width: 72vw;
+  }
+  
+  /* IPads e tablets */
+  @media (max-width: 768px) {
+    width: 90vw;
+  }
+  
+  /* Dispositivos Mobile */
+  @media (max-width: 480px) {
+    width: 85vw;
+  }
 `;
 
 export const FiltersBar = styled.div`

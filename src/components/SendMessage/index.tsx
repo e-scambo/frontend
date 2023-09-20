@@ -60,11 +60,11 @@ const SendMessage: React.FC = () => {
   return (
     <Container>
         <FilesIcon onClick={handleAttachmentClick} />
-        <input
-          type="file"
-          ref={inputFileRef}
-          style={{ display: 'none' }}
-          onChange={handleFileChange}
+              <input
+                type="file"
+                ref={inputFileRef}
+                style={{ display: 'none' }}
+                onChange={handleFileChange}
         />
         <InputTextArea
             value={message}

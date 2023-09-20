@@ -8,7 +8,6 @@ import AnnouncementCard from 'components/AnnouncementCard';
 import PageContainer from 'components/PageContainer';
 import Header from 'components/Header';
 import JustifyContainer from 'components/JustifyContainer';
-import ContentBox from 'components/ContentBox';
 import SearchBar from 'components/SearchBar';
 import Pagination from 'components/Pagination';
 import Ordenar from 'components/Ordenar'; 
@@ -20,6 +19,8 @@ import data from './data.json';
 import {Title} from './styles';
 import Footer from 'components/Footer';
 import MenuOverlay from 'components/MenuOverlay';
+import AdsRight from 'components/AdsRight';
+import AdsLeft from 'components/AdsLeft';
 
 const Announcements: React.FC = () => {
 
@@ -77,6 +78,7 @@ const Announcements: React.FC = () => {
           />
       </HeaderRoxo>
       <JustifyContainer thereIsHeader >
+        <AdsLeft/>
         <ListOfCards>
           <OrdenarOverlay>
             <MenuOverlay isOpen={isMenuOpen} onClose={handleMenuToggle}>
@@ -115,6 +117,7 @@ const Announcements: React.FC = () => {
                   />
                 ))}
         </ListOfCards>
+        <AdsRight/>
       </JustifyContainer>
       <Pagination
         totalPages={totalPages}

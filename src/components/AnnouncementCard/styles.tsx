@@ -3,64 +3,60 @@ import {BiImageAlt as noImage} from 'react-icons/bi';
 
 
 export const Paper = styled.div`
-  display: block;
-  width: 19.2vw;
-  margin: 0.5vw;
+  display: flex;
+  justify-content: center;
+  
+  width: 20.78vw;
+  min-height: 19vh;
+  box-sizing: border-box;
   background: #FFFFFF;
-  padding: 2vh;
+  
+  padding: 1%;
   border: 1.5px solid #B9B7B7;
   border-radius: 8px;
-  min-height: 16vh;
-  &:not(:last-child) {
-    margin-bottom: 1.5vh;
+
+  /* Telas pequenas e laptops */
+  @media (max-width: 1024px) {
+    width: 23vw;
   }
-  @media (max-width: 426px) {
-    width: 70vw;
+
+  /* IPads e tablets */
+  @media (max-width: 768px) {
+    width: 29vw;
+  }
+  
+  /* Dispositivos Mobile */
+  @media (max-width: 480px) {
+    padding: 3%;
+    width: 85vw;
   }
 `;
 
 export const Grid = styled.div`
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
   display: flex;
   flex-direction: column;
-  grid-template-columns: 10vw 35vw;
-  grid-template-rows: 3vh 3vh 1fr 1fr;
+  justify-content: space-between;
+  
+  width: 100vw;
   box-sizing: border-box;
-  max-width: 280px;
-
-  @media (max-width: 426px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    padding-bottom: 2vh;
-  }
+  
+  gap: 1%;
 `;
 
 
 export const Picture = styled.img`
-  background-size: cover;
-  align-self: center;
-  justify-self: center;
-  
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  background-size: cover;
+  object-fit: cover;
+  
+  width: 100%;
+  height: 269px;
+  background-color: #F2F2F2;
   border-radius: 4px;
 
   box-sizing: border-box;
-  background-color: #F2F2F2;
   cursor: pointer;
-
-  width: 100%;
-  height: 269px;
-  object-fit: cover;
-
-  display: flex;
-
 `;
 
 
@@ -70,7 +66,7 @@ export const Title = styled.div`
   font-family: 'Noto Sans' sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 3vh;
+  font-size: 1em;
   color: #4C0C6C;
 `;
 
@@ -82,7 +78,7 @@ export const Localization = styled.div`
   font-family: 'Noto Sans', sans-serif ;
   font-style: normal;
   font-weight: normal;
-  font-size: 2vh;
+  font-size: 0.8em;
   line-height: 2vh;
   color: #C6C6C6;
 
@@ -102,7 +98,7 @@ export const Description = styled.p`
   font-family: 'Noto Sans', sans-serif ;
   font-style: normal;
   font-weight: normal;
-  font-size: 2vh;
+  font-size: 0.8em;
   line-height: 2vh;
   color: #727171;
   height: 4vh;

@@ -58,7 +58,7 @@ const Header: React.FC = () => {
         </ContainerMenus>
         <LoginGroup>
           <ButtonOrange onClick={() => navigate('/create')}>Anunciar</ButtonOrange>
-
+          
           <BotaoOverlay onClick={handleMenuToggle}>
             <IconeUsuario/>Login<IconeSeta/>
           </BotaoOverlay>
