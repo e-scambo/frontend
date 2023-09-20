@@ -6,6 +6,7 @@ const MenuMobile = ({open}) => {
     <StyledMenu open={open}>
       <NavLink to='/announcements'>Anúncios</NavLink>
       <NavLink to='/chats'>Chats</NavLink>
+      <NavLink to='/livros'>Livros</NavLink>
       <NavLink to='/profile'>Meu Perfil</NavLink>
       <NavLink to='/favorites'>Favoritos</NavLink>
       <NavLink to='/signin' onClick={() => signOut()} > Sair </NavLink>

@@ -69,7 +69,13 @@ const CreateAnnouncement: React.FC = () => {
     var categorySelect = "";
     if(serviceOptions === false){
       data.type = "product";
-      categorySelect = categories.Produto[Number(data.category)];
+      const cat = categories.Produto[Number(data.category)];
+      if(cat === "Livros"){
+        categorySelect = "Outros";
+      }else{
+        categorySelect = categories.Produto[Number(data.category)];
+      }
+      
     } else{ 
       data.type = "service";
       categorySelect = categories.Serviço[Number(data.category)];
@@ -84,7 +90,7 @@ const CreateAnnouncement: React.FC = () => {
       
       const state = states[(Number(data.state))].nome;
       const city = states[(Number(data.state))].cidades[(Number(data.city))];
-      console.log('pic');
+      
       const anuncio = await createAnnouncement(auth.user, {
         title: data.title,
         description: data.description,

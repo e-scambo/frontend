@@ -178,7 +178,7 @@ const SignUp: React.FC = () => {
              name="phone"
              label="Telefone"
              type="tel"
-             placeholder="99999999999"
+             placeholder="telefone"
             />
             <Message>
               O número deve ser escrito sem traços e sem espaços.
