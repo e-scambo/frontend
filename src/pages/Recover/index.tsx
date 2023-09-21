@@ -26,11 +26,11 @@ const Recover: React.FC = () => {
   const [popUpMessage, setPopUpMessage] = useState('');
   const [popUpSubtitle, setPopUpSubtitle] = useState('');
   const message = 'Um e-mail de recuperação foi enviado para sua caixa postal!';
-  const subtitle = 'Não se esqueça de verificar a caixa de spam!';
+  const subtitle = 'Não se esqueça de verificar sua caixa de spam!';
 
   const handleToSubmit = (data: object) => {
     const message = 'Um e-mail de recuperação foi enviado para sua caixa postal!';
-    const subtitle = 'Não se esqueça de verificar a caixa de spam!';
+    const subtitle = 'Não se esqueça de verificar sua caixa de spam!';
     setPopUpMessage(message);
     setPopUpSubtitle(subtitle);
     setShowPopUp(true);

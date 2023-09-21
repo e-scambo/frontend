@@ -78,7 +78,7 @@ export const TitlePopUp = styled.div`
 `;
 
 export const ContainerSubtitlePopUp = styled.div`
-  width: 50%;
+  width: 60%;
   height: 10%;
   margin-top: -5vh;
   display: flex;
