@@ -1,10 +1,9 @@
 import {Form} from '@unform/web';
 import {Link} from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react';
 import InputForm from 'components/InputForm';
 import Button from 'components/Button';
 import Carousel from 'components/Carousel';
-import ReturnToPage from 'assets/img/ReturnToPage.png';
 
 import {Principal} from './styles';
 import {ContainerFields} from './styles';
@@ -12,24 +11,41 @@ import {ContainerTitle} from './styles';
 import {ContainerLoginForm} from './styles';
 import {ContainerButton} from './styles';
 import {ContainerReturnToPage} from './styles';
+import { ReturnToPageIcon } from './styles';
 import {Title} from './styles';
 import {Description} from './styles';
 import {Terms} from './styles';
 import {PrivacyPolicy} from './styles';
 
 import data from './data.json';
+import PopUp from 'components/PopUp';
 
 const Recover: React.FC = () => {
+
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [popUpMessage, setPopUpMessage] = useState('');
+  const [popUpSubtitle, setPopUpSubtitle] = useState('');
+  const message = 'Um e-mail de recuperação foi enviado para sua caixa postal!';
+  const subtitle = 'Não se esqueça de verificar a caixa de spam!';
+
   const handleToSubmit = (data: object) => {
-    console.log(data);
+    const message = 'Um e-mail de recuperação foi enviado para sua caixa postal!';
+    const subtitle = 'Não se esqueça de verificar a caixa de spam!';
+    setPopUpMessage(message);
+    setPopUpSubtitle(subtitle);
+    setShowPopUp(true);
   };
 
+  const closePopUp = () => {
+    setShowPopUp(false);
+  };
+  
   return (
     <Principal>
       <ContainerLoginForm>
         <ContainerReturnToPage>
           <Link to="/SignIn">
-            <img src={ReturnToPage} />
+            <ReturnToPageIcon />
           </Link>
         </ContainerReturnToPage>
         <ContainerTitle>
@@ -64,6 +80,8 @@ const Recover: React.FC = () => {
         </Form>
       </ContainerLoginForm>
       <Carousel/>
+      {/* Renderiza o PopUp quando showPopUp for true */}
+      {showPopUp && <PopUp onClose={closePopUp} message={popUpMessage} subtitle={subtitle}/>}
     </Principal>
   );
 };

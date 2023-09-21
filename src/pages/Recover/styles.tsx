@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import ReturnToPage from 'assets/img/ReturnToPage.png';
+import {IoChevronBack} from 'react-icons/io5';
 
 export const Principal = styled.div`
   display: flex;
@@ -26,23 +26,32 @@ export const Carousel = styled.div`
 `;
 
 export const ContainerReturnToPage = styled.div`
-  width: 1vw;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  padding-top: 5vh;
-  
+  margin-top: 5vh;
+
   @media (max-width: 768px) {
-    width: 1vw;
-    justify-content: flex-start;
+    padding-right: 1vw;
+  }
+
+  @media (max-width: 600px) {
+    padding-right: 1vw;
   }
 `;
 
-export const StyledReturnToPage = styled.div`
-  height: 4vh;
-  width: 4vh;
-  cursor: pointer;
+export const ReturnToPageIcon = styled(IoChevronBack)`
+  color: #000;
+  font-size: 5vh;
+
+  @media (max-width: 768px) {
+    align-items: right;
+    font-size: 3.5vh;
+    padding-right: 1.2vw;
+  }
+
+  @media (max-width: 600px) {
+    align-items: center;
+    font-size: 3.5vh;
+    padding-right: 1.2vw;
+  }
 `;
 
 export const ContainerLoginForm = styled.div`
@@ -53,12 +62,11 @@ export const ContainerLoginForm = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   padding: 0vh 14vh 14vh 14vh;
-  
-  @media (max-width: 426px) {
+
+  @media (max-width: 1115px) {
     width: auto;
     height: auto;
     padding: 0;
-    
   }
 `;
 
@@ -69,7 +77,7 @@ export const ContainerFields = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 23vh;
+  padding-top: 20vh;
   div {
     &:not(:first-child) {
       margin-top: 2vh;
@@ -114,7 +122,7 @@ export const Title = styled.div`
   font-size: 8vh;
   color: #4E096B;
   height: 20%;
-  padding-top: 12vh;
+  padding-top: 8vh;
   white-space: pre-line;
   
   @media (max-width: 1115px) {
@@ -123,9 +131,9 @@ export const Title = styled.div`
     height: auto;
   }
 
-  @media (max-width: 600px) {
-    padding: 0;
-    font-size: 4vh;
+  @media (max-width: 1350px) {
+    padding-top: 5vh;
+    font-size: 6vh;
     height: auto;
   }
 `;
@@ -137,21 +145,14 @@ export const Description = styled.div`
   font-size: 2.5vh;
   color: #B9B7B7;
   height: 15%;
-  text-align: left; /* adicionado */
+  text-align: left;
   padding-top: 20vh;
   padding-left: 5px;
   
-  @media (max-width: 1115px) {
+  @media (max-width: 1350px) {
     padding: 0;
-    padding-top: 10vh;
+    padding-top: 2vh;
     font-size: 2vh;
-    height: auto;
-  }
-
-  @media (max-width: 600px) {
-    padding: 0;
-    padding-top: 10vh;
-    font-size: 1.6vh;
     height: auto;
   }
 `;
@@ -186,6 +187,12 @@ export const InfoText = styled.div`
 
   a {
     margin-left: .3vw;
+  }
+
+  @media (max-width: 1115px) {
+    padding: 0;
+    padding-top: 2vh;
+    height: auto;
   }
 `;
 
