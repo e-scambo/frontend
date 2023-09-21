@@ -13,8 +13,7 @@ import Announcements from 'pages/Announcements';
 import Favorites from 'pages/Favorites';
 import MyAds from 'pages/MyAds';
 import Chats from 'pages/Chats';
-import Books from 'pages/Books';
-
+import RegisterNewPassword from 'pages/RegisterNewPassword';
 
 const Routes: React.FC = () => {
   return (
@@ -31,8 +30,7 @@ const Routes: React.FC = () => {
       <Route path="/favorites" element={<Favorites/>} />
       <Route path="/MeusAnuncios" element={ <MyAds/> } />
       <Route path="/chats" element={ <Chats/> } />
-      <Route path="/livros" element={ <Books/> } />
-     
+      <Route path="/registernewpassword" element={ <RegisterNewPassword/> } />
     </Switch>
   );
 };
