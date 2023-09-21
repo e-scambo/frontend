@@ -12,6 +12,7 @@ interface FileInputProps {
 
     const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
       const file = event.target.files?.[0] || null;
+      
       onFileSelect(file);
 
       if (file) {
@@ -34,8 +35,8 @@ interface FileInputProps {
           {selectedImage ? (
             <Image src={selectedImage} alt="Selected" />
           ) : (
-            <div onClick={handleBrowseClick}>
-                <img src={cameraImage} alt="Camera" />
+            <div >
+                <img  src={cameraImage} alt="Camera" />
             </div>
           )}
           <HiddenInput

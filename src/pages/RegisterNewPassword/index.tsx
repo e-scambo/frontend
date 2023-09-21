@@ -19,18 +19,19 @@ import {PrivacyPolicy} from './styles';
 
 import data from './data.json';
 import PopUp from 'components/PopUp';
+import PasswordInput from 'components/PasswordInput';
 
-const Recover: React.FC = () => {
+const RegisterNewPassword: React.FC = () => {
 
   const [showPopUp, setShowPopUp] = useState(false);
   const [popUpMessage, setPopUpMessage] = useState('');
   const [popUpSubtitle, setPopUpSubtitle] = useState('');
-  const message = 'Um e-mail de recuperação foi enviado para sua caixa postal!';
-  const subtitle = 'Não se esqueça de verificar sua caixa de spam!';
+  const message = 'Nova senha cadastrada!';
+  const subtitle = '';
 
   const handleToSubmit = (data: object) => {
-    const message = 'Um e-mail de recuperação foi enviado para sua caixa postal!';
-    const subtitle = 'Não se esqueça de verificar sua caixa de spam!';
+    const message = 'Nova senha cadastrada!';
+    const subtitle = '';
     setPopUpMessage(message);
     setPopUpSubtitle(subtitle);
     setShowPopUp(true);
@@ -43,28 +44,27 @@ const Recover: React.FC = () => {
   return (
     <Principal>
       <ContainerLoginForm>
-        <ContainerReturnToPage>
-          <Link to="/SignIn">
-            <ReturnToPageIcon />
-          </Link>
-        </ContainerReturnToPage>
         <ContainerTitle>
           <Title>{data.title}</Title>
-          <Description>{data.description}</Description>
         </ContainerTitle>
         <Form onSubmit={handleToSubmit}>
           <ContainerFields>
-            <InputForm
-              name="e-mail"
-              label="E-mail"
-              type="text"
-              placeholder="E-mail"
-              // {data.placeholders.email}
+          <PasswordInput
+              name="password"
+              label="Senha"
+              type="password"
+              placeholder={"Senha"}
+            />
+          <PasswordInput
+              name="password"
+              label="Senha"
+              type="password"
+              placeholder={"Digite novamente sua senha"}
             />
             <ContainerButton>
-            <Button
-              type='submit'
-            > Continuar </Button>
+              <Button
+                type='submit'
+              > Confirmar </Button>
             </ContainerButton>
             {/* <InfoText> {data.doesNotHaveAccount}
               <Redirect to='/signup' replace >
@@ -86,4 +86,4 @@ const Recover: React.FC = () => {
   );
 };
 
-export default Recover;
+export default RegisterNewPassword;

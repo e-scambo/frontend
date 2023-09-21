@@ -110,6 +110,24 @@ export const Description = styled.p`
   word-break: break-word;
 `;
 
+export const CardActions = styled.div`
+  margin-top: 2vh;
+  justify-self: start;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+
+  button {
+    width: 20vw;
+  }
+
+  @media (max-width: 426px) {
+    button {
+      width: 25vw;
+    }
+  }
+`;
+
 export const BiImageAlt = styled(noImage)`
   font-size: 32px;
   fill: #A5A5A5;
