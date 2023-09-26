@@ -6,9 +6,8 @@ import {Grid} from './styles';
 import {Picture} from './styles';
 import {Title} from './styles';
 import {Description} from './styles';
-import {CardActions} from './styles';
 import {MdOutlinePlace} from 'react-icons/md';
-import Button from 'components/Button';
+import ButtonCard from 'components/ButtonCard';
 import useUsers from 'hooks/useUsers';
 import useAuth from 'hooks/useAuth';
 
@@ -53,12 +52,7 @@ const AnnouncementCard: React.FC<CardProps> = (props) => {
         <Description>
           {props.description}
         </Description>
-        <CardActions>
-          {/* <Button
-            onClick={ () => favoritar() } > Favoritar </Button> */}
-          <Button
-            onClick={ () => negociar() } > Negociar </Button>
-        </CardActions>
+        <ButtonCard onClick={ () => negociar() } > Negociar </ButtonCard>
       </Grid>
     </Paper>
   );

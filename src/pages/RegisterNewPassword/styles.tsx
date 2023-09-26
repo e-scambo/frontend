@@ -122,7 +122,7 @@ export const Title = styled.div`
   font-size: 8vh;
   color: #4E096B;
   height: 20%;
-  padding-top: 8vh;
+  padding-top: 15vh;
   white-space: pre-line;
   
   @media (max-width: 1115px) {
