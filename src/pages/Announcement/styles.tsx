@@ -21,7 +21,8 @@ export const Paper = styled.div`
 
   @media (max-width: 800px) {
     flex-direction: column;
-
+    margin-left: 7.5vw;
+    height: 150vh;
 `;
 
 export const AdvertType = styled.div`
@@ -50,12 +51,12 @@ export const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  margin-top: 9vh;
 
   button {
     height: 4vh;
     width: 18vh;
   }
+
   @media (max-width: 800px) {
     width: 80vw;
   }
@@ -67,6 +68,10 @@ export const ContainerSection = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
   padding-left: 2vw;
+
+  @media (max-width: 800px) {
+    padding-left: 6vw;
+  }
 `;
 
 export const SectionWrapper = styled.div`
@@ -91,7 +96,17 @@ export const ImagesSection = styled.div`
   display: flex;
   flex-direction: row;
   padding-left: 1.7vw;
-  justify-content: space-between;
+  padding-bottom: 5vh;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    margin-right: 42%;
+  }
+
+  @media (min-width: 601px) {
+    margin-right: 15%;
+  }
 `;
 
 export const SmallSection = styled.div`
@@ -113,12 +128,10 @@ export const BigSection = styled.div`
   border-radius: 4px;
  
   @media (max-width: 800px) {
-    width: 20vw;
     img {
-      position: absolute;
-      width: 46%;
-      top: 0%;
-      height: 134px;}
+      margin: 0 auto; /* Centralize horizontalmente */
+      height: 300px;
+    }
   }
 `;
 
@@ -155,7 +168,6 @@ export const DataSectionTitle = styled.div`
   font-style: normal;
   font-weight: 900;
   font-size: 5.2vh;
-  line-height: 1vh;
   color: #4C0C6C;
   margin: 1vh 0vh;
 `;
@@ -177,20 +189,21 @@ export const ContainerButtons = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding-top: 4.7vh;
   margin: auto;
+  padding-top: 4vh;
   
    button {
     height: 11vh;
-    width: 15vw;;
+    width: 100%;
     margin: 0 auto;
     border-radius: 50px;
+    margin: 2vh 0vw 1vh 0vw;
   }
 
-  @media (max-width: 426px) {
-    width: 30vw;
-    height: 100vh;
+  @media (max-width: 800px) {
+    width: 80%;
     flex-direction: column;
+    padding-top: 4vh;
   }
 }
 `;
@@ -199,6 +212,7 @@ export const ContainerNormalButton = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 1vw;
+  width: 100%;
 `;
 
 export const ContainerGhostButton = styled.div`
@@ -206,6 +220,7 @@ export const ContainerGhostButton = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: 100%;
 `;
 
 export const SuccessMessage = styled.p`
