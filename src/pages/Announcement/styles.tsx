@@ -96,6 +96,7 @@ export const ImagesSection = styled.div`
   display: flex;
   flex-direction: row;
   padding-left: 1.7vw;
+  padding-bottom: 5vh;
   justify-content: center;
   align-items: center;
 
