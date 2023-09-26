@@ -14,6 +14,7 @@ import Favorites from 'pages/Favorites';
 import MyAds from 'pages/MyAds';
 import Chats from 'pages/Chats';
 import RegisterNewPassword from 'pages/RegisterNewPassword';
+import Books from 'pages/Books';
 
 const Routes: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ const Routes: React.FC = () => {
       <Route path="/announcement/:id" element={<Announcement/>} />
       <Route path="/announcements" element={<Announcements/>} />
       <Route path="/favorites" element={<Favorites/>} />
+      <Route path="/livros" element={<Books/>} />
       <Route path="/MeusAnuncios" element={ <MyAds/> } />
       <Route path="/chats" element={ <Chats/> } />
       <Route path="/registernewpassword" element={ <RegisterNewPassword/> } />
