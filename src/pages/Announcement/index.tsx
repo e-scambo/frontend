@@ -12,10 +12,7 @@ import {Paper} from './styles';
 import {Section} from './styles';
 import {SectionWrapper} from './styles';
 import {ContainerSection} from './styles';
-import {ImagesSection} from './styles';
-import {SmallSection} from './styles';
-import {BigSection} from './styles';
-import {ColumnSection} from './styles';
+import {ImageSection} from './styles';
 import {DataSectionTitle} from './styles';
 import {DataSectionLocalization} from './styles';
 import {TitleSection} from './styles';
@@ -26,6 +23,8 @@ import {ContainerButtons} from './styles';
 import {ContainerNormalButton} from './styles';
 import {ContainerGhostButton} from './styles';
 import {SuccessMessage} from './styles';
+import {LineVertical} from './styles';
+import {LocalIcon} from './styles';
 
 import ProductImages from 'components/ProductImages';
 import Button from 'components/Button';
@@ -79,14 +78,11 @@ const Announcement: React.FC = () => {
           {announcement && (
             <Paper>
               <ContainerLeft>
-                <ImagesSection>
-                  
-                  <BigSection>
-                    <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto"/>
-                  </BigSection>
-                </ImagesSection>
+                <ImageSection>
+                  <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto"/>
+                </ImageSection>
               </ContainerLeft>
-
+              <LineVertical/>
               <ContainerRight>
                 {/* <AdvertType>
                   { announcement.type === 'product'? 'Produto' : 'Serviço' }
@@ -101,7 +97,7 @@ const Announcement: React.FC = () => {
                   
                     <Section>
                       <DataSectionLocalization>
-                        {announcement.localization}
+                        <LocalIcon/>{announcement.localization}
                       </DataSectionLocalization>
                     </Section>
 
