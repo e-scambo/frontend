@@ -8,6 +8,8 @@ import {ReactComponent as Favorite} from 'assets/icons/FavoriteIcon.svg';
 import {ReactComponent as Wallet} from 'assets/icons/WalletIcon.svg';
 import {ReactComponent as User} from 'assets/icons/UserIcon.svg';
 import {ReactComponent as Arrow} from 'assets/icons/ArrowIcon.svg';
+import {RiBook2Line as Books} from 'react-icons/all';
+import React from 'react';
 
 export const Container = styled.div`
   position: fixed;
@@ -219,6 +221,12 @@ export const IconeAnuncios = styled(Annoucement)`
   height: 3vh;
   width: auto;
   padding-right: 0.5em;
+`;
+
+export const IconeBooks = styled(Books)`
+height: 3.5vh;
+width: auto;
+padding-right: 0.5em;
 `;
 
 export const IconeChat = styled(Chat)`
