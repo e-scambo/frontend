@@ -40,7 +40,7 @@ export const InputImage = styled.input`
   height: 25vh;
   width: 25vh;
   position: absolute;
-  top: 60vh;
+  border-radius: 100%;
   opacity: 0;
   z-index: 2;
   cursor: pointer;

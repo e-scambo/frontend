@@ -32,6 +32,7 @@ export const TitleSection = styled.div`
 
   @media (max-width: 768px) {
     font-size: 4vh;
+    margin-top: 0vh;
   }
 `;
 
