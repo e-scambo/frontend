@@ -191,7 +191,7 @@ export const ContainerMegaFileInput = styled.div`
   padding-bottom: 4vh;
   margin-top: 7.6vh;
 
-  img {
+  /* img {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,7 +204,7 @@ export const ContainerMegaFileInput = styled.div`
       width: 40vw;
       height: 19vh;
     }
-  }
+  } */
 
   @media (max-width: 768px) {
     width: auto;

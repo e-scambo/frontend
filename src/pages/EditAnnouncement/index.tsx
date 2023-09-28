@@ -33,11 +33,14 @@ import {states, stateNames} from '../../locales/states-cities.json';
 import {categories} from './options.json';
 import Footer from '../../components/Footer';
 import useAnnouncements from '../../hooks/useAnnouncements';
+import useAuth from 'hooks/useAuth';
 
 const EditAnnouncement: React.FC = () => {
   const navigate = useNavigate();
   const {id} = useParams();
   const {announcement, fetchAnnouncementById} = useAnnouncements();
+  const {editAnnouncement} = useUsers();
+  const {auth} = useAuth();
   const [image, setImage] = useState<string>('');
 
   useEffect(() => {
@@ -86,6 +89,24 @@ const EditAnnouncement: React.FC = () => {
       if (formRef) {
         formRef.current?.setErrors({});
       }
+
+      const state = states[(Number(data.state))].nome;
+      const city = states[(Number(data.state))].cidades[(Number(data.city))];
+      
+      const anuncio = await editAnnouncement(auth.user, {
+        title: data.title,
+        description: data.description,
+        category: categorySelect,
+        localization: `${state} - ${city}`,
+        usage_time: data.usage_time,
+        type: data.type,
+        images: [pictures]
+      });
+      if (anuncio?.status === 200) {
+        navigate('/MeusAnuncios');
+      }else{
+        alert("Erro ao atualizar anúncio tente novamente!");
+      };
 
     } catch (err) {
       const validationErrors = {};
@@ -180,8 +201,8 @@ const EditAnnouncement: React.FC = () => {
                 </ContainerLeft>
                 <ContainerRight>
                   <ContainerMegaFileInput>
-                    <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto" />
-                    {/* <FileInputBigger onFileSelect={setPictures} /> */}
+                    {/* <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto" /> */}
+                    <FileInputBigger onFileSelect={setPictures} />
                   </ContainerMegaFileInput>
                   {/*<ContainerFileInput>
                     <FileInput onFileSelect={setPictures} />
