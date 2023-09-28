@@ -23,18 +23,8 @@ interface CardProps {
 
 const MyAnnouncementCard: React.FC<CardProps> = (props) => {
   const navigate = useNavigate();
-  const {addFavorite} = useUsers();
   const img = 'https://etrokaapi.herokuapp.com/images/'+props.image;
-  const {auth} = useAuth();
-  const favoritar = ()=>{
-    addFavorite(auth.user, {announcement: props.id, owner: props.owner.id});
-  };
-  const negociar = ()=>{
-    const phone = props.owner.phone.replace('(', '').replace(')', '')
-        .replace(' ', '').replace('-', '');
-    console.log(phone);
-    window.location.replace(`https://api.whatsapp.com/send?phone=55${phone}&text=ass`);
-  };
+  
   return (
     <Paper>
       <Grid>
@@ -52,7 +42,9 @@ const MyAnnouncementCard: React.FC<CardProps> = (props) => {
         <Description>
           {props.description}
         </Description>
-        <ButtonMyCard onClick={ () => negociar() } > Editar </ButtonMyCard>
+        <ButtonMyCard onClick={() => {
+          navigate(`/editAnnouncement/${props.id}`);
+        }}> Editar </ButtonMyCard>
       </Grid>
     </Paper>
   );

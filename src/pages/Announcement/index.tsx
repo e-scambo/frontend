@@ -49,14 +49,15 @@ const Announcement: React.FC = () => {
     }
     
   }, []);
-   const imagean = ()=>{
+
+  const imagean = ()=>{
     console.log(announcement);
     if(announcement?.images[0]){
       setImage('https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname);
     }else{
       return 'https://etrokaapi.herokuapp.com/images/semimagem.png';
     }
-   }
+  }
   const favoritar = ()=>{
     addFavorite(auth.user, {announcement: announcement?.id, owner: announcement?.owner?.id});
     setFavoritado(true);
