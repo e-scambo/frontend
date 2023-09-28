@@ -41,6 +41,18 @@ function useUsers() {
     }
     return null;
   }
+
+  async function editAnnouncement(userId: string, data:AnnouncementForm): Promise<AxiosResponse|null> {
+    try {
+      const response = await userService.editAnnouncement(userId, data);
+      return response;
+    } catch (error) {
+      console.log('erro');
+      console.log('erro :'+error);
+    }
+    return null;
+  }
+
   async function addFavorite(userId: string, data:any): Promise<AxiosResponse|null> {
     try {
       const response = await userService.addFavorite(userId, data);
@@ -62,6 +74,7 @@ function useUsers() {
     createUser,
     fetchUserById,
     createAnnouncement,
+    editAnnouncement,
     addFavorite,
   };
 }
