@@ -98,7 +98,7 @@ const Announcements: React.FC = () => {
                     id={announcement.id}
                     title={announcement.title}
                     description={announcement.description}
-                    image={announcement.images[0] as string}
+                    image={announcement.images[0]?.originalname as string}
                     localization={announcement.localization}
                     owner={announcement.owner}
                   />

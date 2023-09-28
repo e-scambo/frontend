@@ -190,6 +190,22 @@ export const ContainerMegaFileInput = styled.div`
   flex-direction: column;
   padding-bottom: 4vh;
   margin-top: 7.6vh;
+
+  img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35vw;
+    height: 60vh;
+    background-color: #D9D9D9;
+    cursor: pointer;
+    border-radius: 7px;
+    @media (max-width: 800px) {
+      width: 40vw;
+      height: 19vh;
+    }
+  }
+
   @media (max-width: 768px) {
     width: auto;
     height: auto;

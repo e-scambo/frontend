@@ -180,7 +180,8 @@ const EditAnnouncement: React.FC = () => {
                 </ContainerLeft>
                 <ContainerRight>
                   <ContainerMegaFileInput>
-                    <FileInputBigger onFileSelect={setPictures} />
+                    <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto" />
+                    {/* <FileInputBigger onFileSelect={setPictures} /> */}
                   </ContainerMegaFileInput>
                   {/*<ContainerFileInput>
                     <FileInput onFileSelect={setPictures} />
