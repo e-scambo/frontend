@@ -86,6 +86,30 @@ class UserService extends CoreService {
     return null;
   }
 
+  async editAnnouncement(userId: string, data): Promise<AxiosResponse|null> {
+    try {
+      const customRoute = `${this.baseRoute}/${userId}/announcements`;
+      const formData = new FormData();
+      console.log(data.usage_time);
+      console.log(data);
+      formData.append('title', data.title);
+      formData.append('description', data.description);
+      formData.append('category', data.category);
+      formData.append('localization', data.localization);
+      formData.append('type', data.type);
+      formData.append('images', data.images[0]);
+      formData.append('usage_time', data.usage_time);
+      const response = await this.getApi().put(customRoute, formData, {
+        headers: {
+          'content-type': 'multipart/form-data',
+        },
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+    return null;
+  }
 
   async getUserAnnouncements(userId: string): Promise<AxiosResponse|null> {
     try {
