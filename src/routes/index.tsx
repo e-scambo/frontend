@@ -12,6 +12,7 @@ import Announcement from 'pages/Announcement';
 import Announcements from 'pages/Announcements';
 import Favorites from 'pages/Favorites';
 import MyAds from 'pages/MyAds';
+import EditAnnouncement from 'pages/EditAnnouncement';
 import Chats from 'pages/Chats';
 import RegisterNewPassword from 'pages/RegisterNewPassword';
 import Books from 'pages/Books';
@@ -26,6 +27,7 @@ const Routes: React.FC = () => {
       <Route path="/passwordreset" element={ <PasswordReset />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/create" element={<CreateAnnouncement/>} />
+      <Route path="/editAnnouncement/:id" element={<EditAnnouncement/>} />      
       <Route path="/announcement/:id" element={<Announcement/>} />
       <Route path="/announcements" element={<Announcements/>} />
       <Route path="/favorites" element={<Favorites/>} />

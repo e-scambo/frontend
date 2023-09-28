@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import PageContainer from 'components/PageContainer';
-import Header from 'components/Header';
-import JustifyContainer from 'components/JustifyContainer';
-import useMyAds from 'hooks/useAnnouncements';
-import { ListOfCards } from 'pages/Announcements/styles';
-import AnnouncementCard from 'components/AnnouncementCard';
-import Footer from 'components/Footer';
-import AdsRight from 'components/AdsRight';
-import AdsLeft from 'components/AdsLeft';
+import PageContainer from '../../components/PageContainer';
+import Header from '../../components/Header';
+import JustifyContainer from '../../components/JustifyContainer';
+import useMyAds from '../../hooks/useAnnouncements';
+import { ListOfCards } from '../../pages/Announcements/styles';
+import Footer from '../../components/Footer';
+import AdsRight from '../../components/AdsRight';
+import AdsLeft from '../../components/AdsLeft';
 
 import { BotaoOverlay, OrdenarOverlay, OutlineDownIcon, TitleArea } from './styles';
 import { TitleSection } from './styles';
 import { ContainerReturnToPage } from './styles';
 import {ReturnToPageIcon} from './styles';
-import useAuth from 'hooks/useAuth';
-import useAnnouncements from 'hooks/useAnnouncements';
-import { Announcement } from 'types';
-import MenuOverlay from 'components/MenuOverlay';
-import Ordenar from 'components/Ordenar';
-import Pagination from 'components/Pagination';
+import useAuth from '../../hooks/useAuth';
+import useAnnouncements from '../../hooks/useAnnouncements';
+import { Announcement } from '../../types';
+import MenuOverlay from '../../components/MenuOverlay';
+import Ordenar from '../../components/Ordenar';
+import Pagination from '../../components/Pagination';
+import MyAnnouncementCard from '../../components/MyAnnouncementCard';
 
 const MyAds: React.FC = () => {
   const {auth} = useAuth();
@@ -86,7 +86,7 @@ const MyAds: React.FC = () => {
         </OrdenarOverlay>
         {announcements && announcements.length > 0 ? (
           announcements.map((announcement: any, index) => (
-            <AnnouncementCard
+            <MyAnnouncementCard
               key={announcement.id}
               id={announcement.id}
               title={announcement.title}
