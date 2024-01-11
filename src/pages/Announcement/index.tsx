@@ -79,7 +79,7 @@ const Announcement: React.FC = () => {
             <Paper>
               <ContainerLeft>
                 <ImageSection>
-                  <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto"/>
+                  <img src={'https://etroka-api-f832735b4e64.herokuapp.com/'+announcement?.images[0].originalname} alt="Imagem do produto"/>
                 </ImageSection>
               </ContainerLeft>
               <LineVertical/>
