@@ -25,7 +25,7 @@ interface CardProps {
 const AnnouncementCard: React.FC<CardProps> = (props) => {
   const navigate = useNavigate();
   const {addFavorite} = useUsers();
-  const img = 'https://etrokaapi.herokuapp.com/images/'+props.image;
+  const img = 'https://etroka-api-f832735b4e64.herokuapp.com/images/'+props.image;
   const {auth} = useAuth();
   const favoritar = ()=>{
     addFavorite(auth.user, {announcement: props.id, owner: props.owner.id});

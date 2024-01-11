@@ -13,7 +13,7 @@ interface ChatSideProps {
 
 const ChatSide: React.FC<ChatSideProps> = ({ onChatClick }) => {
   // const navigate = useNavigate();
-  // const img = 'https://etrokaapi.herokuapp.com/images/'+props.image;
+  // const img = 'https://etroka-api-f832735b4e64.herokuapp.com/images/'+props.image;
   // const {auth} = useAuth();
   return (
     <Container>

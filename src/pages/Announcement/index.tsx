@@ -53,9 +53,9 @@ const Announcement: React.FC = () => {
    const imagean = ()=>{
     console.log(announcement);
     if(announcement?.images[0]){
-      setImage('https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname);
+      setImage('https://etroka-api-f832735b4e64.herokuapp.com/images/'+announcement?.images[0].originalname);
     }else{
-      return 'https://etrokaapi.herokuapp.com/images/semimagem.png';
+      return 'https://etroka-api-f832735b4e64.herokuapp.com/images/semimagem.png';
     }
    }
   const favoritar = ()=>{
@@ -82,7 +82,7 @@ const Announcement: React.FC = () => {
                 <ImagesSection>
                   
                   <BigSection>
-                    <img src={'https://etrokaapi.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto"/>
+                    <img src={'https://etroka-api-f832735b4e64.herokuapp.com/images/'+announcement?.images[0].originalname} alt="Imagem do produto"/>
                   </BigSection>
                 </ImagesSection>
               </ContainerLeft>
