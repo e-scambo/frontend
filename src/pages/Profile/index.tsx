@@ -124,35 +124,35 @@ const Profile: React.FC = () => {
                   name="name"
                   label="Nome"
                   type="text"
-                  placeholder="Nome de usuário"
+                  placeholder={user?.name}
                   disabled={disableEditModeFields}
                 />
                 <EmailInput
                   name="email"
                   label="Email"
                   type="email"
-                  placeholder="Email"
+                  placeholder={user?.email}
                   disabled={disableEditModeFields}
                 />
                 <PasswordInput
                   name="password"
                   label="Senha"
                   type="password"
-                  placeholder="Senha"
+                  placeholder="**********"
                   disabled={disableEditModeFields}
                 />
                 <InputForm
                   name="phone"
                   label="Telefone"
                   type="text"
-                  placeholder="999999999"
+                  placeholder={user?.phone}
                   disabled={disableEditModeFields}
                 />
                 <InputForm
                   name="city"
                   label="Cidade"
                   type="text"
-                  placeholder="Campina Grande - PB"
+                  placeholder={user?.city + " - " + user?.state}
                   disabled={disableEditModeFields}
                 />
                 <InputForm
@@ -188,10 +188,10 @@ const Profile: React.FC = () => {
 
               <InformationSection>
                 <ProfileName>
-                  Nome de Usuário
+                  {user?.name}
                 </ProfileName>
                 <ProfileLocation>
-                  Localização
+                  {user?.city} - {user?.state}
                 </ProfileLocation>
               </InformationSection>
 

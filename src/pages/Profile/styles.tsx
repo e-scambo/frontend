@@ -40,6 +40,8 @@ export const TitleArea = styled.div`
     width: 80vw;
     height: 8vh;
     flex-direction: column;
+    margin-bottom: 5vh;
+    padding-top: 10vh;
   }
 `;
 

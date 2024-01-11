@@ -8,6 +8,8 @@ import {ReactComponent as Favorite} from 'assets/icons/FavoriteIcon.svg';
 import {ReactComponent as Wallet} from 'assets/icons/WalletIcon.svg';
 import {ReactComponent as User} from 'assets/icons/UserIcon.svg';
 import {ReactComponent as Arrow} from 'assets/icons/ArrowIcon.svg';
+import {RiBook2Line as Books} from 'react-icons/all';
+import React from 'react';
 
 export const Container = styled.div`
   position: fixed;
@@ -221,6 +223,12 @@ export const IconeAnuncios = styled(Annoucement)`
   padding-right: 0.5em;
 `;
 
+export const IconeBooks = styled(Books)`
+height: 3.5vh;
+width: auto;
+padding-right: 0.5em;
+`;
+
 export const IconeChat = styled(Chat)`
   height: 3vh;
   width: auto;
@@ -264,6 +272,7 @@ export const Li = styled.li`
 
 export const Line = styled.div`
   border: 1px solid black;
+  width: 177px;
 `;
 
 export const BotaoOverlay = styled.button`
@@ -294,8 +303,6 @@ export const BotaoOverlay = styled.button`
 export const Menu = styled.div`
   list-style: none;
 
-  width: 12.2vw;
-  height: 6.4vw;
   padding: 2vw;
   padding-top: 1vw;
   border: solid;
@@ -307,7 +314,7 @@ export const Menu = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 10px;
 
   border: solid black 1px;
   border-top: none;

@@ -21,6 +21,7 @@ import {
   BotaoOverlay,
   Menu,
   IconeAnuncios,
+  IconeBooks,
   IconeChat,
   IconeFavoritos,
   IconeCarteira,
@@ -49,7 +50,7 @@ const Header: React.FC = () => {
           <MenuMobile open={open} ></MenuMobile>
           <NavDesktop>
             <NavLink to='/announcements'><IconeAnuncios/>Anúncios</NavLink>
-            <NavLink to='/livros'><IconeAnuncios/>Livros</NavLink>
+            <NavLink to='/livros'><IconeBooks/>Livros</NavLink>
             <NavLink to='/chats'><IconeChat/>Chats (em breve)</NavLink>
             <NavLink to='/favorites'><IconeFavoritos/>Favoritos</NavLink>
             
