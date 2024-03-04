@@ -33,19 +33,25 @@ const AuthProvider: React.FC = ({children}) => {
   const coreService = new CoreServices();
 
   const signIn = useCallback(async (email, password) => {
-    const response = await coreService.getApi().post('auth', {
-      email: email,
-      password: password,
-    });
-
-    const {access_token: token} = response.data;
-    const decoded: JwtPayload = jwt_decode(token);
-    const user = decoded.sub;
-
-    localStorage.setItem('@escambo:token', JSON.stringify(token));
-    localStorage.setItem('@escambo:user', JSON.stringify(user));
-
-    setAuth({token, user: user as string});
+    try{
+      const response = await coreService.getApi().post('auth', {
+        email: email,
+        password: password,
+      });
+  
+      const {access_token: token} = response.data;
+      const decoded: JwtPayload = jwt_decode(token);
+      const user = decoded.sub;
+  
+      localStorage.setItem('@escambo:token', JSON.stringify(token));
+      localStorage.setItem('@escambo:user', JSON.stringify(user));
+  
+      setAuth({token, user: user as string});
+    }catch(error){
+      console.log(error);
+      alert('Email ou senha inválidos');
+    }
+    
   }, []);
 
   const signOut = useCallback(() => {
